@@ -36,7 +36,7 @@ def review_hash(url, data):
     # eBible's detail page footer identifies the serving replica. Preserve the
     # entire original separately and ignore only this terminal machine label.
     if url.startswith("https://ebible.org/details.php?id="):
-        data = re.sub(rb"(Last updated \d{4}-\d\d-\d\d +)(?:e|www|tiny\d+)(</p></body></html>\s*\Z)",
+        data = re.sub(rb"(Last updated \d{4}-\d\d-\d\d +)(?:c|e|www|tiny\d+)(</p></body></html>\s*\Z)",
                       rb"\1\2", data)
     return digest(data)
 

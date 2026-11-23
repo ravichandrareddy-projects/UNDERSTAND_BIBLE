@@ -1,0 +1,914 @@
+{
+  "eng-web": {
+    "ledger": "bfee50b18c629aa302eee65a6dc033c5780dd7803b34bed79066134b83b2ef23",
+    "evidence_at": "2026-11-23T21:58:14+05:30",
+    "result": {
+      "books": 66,
+      "verses": 31103,
+      "edition": "eng-web",
+      "version": "e36d23c5d28517a69faf91654cc6fc6657a298d9b6d66496166491f3ceab9749",
+      "chapters": 1189,
+      "annotations": {
+        "heading": 286,
+        "footnote": 1232,
+        "metadata": 338,
+        "introduction": 126,
+        "cross_reference": 340
+      },
+      "empty_labels": [
+        [
+          "LUK",
+          "17",
+          "36"
+        ],
+        [
+          "ACT",
+          "8",
+          "37"
+        ],
+        [
+          "ACT",
+          "15",
+          "34"
+        ],
+        [
+          "ACT",
+          "24",
+          "7"
+        ],
+        [
+          "ROM",
+          "16",
+          "25"
+        ]
+      ],
+      "label_findings": [],
+      "ancillary_books": [
+        "FRT",
+        "GLO"
+      ]
+    },
+    "ledger_path": "data/sources/bible-texts/staging/eng-web/e36d23c5d28517a69faf91654cc6fc6657a298d9b6d66496166491f3ceab9749/bfee50b18c629aa302eee65a6dc033c5780dd7803b34bed79066134b83b2ef23.jsonl.gz",
+    "source_notice_date": "2026-10-30",
+    "embedded_source_date": "2026-11-21",
+    "embedded_notice_sha256": "cf2f74dc550702cd7a785cf7afd258515e8f674df426f93e5e1578466ce3d37c",
+    "bsb_gap_notes": [],
+    "checked": "archive span, independent plain text, database UTF-8 hash and NFC, stored USJ and ordered annotation projections"
+  },
+  "eng-bsb": {
+    "ledger": "c0e296e4aedddd3f79294e4c48ffde32bea25a5cdd42b553b2011e8ae276f658",
+    "evidence_at": "2026-11-23T21:58:14+05:30",
+    "result": {
+      "books": 66,
+      "verses": 31086,
+      "edition": "eng-bsb",
+      "version": "75ca91d5a5c69ca4cbdeabdb03ea1a458db20cf3966abe15d86df086acf7fbc4",
+      "chapters": 1189,
+      "annotations": {
+        "heading": 4859,
+        "footnote": 4846,
+        "metadata": 198
+      },
+      "empty_labels": [],
+      "label_findings": [
+        [
+          "MAT",
+          "17",
+          "22",
+          "unlabelled interval 21-21"
+        ],
+        [
+          "MAT",
+          "18",
+          "12",
+          "unlabelled interval 11-11"
+        ],
+        [
+          "MAT",
+          "23",
+          "15",
+          "unlabelled interval 14-14"
+        ],
+        [
+          "MRK",
+          "7",
+          "17",
+          "unlabelled interval 16-16"
+        ],
+        [
+          "MRK",
+          "9",
+          "45",
+          "unlabelled interval 44-44"
+        ],
+        [
+          "MRK",
+          "9",
+          "47",
+          "unlabelled interval 46-46"
+        ],
+        [
+          "MRK",
+          "11",
+          "27",
+          "unlabelled interval 26-26"
+        ],
+        [
+          "MRK",
+          "15",
+          "29",
+          "unlabelled interval 28-28"
+        ],
+        [
+          "LUK",
+          "17",
+          "37",
+          "unlabelled interval 36-36"
+        ],
+        [
+          "LUK",
+          "23",
+          "18",
+          "unlabelled interval 17-17"
+        ],
+        [
+          "JHN",
+          "5",
+          "5",
+          "unlabelled interval 4-4"
+        ],
+        [
+          "ACT",
+          "8",
+          "38",
+          "unlabelled interval 37-37"
+        ],
+        [
+          "ACT",
+          "15",
+          "35",
+          "unlabelled interval 34-34"
+        ],
+        [
+          "ACT",
+          "24",
+          "8",
+          "unlabelled interval 7-7"
+        ],
+        [
+          "ACT",
+          "28",
+          "30",
+          "unlabelled interval 29-29"
+        ],
+        [
+          "ROM",
+          "16",
+          "25",
+          "unlabelled interval 24-24"
+        ]
+      ],
+      "ancillary_books": []
+    },
+    "ledger_path": "data/sources/bible-texts/staging/eng-bsb/75ca91d5a5c69ca4cbdeabdb03ea1a458db20cf3966abe15d86df086acf7fbc4/c0e296e4aedddd3f79294e4c48ffde32bea25a5cdd42b553b2011e8ae276f658.jsonl.gz",
+    "source_notice_date": "2026-10-30",
+    "embedded_source_date": "2026-10-30",
+    "embedded_notice_sha256": "50c75edf9b3cd16f74bf115e936a8a83773ff0ac4abab2da51f371b3e012fed0",
+    "bsb_gap_notes": [
+      {
+        "book": "MAT",
+        "chapter": "17",
+        "absent_label": "21",
+        "adjacent_note_labels_mentioning_number": [
+          "20"
+        ]
+      },
+      {
+        "book": "MAT",
+        "chapter": "18",
+        "absent_label": "11",
+        "adjacent_note_labels_mentioning_number": [
+          "10"
+        ]
+      },
+      {
+        "book": "MAT",
+        "chapter": "23",
+        "absent_label": "14",
+        "adjacent_note_labels_mentioning_number": [
+          "13"
+        ]
+      },
+      {
+        "book": "MRK",
+        "chapter": "7",
+        "absent_label": "16",
+        "adjacent_note_labels_mentioning_number": [
+          "15"
+        ]
+      },
+      {
+        "book": "MRK",
+        "chapter": "9",
+        "absent_label": "44",
+        "adjacent_note_labels_mentioning_number": [
+          "43"
+        ]
+      },
+      {
+        "book": "MRK",
+        "chapter": "9",
+        "absent_label": "46",
+        "adjacent_note_labels_mentioning_number": [
+          "45"
+        ]
+      },
+      {
+        "book": "MRK",
+        "chapter": "11",
+        "absent_label": "26",
+        "adjacent_note_labels_mentioning_number": [
+          "25"
+        ]
+      },
+      {
+        "book": "MRK",
+        "chapter": "15",
+        "absent_label": "28",
+        "adjacent_note_labels_mentioning_number": [
+          "27"
+        ]
+      },
+      {
+        "book": "LUK",
+        "chapter": "17",
+        "absent_label": "36",
+        "adjacent_note_labels_mentioning_number": [
+          "35"
+        ]
+      },
+      {
+        "book": "LUK",
+        "chapter": "23",
+        "absent_label": "17",
+        "adjacent_note_labels_mentioning_number": [
+          "16"
+        ]
+      },
+      {
+        "book": "JHN",
+        "chapter": "5",
+        "absent_label": "4",
+        "adjacent_note_labels_mentioning_number": [
+          "3"
+        ]
+      },
+      {
+        "book": "ACT",
+        "chapter": "8",
+        "absent_label": "37",
+        "adjacent_note_labels_mentioning_number": [
+          "36"
+        ]
+      },
+      {
+        "book": "ACT",
+        "chapter": "15",
+        "absent_label": "34",
+        "adjacent_note_labels_mentioning_number": [
+          "33"
+        ]
+      },
+      {
+        "book": "ACT",
+        "chapter": "24",
+        "absent_label": "7",
+        "adjacent_note_labels_mentioning_number": [
+          "6"
+        ]
+      },
+      {
+        "book": "ACT",
+        "chapter": "28",
+        "absent_label": "29",
+        "adjacent_note_labels_mentioning_number": [
+          "28"
+        ]
+      },
+      {
+        "book": "ROM",
+        "chapter": "16",
+        "absent_label": "24",
+        "adjacent_note_labels_mentioning_number": [
+          "23"
+        ]
+      }
+    ],
+    "checked": "archive span, independent plain text, database UTF-8 hash and NFC, stored USJ and ordered annotation projections"
+  },
+  "eng-dra": {
+    "ledger": "6bf31bb569fa9ed2052643a7c19199aedfe54f12c674c2ab7040b52f5fd88edc",
+    "evidence_at": "2026-11-23T21:58:14+05:30",
+    "result": {
+      "books": 73,
+      "verses": 35811,
+      "edition": "eng-dra",
+      "version": "28147740343e44cede8c86cffb91973f934ddd892a887f621f4df816ffc86834",
+      "chapters": 1334,
+      "annotations": {
+        "heading": 119,
+        "metadata": 292
+      },
+      "empty_labels": [],
+      "label_findings": [],
+      "ancillary_books": []
+    },
+    "ledger_path": "data/sources/bible-texts/staging/eng-dra/28147740343e44cede8c86cffb91973f934ddd892a887f621f4df816ffc86834/6bf31bb569fa9ed2052643a7c19199aedfe54f12c674c2ab7040b52f5fd88edc.jsonl.gz",
+    "source_notice_date": "2022-11-03",
+    "embedded_source_date": "2026-11-13",
+    "embedded_notice_sha256": "303725006b7f4ef6f157781fa8c5a5d9a47fe5106a0adf246897fa0885ae006d",
+    "bsb_gap_notes": [],
+    "checked": "archive span, independent plain text, database UTF-8 hash and NFC, stored USJ and ordered annotation projections"
+  },
+  "tel-irv": {
+    "ledger": "6725f7eb47fc312130dc34da2a9f38d6e5570f713d554c434e22e82679dde398",
+    "evidence_at": "2026-11-23T21:58:14+05:30",
+    "result": {
+      "books": 66,
+      "verses": 31004,
+      "edition": "tel-irv",
+      "version": "2c90088101dc614422e753f10b79dccae968db28a2fd979dfc5f82b944bf8b4f",
+      "chapters": 1189,
+      "annotations": {
+        "heading": 2920,
+        "footnote": 443,
+        "metadata": 264,
+        "introduction": 1087
+      },
+      "empty_labels": [],
+      "label_findings": [
+        [
+          "DEU",
+          "1",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "4",
+          "6-8",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "5",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "6",
+          "13-14",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "12",
+          "14-15",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "17",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "JOB",
+          "32",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "JOB",
+          "38",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "JOB",
+          "38",
+          "22-23",
+          "bridge or suffix"
+        ],
+        [
+          "PSA",
+          "132",
+          "3-5",
+          "bridge or suffix"
+        ],
+        [
+          "PRO",
+          "26",
+          "18-19",
+          "bridge or suffix"
+        ],
+        [
+          "ISA",
+          "9",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "EZK",
+          "3",
+          "24-25",
+          "bridge or suffix"
+        ],
+        [
+          "EZK",
+          "18",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "1",
+          "22-23",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "2",
+          "17-18",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "3",
+          "1-2",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "4",
+          "14-16",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "9",
+          "20-21",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "10",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "11",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "11",
+          "16-17",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "12",
+          "15-16",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "13",
+          "34-35",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "13",
+          "53-54",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "15",
+          "7-9",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "20",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "22",
+          "31-32",
+          "bridge or suffix"
+        ],
+        [
+          "MRK",
+          "9",
+          "43-44",
+          "bridge or suffix"
+        ],
+        [
+          "MRK",
+          "9",
+          "45-46",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "39-40",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "48-49",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "54-55",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "70-73",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "74-75",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "76-78",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "2",
+          "22-24",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "2",
+          "30-32",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "6",
+          "17-18",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "11",
+          "50-51",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "11",
+          "53-54",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "16",
+          "27-28",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "19",
+          "45-46",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "20",
+          "39-40",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "20",
+          "42-43",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "5",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "12",
+          "10-11",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "12",
+          "14-15",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "19",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "19",
+          "8-9",
+          "bridge or suffix"
+        ],
+        [
+          "ACT",
+          "24",
+          "20-21",
+          "bridge or suffix"
+        ],
+        [
+          "ACT",
+          "26",
+          "17-18",
+          "bridge or suffix"
+        ],
+        [
+          "ACT",
+          "26",
+          "22-23",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "1",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "1",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "5",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "8",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "8",
+          "38-39",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "9",
+          "1-2",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "9",
+          "27-28",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "12",
+          "7-8",
+          "bridge or suffix"
+        ],
+        [
+          "1CO",
+          "4",
+          "15-16",
+          "bridge or suffix"
+        ],
+        [
+          "1CO",
+          "12",
+          "24-25",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "3",
+          "14-15",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "3",
+          "16-17",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "4",
+          "1-3",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "4",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "6",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "1",
+          "25-26",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "1",
+          "29-30",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "2",
+          "9-11",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "3",
+          "10-11",
+          "bridge or suffix"
+        ],
+        [
+          "COL",
+          "1",
+          "3-5",
+          "bridge or suffix"
+        ],
+        [
+          "1TH",
+          "3",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "1TH",
+          "4",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "2TH",
+          "1",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "2TH",
+          "1",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "2TI",
+          "2",
+          "25-26",
+          "bridge or suffix"
+        ],
+        [
+          "2TI",
+          "3",
+          "16-17",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "1",
+          "13-14",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "2",
+          "4-5",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "2",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "2",
+          "12-13",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "3",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "PHM",
+          "1",
+          "4-5",
+          "bridge or suffix"
+        ],
+        [
+          "HEB",
+          "6",
+          "4-5",
+          "bridge or suffix"
+        ],
+        [
+          "REV",
+          "16",
+          "5-6",
+          "bridge or suffix"
+        ],
+        [
+          "REV",
+          "18",
+          "9-10",
+          "bridge or suffix"
+        ]
+      ],
+      "ancillary_books": []
+    },
+    "ledger_path": "data/sources/bible-texts/staging/tel-irv/2c90088101dc614422e753f10b79dccae968db28a2fd979dfc5f82b944bf8b4f/6725f7eb47fc312130dc34da2a9f38d6e5570f713d554c434e22e82679dde398.jsonl.gz",
+    "source_notice_date": "2020-02-11",
+    "embedded_source_date": "2023-04-19",
+    "embedded_notice_sha256": "0bf7db927422cf7b57f7465dfce9fb445864c09e5badb192c2cd8550307498ed",
+    "bsb_gap_notes": [],
+    "checked": "archive span, independent plain text, database UTF-8 hash and NFC, stored USJ and ordered annotation projections"
+  },
+  "hin-irv": {
+    "ledger": "f0dd6b64646418788f3287274111c2c670657882dc183b6c9f8c17bb9b1517b5",
+    "evidence_at": "2026-11-23T21:58:14+05:30",
+    "result": {
+      "books": 66,
+      "verses": 31104,
+      "edition": "hin-irv",
+      "version": "7fe5d5b089c42e3f1b1f533a8042a757aed773880f1e3e824fc905f8dd7f1f0a",
+      "chapters": 1189,
+      "annotations": {
+        "heading": 3037,
+        "footnote": 2956,
+        "metadata": 264,
+        "introduction": 1095
+      },
+      "empty_labels": [],
+      "label_findings": [],
+      "ancillary_books": []
+    },
+    "ledger_path": "data/sources/bible-texts/staging/hin-irv/7fe5d5b089c42e3f1b1f533a8042a757aed773880f1e3e824fc905f8dd7f1f0a/f0dd6b64646418788f3287274111c2c670657882dc183b6c9f8c17bb9b1517b5.jsonl.gz",
+    "source_notice_date": "2023-04-11",
+    "embedded_source_date": "2023-04-11",
+    "embedded_notice_sha256": "25a4e67a6e052e3e19c468f56b4e8d6e5580f5cc29690f7a6e2422b2f4a6ffb6",
+    "bsb_gap_notes": [],
+    "checked": "archive span, independent plain text, database UTF-8 hash and NFC, stored USJ and ordered annotation projections"
+  }
+}

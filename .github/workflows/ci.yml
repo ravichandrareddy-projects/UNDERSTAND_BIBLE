@@ -13,6 +13,25 @@ env:
   TURBO_TELEMETRY_DISABLED: '1'
 
 jobs:
+  rights-migrations:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: ${{ github.run_id }}-${{ github.run_attempt }}
+        ports:
+          - '127.0.0.1:5432:5432'
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 3s --health-retries 12
+    env:
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: ${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -B packages/db/test_migrations.py
+      - run: python3 -B packages/ingest/parse/test_usfm.py -v
+
   foundation:
     runs-on: ubuntu-latest
     timeout-minutes: 40

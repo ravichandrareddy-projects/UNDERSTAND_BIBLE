@@ -1,5 +1,15 @@
 # Understand Bible decision requests
 
+## 2026-11-23 · Owner decisions and staging review
+
+OC-02 is accepted. The five acquired editions are approved source inputs. KJV remains held worldwide pending UK rights resolution. CC BY-SA-covered IRV uses are approved, while external AI, embeddings and synthesized speech remain held for Telugu and Hindi. D-001 remains open. The original archives stay private and the other 15 CORE editions remain deferred.
+
+| Review item                       | Options and recommendation                                                                                                                                                                                                                                                             | Effect                                                                                                                                                            |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Edition-specific reading contract | Codex accepts Antigravity's browser resource names. Recommend an adapter to the planned service paths, string source labels, version-bound continuation, edition-specific 66/73-book lists and positions. The alternative is changing the frontend to call the service paths directly. | Owner and Antigravity confirm payloads and pagination before replacing fixtures. Literal bridges and DRA coverage must survive either choice.                     |
+| Migration tooling                 | The tested pilot uses native SQL with a Python/psql migration runner. Retain this small dependency set, or adopt the architecture draft's Drizzle/Kysely runner with the same SQL and a reviewed migration-history transition.                                                         | Owner reviews the pilot tooling choice before other services depend on its history.                                                                               |
+| Staging acceptance                | Accept the five private versions with their source-date pairs, 16 BSB internal gaps, five WEB note-only labels and 88 Telugu bridges, or request an edition-specific re-audit.                                                                                                         | Acceptance makes the pilot eligible for a separately approved OC-05 mapping task. Publication and production seeding require later validation and owner approval. |
+
 ## OC-02 update · 2026-11-23
 
 The owner authorised the six-edition pilot and an initial local acquisition pipeline. Five archives passed. The scope decision on the other 15 CORE editions remains open until parser, versification and validation gates pass. D-001 remains undecided.

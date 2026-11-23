@@ -1,5 +1,9 @@
 # Understand Bible status
 
+## 2026-11-23 · OC-02 accepted, OC-07 and OC-04 ready for owner review
+
+The owner accepted the five source editions and retained the KJV and IRV derivative-use holds. A live local PostgreSQL 17.12 rights registry passed its seed, migration and role checks before parsing. Private staging contains 160,108 verified verse rows across 337 canonical book instances and 6,090 chapters. Zero editions are published. Antigravity's browser routes have a documented service mapping. Label, pagination and position changes await joint review. [OC-07 database report](OC-07_REPORT.md) · [OC-04 parsing report](OC-04_REPORT.md) · [Reader contract](../packages/contracts/reader-proposal.md)
+
 ## 2026-11-23 · OC-02 pilot checkpoint
 
 Five gated USFM acquisitions passed archive and structural verification. KJV remains on territorial hold. The three study sources are preserved at separate upstream commits. The adaptive-reading research note is ready for frontend review. The reader contract still exposes only the OC-01 health operation. Raw inputs stay private, and Antigravity's ongoing reader edits remain independently owned. Owner review is the next milestone. [Report](OC-02_REPORT.md) · [Checklist](OC-02_CHECKLIST.md) · [Study audit](OC-02_STUDY_SOURCES.md) · [Reading focus](OC-02_READING_FOCUS.md)

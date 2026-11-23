@@ -133,3 +133,7 @@ OC-18 people + OC-20 timeline ─► OC-22 grounding packets ─► generation �
 ## 7. V2 candidates
 
 Native iOS/Android apps; Hebrew/Greek word study (STEPBible TAHOT/TAGNT); places and maps; group reading plans; additional UI languages (Urdu, Marathi, Nepali, Swahili, Korean); Ethiopian/Syriac/Armenian canon support when texts exist; community-suggested corrections with moderation.
+
+## 2026-11-23 · Owner-approved sequence for the five-edition pilot
+
+The owner accepted OC-02 as the acquisition checkpoint for five editions. OC-07 rights registration, seed replay and reader-role denial tests preceded OC-04 parsing. The five sources have now reached private PostgreSQL staging. The earlier roadmap remains the historical plan. Owner review is the current gate. OC-05 edition-aware alignment is the recommended next task if authorized. The 15 remaining CORE editions, KJV, production seeding and public reader integration await their own decisions. [OC-07 evidence](OC-07_REPORT.md) · [OC-04 evidence](OC-04_REPORT.md)

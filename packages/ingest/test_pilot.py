@@ -49,6 +49,7 @@ class PilotTests(unittest.TestCase):
         url = "https://ebible.org/details.php?id=test"
         body = b"rights A Last updated 2026-11-23   e</p></body></html>"
         self.assertEqual(review_hash(url, body), review_hash(url, body.replace(b"   e<", b"   tiny3<")))
+        self.assertEqual(review_hash(url, body), review_hash(url, body.replace(b"   e<", b"   c<")))
         for before, after in [(b"A ", b"B "), (b"11-23", b"11-24"), (b"   e<", b"   restricted<")]:
             self.assertNotEqual(review_hash(url, body), review_hash(url, body.replace(before, after)))
 
