@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "$TURBO_ROOT$/packages/contracts/openapi.yaml"
+      ],
+      "outputs": []
+    }
+  },
+  "globalDependencies": ["tsconfig.base.json"],
+  "globalPassThroughEnv": [
+    "NEXT_TELEMETRY_DISABLED",
+    "TURBO_TELEMETRY_DISABLED"
+  ]
+}

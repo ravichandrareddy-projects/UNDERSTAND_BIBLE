@@ -1,0 +1,25 @@
+**/node_modules
+**/dist
+**/.next
+**/.turbo
+**/coverage
+**/*.tsbuildinfo
+**/next-env.d.ts
+.local
+.pnpm-store
+pnpm-lock.yaml
+data/sources
+data/raw
+data/processed
+data/bundles
+rights
+# Preserve the original planning pack at its committed formatting.
+AGENTS.md
+CODEX_SETUP_RHEL.md
+NEXT_STEPS.md
+README_CODEX_FIRST.md
+prompts
+docs/**
+!docs/STATUS.md
+!docs/DECISION_REQUESTS.md
+!docs/OC-01_REPORT.md

@@ -1,0 +1,18 @@
+# The repository owner receives GitHub review requests for all three roles
+# until separate users or teams with write access are designated.
+# Codex owns root tooling, backend, infrastructure, data and shared contracts.
+*                         @ravichandrareddy-projects
+
+# Antigravity owns frontend, localisation and browser validation.
+/apps/web/                @ravichandrareddy-projects
+/apps/review/             @ravichandrareddy-projects
+/packages/ui/             @ravichandrareddy-projects
+/packages/i18n/           @ravichandrareddy-projects
+/e2e/                     @ravichandrareddy-projects
+
+# Claude maintains the planning pack. The project owner approves decisions.
+/docs/                    @ravichandrareddy-projects
+/prompts/                 @ravichandrareddy-projects
+
+# Codex proposes contracts. Antigravity reviews changes before consuming them.
+/packages/contracts/      @ravichandrareddy-projects

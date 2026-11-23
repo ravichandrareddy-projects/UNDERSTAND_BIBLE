@@ -1,0 +1,74 @@
+name: understand-bible
+
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.1-pg17@sha256:3e8b3adfd27b5707128f60956f62a793c3c9326ea8cfaf0eab7adccb5d700b21
+    environment:
+      POSTGRES_DB: understand_bible
+      POSTGRES_USER: understand_bible
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets: [postgres_password]
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/001-extensions.sql:/docker-entrypoint-initdb.d/001-extensions.sql:ro
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          pg_isready -h 127.0.0.1 -U understand_bible -d understand_bible &&
+          test "$$(psql -U understand_bible -d understand_bible -Atc
+          "SELECT count(*) FROM pg_extension WHERE extname IN ('vector', 'pg_trgm')")" = 2
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7.4-alpine@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe
+    command: ['redis-server', '--appendonly', 'yes']
+    ports:
+      - '127.0.0.1:6379:6379'
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  minio:
+    build: ./minio
+    command: ['server', '/data', '--console-address', ':9001']
+    environment:
+      MINIO_ROOT_USER: understand_bible
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/minio_password
+    secrets: [minio_password]
+    ports:
+      - '127.0.0.1:9000:9000'
+      - '127.0.0.1:9001:9001'
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'wget',
+          '-q',
+          '--spider',
+          'http://127.0.0.1:9000/minio/health/ready',
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  pgdata:
+  redisdata:
+  miniodata:
+
+secrets:
+  postgres_password:
+    file: ../.local/secrets/postgres_password
+  minio_password:
+    file: ../.local/secrets/minio_password

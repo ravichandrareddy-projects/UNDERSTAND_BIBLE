@@ -1,0 +1,24 @@
+openapi: 3.1.0
+info:
+  title: Understand Bible API
+  version: 0.1.0
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Check that the API process can serve requests
+      responses:
+        '200':
+          description: API process is running
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                additionalProperties: false
+                properties:
+                  status:
+                    type: string
+                    enum: [ok]
+              example:
+                status: ok
