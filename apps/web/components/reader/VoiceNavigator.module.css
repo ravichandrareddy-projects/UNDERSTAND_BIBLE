@@ -1,0 +1,171 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(24, 61, 50, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal {
+  background-color: #faf8f3;
+  border: 1px solid #ebe4d5;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(41, 43, 40, 0.15);
+  animation: scaleUp 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+.header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #ebe4d5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f4ea;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #183d32;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #71716a;
+  cursor: pointer;
+}
+
+.body {
+  padding: 28px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.micCircle {
+  width: 72px;
+  height: 72px;
+  border-radius: 9999px;
+  background-color: #183d32;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s;
+  box-shadow: 0 4px 16px rgba(24, 61, 50, 0.3);
+}
+
+.micCircleListening::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 2px solid #c5a15a;
+  animation: pulse 1.5s infinite;
+}
+
+.statusText {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #292b28;
+}
+
+.transcriptText {
+  font-size: 14px;
+  color: #183d32;
+  background-color: #f2ede0;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  min-height: 28px;
+  font-weight: 600;
+}
+
+.hintText {
+  font-size: 12px;
+  color: #71716a;
+}
+
+.suggestionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.suggestionChip {
+  padding: 4px 10px;
+  border: 1px solid #ebe4d5;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  font-size: 12px;
+  color: #183d32;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.suggestionChip:hover {
+  border-color: #c5a15a;
+  background-color: #f7f4ea;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

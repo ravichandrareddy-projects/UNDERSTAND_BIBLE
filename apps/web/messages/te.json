@@ -142,8 +142,11 @@
   "bookPicker": {
     "title": "పుస్తకాలు",
     "search": "పుస్తకాలను వెతకండి...",
+    "searchPlaceholder": "పుస్తకాలను లేదా సంక్షిప్త రూపాలను వెతకండి...",
     "oldTestament": "పాత నిబంధన",
     "newTestament": "క్రొత్త నిబంధన",
+    "otTab": "పాత నిబంధన (39)",
+    "ntTab": "క్రొత్త నిబంధన (27)",
     "deuterocanon": "ద్యూటెరోకానన్",
     "notInEdition": "ఈ ఎడిషన్‌లో లేదు",
     "chapters": "అధ్యాయాలు"

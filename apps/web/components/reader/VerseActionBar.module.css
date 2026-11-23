@@ -1,0 +1,119 @@
+.actionBar {
+  position: fixed;
+  bottom: calc(var(--bottom-nav-height, 64px) + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #183d32;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+  z-index: var(--z-modal);
+  animation: slideUp 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 90vw;
+}
+
+@media (min-width: 900px) {
+  .actionBar {
+    bottom: 28px;
+    margin-left: 8rem; /* Offset for left rail */
+  }
+}
+
+.verseLabel {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: #c5a15a;
+  padding-right: 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+[dir='rtl'] .verseLabel {
+  padding-right: 0;
+  padding-left: 8px;
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.colorPalette {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.colorDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.colorDot:hover {
+  transform: scale(1.2);
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  color: #f7f4ea;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.15s;
+}
+
+.actionBtn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.actionBtnActive {
+  color: #c5a15a;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.closeBtn:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

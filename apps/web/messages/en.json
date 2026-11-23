@@ -142,8 +142,11 @@
   "bookPicker": {
     "title": "Books",
     "search": "Search books...",
+    "searchPlaceholder": "Search books or abbreviations...",
     "oldTestament": "Old Testament",
     "newTestament": "New Testament",
+    "otTab": "Old Testament (39)",
+    "ntTab": "New Testament (27)",
     "deuterocanon": "Deuterocanon",
     "notInEdition": "Not in this edition",
     "chapters": "Chapters"

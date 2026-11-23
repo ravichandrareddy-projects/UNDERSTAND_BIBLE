@@ -142,8 +142,11 @@
   "bookPicker": {
     "title": "الكتب",
     "search": "ابحث عن كتب...",
+    "searchPlaceholder": "ابحث عن سفر أو اختصار...",
     "oldTestament": "العهد القديم",
     "newTestament": "العهد الجديد",
+    "otTab": "العهد القديم (39)",
+    "ntTab": "العهد الجديد (27)",
     "deuterocanon": "الأسفار القانونية الثانية",
     "notInEdition": "غير موجود في هذه الطبعة",
     "chapters": "الإصحاحات"

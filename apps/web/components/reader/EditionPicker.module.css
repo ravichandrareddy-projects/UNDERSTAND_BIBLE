@@ -1,0 +1,157 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(24, 61, 50, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal {
+  background-color: #faf8f3;
+  border: 1px solid #ebe4d5;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(41, 43, 40, 0.15);
+  animation: scaleUp 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #ebe4d5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f4ea;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #183d32;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #71716a;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: #183d32;
+}
+
+.list {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editionCard {
+  padding: 14px 16px;
+  border: 1.5px solid #ebe4d5;
+  border-radius: 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+[dir='rtl'] .editionCard {
+  text-align: right;
+}
+
+.editionCard:hover {
+  border-color: #c5a15a;
+  background-color: #fbf9f4;
+  transform: translateY(-1px);
+}
+
+.editionCardSelected {
+  border-color: #183d32;
+  background-color: #f2ede0;
+}
+
+.editionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editionName {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #292b28;
+}
+
+.licenseBadge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: #efe8d6;
+  color: #8b7038;
+}
+
+.editionMeta {
+  font-size: 12px;
+  color: #71716a;
+}
+
+.noticeBox {
+  margin: 0 20px 16px;
+  padding: 10px 14px;
+  background-color: #f7f4ea;
+  border: 1px dashed #c5a15a;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #5a5d58;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
