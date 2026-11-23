@@ -17,10 +17,10 @@
 | **C** | **Voice and Discovery** | 3 | 1 | 0 | 2 | 33% |
 | **D** | **UNDERSTAND (Chapter AI Experience)** | 4 | 0 | 1 | 3 | 12% |
 | **E** | **Adaptive Reading Focus (R&D Feature)** | 10 | 0 | 0 | 10 | 0% |
-| **F** | **Vamsavali (Genealogy Section)** | 5 | 1 | 0 | 4 | 20% |
+| **F** | **Vamsavali (Genealogy Section)** | 5 | 2 | 0 | 3 | 40% |
 | **G** | **Geography and Timeline** | 6 | 0 | 0 | 6 | 0% |
 | **H** | **Daily Reading** | 4 | 1 | 0 | 3 | 25% |
-| **TOTAL** | **All Sections** | **48** | **17** | **2** | **29** | **37.5%** |
+| **TOTAL** | **All Sections** | **48** | **18** | **2** | **28** | **39.6%** |
 
 ---
 
@@ -95,7 +95,7 @@
 
 ### F. VAMSAVALI (DEDICATED GENEALOGY SECTION)
 - [x] **F.1** — **Dedicated top-level website navigation tab on desktop** (`Sidebar.tsx` has Vamsavali (Genealogy) as a permanent left rail item).
-- [ ] **F.2** — **Dedicated visible Vamsavali button/tab on mobile** (Prominent bottom navigation pill or persistent mobile header action).
+- [x] **F.2** — **Dedicated visible Vamsavali button/tab on mobile** (Prominent bottom navigation pill or persistent mobile header action).
 - [ ] **F.3** — **Left-to-right swipe interaction in the Bible reader** to open its contextual genealogy panel.
 - [ ] **F.4** — **Contextual genealogy panel** showing family members and lineages directly connected to the current chapter.
 - [ ] **F.5** — **Full genealogy explorer** with interactive zoom, scrolling canvas, ancestor/descendant trees, dynasty branches, and detailed person profiles (AG-16).

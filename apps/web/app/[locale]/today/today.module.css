@@ -295,6 +295,120 @@
   background-color: var(--color-primary-hover);
 }
 
+/* Empty State for Continue Reading */
+.emptyContinueCard {
+  background: #faf8f3;
+  border: 1.5px dashed #d5cebe;
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(41, 43, 40, 0.02);
+  flex-wrap: wrap;
+}
+
+.emptyContinueContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.emptyContinueIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background-color: #f0ebd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c5a15a;
+  flex-shrink: 0;
+}
+
+.emptyContinueTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #292b28;
+  margin-bottom: 2px;
+}
+
+.emptyContinueDesc {
+  font-size: 13px;
+  color: #71716a;
+}
+
+.readingDetailPassageLink {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-fast);
+}
+
+.readingDetailPassageLink:hover {
+  color: #183d32;
+  text-decoration: underline;
+}
+
+.markCompleteBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid #183d32;
+  color: #183d32;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.markCompleteBtnActive {
+  background: #183d32;
+  color: #ffffff;
+}
+
+.paletteHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.paletteToggleBtn {
+  background: none;
+  border: 1px solid #d5cebe;
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #71716a;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.paletteToggleBtn:hover {
+  border-color: #183d32;
+  color: #183d32;
+}
+
+.swatchButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+
 /* ============================================================
    4. DISCOVER SECTION (3 Cards)
    ============================================================ */
@@ -548,6 +662,13 @@
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dayCircle:hover {
+  transform: scale(1.1);
 }
 
 .dayCircleChecked {
@@ -557,6 +678,10 @@
 .dayCircleEmpty {
   border: 1.5px solid #d5cebe;
   background-color: transparent;
+}
+
+.dayCircleEmpty:hover {
+  border-color: #183d32;
 }
 
 .dayLabel {

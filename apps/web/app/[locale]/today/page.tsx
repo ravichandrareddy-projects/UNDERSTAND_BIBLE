@@ -1,11 +1,62 @@
 'use client';
 
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { Link } from '../../../i18n/navigation';
 import type { Locale } from '../../../i18n/config';
+import { getBook } from '../../../data/bible/books';
+import type { BibleBook, ReadingPosition } from '../../../data/bible/types';
 import styles from './today.module.css';
+
+interface WeekDayState {
+  key: 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun';
+  checked: boolean;
+}
+
+const DEFAULT_WEEK_DAYS: WeekDayState[] = [
+  { key: 'mon', checked: true },
+  { key: 'tue', checked: true },
+  { key: 'wed', checked: true },
+  { key: 'thu', checked: true },
+  { key: 'fri', checked: false },
+  { key: 'sat', checked: false },
+  { key: 'sun', checked: false },
+];
+
+const SWATCHES = [
+  {
+    nameKey: 'warmIvory',
+    hex: '#F7F4EA',
+    border: '1px solid #DED8CA',
+    roleKey: 'warmIvoryRole',
+  },
+  {
+    nameKey: 'forestGreen',
+    hex: '#183D32',
+    border: 'none',
+    roleKey: 'forestGreenRole',
+  },
+  {
+    nameKey: 'mutedGold',
+    hex: '#C5A15A',
+    border: 'none',
+    roleKey: 'mutedGoldRole',
+  },
+  {
+    nameKey: 'ink',
+    hex: '#292B28',
+    border: 'none',
+    roleKey: 'inkRole',
+  },
+  {
+    nameKey: 'sand',
+    hex: '#E5E0D3',
+    border: '1px solid #DED8CA',
+    roleKey: 'sandRole',
+  },
+];
 
 export default function TodayPage() {
   const params = useParams();
@@ -17,6 +68,140 @@ export default function TodayPage() {
   const tProgress = useTranslations('readingProgress');
   const tDiscover = useTranslations('discover');
   const tPalette = useTranslations('paletteBar');
+
+  // 1. Persistent Real Reading Position
+  const [lastPosition, setLastPosition] = useState<ReadingPosition | null>(
+    null,
+  );
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // 2. Interactive Weekly Progress
+  const [weekDays, setWeekDays] = useState<WeekDayState[]>(DEFAULT_WEEK_DAYS);
+
+  // 3. Today's Reading Completion
+  const [todayCompleted, setTodayCompleted] = useState<boolean>(false);
+
+  // 4. Palette Collapse State & Copy Feedback
+  const [paletteOpen, setPaletteOpen] = useState(true);
+  const [copiedHex, setCopiedHex] = useState<string | null>(null);
+
+  // Load real state from localStorage on mount
+  useEffect(() => {
+    try {
+      // Last reading position
+      const storedPos = localStorage.getItem(
+        'understand_bible_last_reading_pos',
+      );
+      if (storedPos) {
+        const parsed = JSON.parse(storedPos) as ReadingPosition;
+        if (parsed.bookId && parsed.chapterNumber) {
+          setLastPosition(parsed);
+        }
+      }
+
+      // Weekly days log
+      const storedDays = localStorage.getItem('understand_bible_week_days');
+      if (storedDays) {
+        setWeekDays(JSON.parse(storedDays));
+      }
+
+      // Today completed status
+      const storedCompleted = localStorage.getItem(
+        'understand_bible_today_completed',
+      );
+      if (storedCompleted) {
+        setTodayCompleted(JSON.parse(storedCompleted));
+      }
+    } catch {
+      // Ignore storage errors
+    } finally {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  // Real Book details
+  const lastBook: BibleBook | null = useMemo(() => {
+    if (!lastPosition) return null;
+    return getBook(lastPosition.bookId);
+  }, [lastPosition]);
+
+  // Real progress calculation
+  const progressPercent = useMemo(() => {
+    if (!lastPosition || !lastBook || lastBook.chaptersCount === 0) return 0;
+    return Math.min(
+      100,
+      Math.max(
+        5,
+        Math.round((lastPosition.chapterNumber / lastBook.chaptersCount) * 100),
+      ),
+    );
+  }, [lastPosition, lastBook]);
+
+  // Toggle Weekday Log
+  const handleToggleDay = useCallback((dayKey: string) => {
+    setWeekDays((prev) => {
+      const updated = prev.map((d) =>
+        d.key === dayKey ? { ...d, checked: !d.checked } : d,
+      );
+      try {
+        localStorage.setItem(
+          'understand_bible_week_days',
+          JSON.stringify(updated),
+        );
+      } catch {
+        // Ignore storage errors
+      }
+      return updated;
+    });
+  }, []);
+
+  // Toggle Today's Reading Complete
+  const handleToggleToday = useCallback(() => {
+    setTodayCompleted((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem(
+          'understand_bible_today_completed',
+          JSON.stringify(next),
+        );
+      } catch {
+        // Ignore storage errors
+      }
+      if (next) {
+        // Automatically check Monday (today's day circle)
+        setWeekDays((days) => {
+          const updated = days.map((d) =>
+            d.key === 'mon' ? { ...d, checked: true } : d,
+          );
+          try {
+            localStorage.setItem(
+              'understand_bible_week_days',
+              JSON.stringify(updated),
+            );
+          } catch {
+            // Ignore storage errors
+          }
+          return updated;
+        });
+      }
+      return next;
+    });
+  }, []);
+
+  // Copy Swatch Hex Code
+  const handleCopySwatch = useCallback((hex: string) => {
+    navigator.clipboard?.writeText(hex).catch(() => {});
+    setCopiedHex(hex);
+    setTimeout(() => setCopiedHex(null), 2000);
+  }, []);
+
+  // Weekly Stats Calculations
+  const activeDaysCount = useMemo(
+    () => weekDays.filter((d) => d.checked).length,
+    [weekDays],
+  );
+  const weekRatio = `${activeDaysCount} / 7 days`;
+  const overallPercentVal = Math.round((activeDaysCount / 7) * 100);
 
   return (
     <div className={styles.dashboardContainer}>
@@ -54,9 +239,10 @@ export default function TodayPage() {
               </div>
               <div>
                 <Link
-                  href="/read"
+                  href="/read?book=PSA&chapter=119&verse=105"
                   locale={locale}
                   className={styles.heroButton}
+                  title="Open Psalm 119:105 in Reader"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -106,8 +292,13 @@ export default function TodayPage() {
                 </svg>
                 <span>{tContinue('title')}</span>
               </h2>
-              <Link href="/read" locale={locale} className={styles.viewAllLink}>
-                <span>{tContinue('viewAll')}</span>
+              <Link
+                href="/read/books"
+                locale={locale}
+                className={styles.viewAllLink}
+                title="Browse all 66 canonical books"
+              >
+                <span>Browse All Books</span>
                 <svg
                   viewBox="0 0 24 24"
                   width="14"
@@ -123,60 +314,112 @@ export default function TodayPage() {
               </Link>
             </div>
 
-            <div className={styles.continueCard}>
-              {/* Boat on Sea of Galilee Photographic Thumbnail */}
-              <div className={styles.continueThumb}>
-                <Image
-                  src="/images/boat_galilee.png"
-                  alt="Sea of Galilee"
-                  fill
-                  sizes="120px"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
+            {/* REAL POSITION OR CLEAN EMPTY STATE */}
+            {isLoaded && lastPosition && lastBook ? (
+              <div className={styles.continueCard}>
+                {/* Visual Thumbnail */}
+                <div className={styles.continueThumb}>
+                  <Image
+                    src="/images/boat_galilee.png"
+                    alt={lastBook.names[locale] || lastBook.names.en}
+                    fill
+                    sizes="120px"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
 
-              {/* Info & Progress */}
-              <div className={styles.continueInfo}>
-                <div className={styles.continueBook}>
-                  {tContinue('bookTitle')}
-                </div>
-                <div className={styles.continueChapter}>
-                  {tContinue('chapterProgress')}
-                </div>
-                <div className={styles.progressRow}>
-                  <div className={styles.progressBarTrack}>
-                    <div
-                      className={styles.progressBarFill}
-                      style={{ width: '14%' }}
-                    />
+                {/* Info & Progress */}
+                <div className={styles.continueInfo}>
+                  <div className={styles.continueBook}>
+                    {lastBook.names[locale] || lastBook.names.en}
                   </div>
-                  <span className={styles.progressPercent}>
-                    {tContinue('progressPercent')}
-                  </span>
+                  <div className={styles.continueChapter}>
+                    Chapter {lastPosition.chapterNumber} of{' '}
+                    {lastBook.chaptersCount} · Verse {lastPosition.verseNumber}
+                  </div>
+                  <div className={styles.progressRow}>
+                    <div className={styles.progressBarTrack}>
+                      <div
+                        className={styles.progressBarFill}
+                        style={{ width: `${progressPercent}%` }}
+                      />
+                    </div>
+                    <span className={styles.progressPercent}>
+                      {progressPercent}%
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Continue CTA */}
-              <Link
-                href="/read"
-                locale={locale}
-                className={styles.continueButton}
-              >
-                <span>{tContinue('continue')}</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  width="15"
-                  height="15"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  aria-hidden="true"
+                {/* Continue CTA */}
+                <Link
+                  href={`/read?book=${lastPosition.bookId}&chapter=${lastPosition.chapterNumber}&verse=${lastPosition.verseNumber}`}
+                  locale={locale}
+                  className={styles.continueButton}
                 >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </Link>
-            </div>
+                  <span>{tContinue('continue')}</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="15"
+                    height="15"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
+              </div>
+            ) : (
+              /* CLEAN EMPTY STATE: If no data exists */
+              <div className={styles.emptyContinueCard}>
+                <div className={styles.emptyContinueContent}>
+                  <div className={styles.emptyContinueIcon}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className={styles.emptyContinueTitle}>
+                      No reading in progress
+                    </div>
+                    <div className={styles.emptyContinueDesc}>
+                      Start reading any book of the Bible. Your progress will be
+                      saved automatically.
+                    </div>
+                  </div>
+                </div>
+                <Link
+                  href="/read?book=GEN&chapter=1&verse=1"
+                  locale={locale}
+                  className={styles.continueButton}
+                >
+                  <span>Begin with Genesis 1</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="15"
+                    height="15"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* 3. DISCOVER SECTION */}
@@ -221,7 +464,7 @@ export default function TodayPage() {
             <div className={styles.discoverGrid}>
               {/* Card 1: People of the Bible */}
               <Link
-                href="/explore"
+                href="/vamsavali"
                 locale={locale}
                 className={styles.discoverCard}
               >
@@ -260,7 +503,7 @@ export default function TodayPage() {
 
               {/* Card 2: Places & Geography */}
               <Link
-                href="/explore"
+                href="/geography"
                 locale={locale}
                 className={styles.discoverCard}
               >
@@ -378,29 +621,60 @@ export default function TodayPage() {
                 </span>
               </div>
 
-              <div className={styles.readingCardTop}>
+              <div
+                className={styles.readingCardTop}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
                 <span className={styles.readingBadge}>
-                  {tTodayReading('dayBadge')}
+                  {todayCompleted ? 'Completed ✓' : tTodayReading('dayBadge')}
                 </span>
+                <button
+                  type="button"
+                  className={`${styles.markCompleteBtn} ${todayCompleted ? styles.markCompleteBtnActive : ''}`}
+                  onClick={handleToggleToday}
+                  aria-label="Toggle mark today's reading completed"
+                >
+                  {todayCompleted ? 'Done ✓' : 'Mark as Done'}
+                </button>
               </div>
 
               <h3 className={styles.planTitle}>{tTodayReading('planTitle')}</h3>
 
               <div className={styles.readingDetailsList}>
                 <div className={styles.readingDetailItem}>
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
+                  <Link
+                    href="/read?book=JHN&chapter=3&verse=1"
+                    locale={locale}
+                    className={styles.readingDetailPassageLink}
+                    title="Open John 3 in Reader"
                   >
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                  </svg>
-                  <span>{tTodayReading('passage')}</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    <span>{tTodayReading('passage')}</span>
+                    <span
+                      style={{
+                        fontSize: '11px',
+                        color: '#C5A15A',
+                        fontWeight: 700,
+                      }}
+                    >
+                      ↗
+                    </span>
+                  </Link>
                 </div>
                 <div className={styles.readingDetailItem}>
                   <svg
@@ -437,11 +711,15 @@ export default function TodayPage() {
               </div>
 
               <Link
-                href="/read"
+                href="/read?book=JHN&chapter=3&verse=1"
                 locale={locale}
                 className={styles.startReadingBtn}
               >
-                <span>{tTodayReading('startButton')}</span>
+                <span>
+                  {todayCompleted
+                    ? 'Re-read Today’s Passage'
+                    : tTodayReading('startButton')}
+                </span>
                 <svg
                   viewBox="0 0 24 24"
                   width="16"
@@ -476,22 +754,20 @@ export default function TodayPage() {
               </svg>
               <h3 className={styles.progressCardTitle}>{tProgress('title')}</h3>
             </div>
-            <p className={styles.progressSubtitle}>{tProgress('subtitle')}</p>
+            <p className={styles.progressSubtitle}>
+              {activeDaysCount} days this week
+            </p>
 
-            {/* Days Circle Strip */}
+            {/* Days Circle Strip — Interactive */}
             <div className={styles.weekDaysRow}>
-              {[
-                { key: 'mon', checked: true },
-                { key: 'tue', checked: true },
-                { key: 'wed', checked: true },
-                { key: 'thu', checked: true },
-                { key: 'fri', checked: false },
-                { key: 'sat', checked: false },
-                { key: 'sun', checked: false },
-              ].map((day) => (
+              {weekDays.map((day) => (
                 <div key={day.key} className={styles.dayCol}>
-                  <div
+                  <button
+                    type="button"
                     className={`${styles.dayCircle} ${day.checked ? styles.dayCircleChecked : styles.dayCircleEmpty}`}
+                    onClick={() => handleToggleDay(day.key)}
+                    aria-label={`Toggle reading for ${day.key}`}
+                    title={`Click to toggle reading log for ${day.key}`}
                   >
                     {day.checked && (
                       <svg
@@ -508,11 +784,9 @@ export default function TodayPage() {
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     )}
-                  </div>
+                  </button>
                   <span className={styles.dayLabel}>
-                    {tProgress(
-                      `days.${day.key as 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun'}`,
-                    )}
+                    {tProgress(`days.${day.key}`)}
                   </span>
                 </div>
               ))}
@@ -535,7 +809,7 @@ export default function TodayPage() {
                 </svg>
                 <span>{tProgress('thisWeek')}</span>
               </div>
-              <div className={styles.statRight}>{tProgress('weekRatio')}</div>
+              <div className={styles.statRight}>{weekRatio}</div>
             </div>
 
             <div className={styles.progressStatRow}>
@@ -554,9 +828,7 @@ export default function TodayPage() {
                 </svg>
                 <span>{tProgress('overall')}</span>
               </div>
-              <div className={styles.statRight}>
-                {tProgress('overallPercent')}
-              </div>
+              <div className={styles.statRight}>{overallPercentVal}%</div>
             </div>
 
             <div
@@ -565,7 +837,7 @@ export default function TodayPage() {
             >
               <div
                 className={styles.progressBarFill}
-                style={{ width: '12%' }}
+                style={{ width: `${overallPercentVal}%` }}
               />
             </div>
           </div>
@@ -573,114 +845,90 @@ export default function TodayPage() {
       </div>
 
       {/* ============================================================
-          APPROVED DESIGN COLOUR PALETTE FOOTER BAR
+          APPROVED DESIGN COLOUR PALETTE FOOTER BAR (Collapsible & Interactive)
           ============================================================ */}
       <footer className={styles.paletteBar} aria-label="Design colour palette">
-        <div className={styles.paletteTitle}>
-          <svg
-            viewBox="0 0 24 24"
-            width="22"
-            height="22"
-            fill="none"
-            stroke="#C5A15A"
-            strokeWidth="2"
-            aria-hidden="true"
+        <div className={styles.paletteHeaderRow}>
+          <div className={styles.paletteTitle}>
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="#C5A15A"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <circle cx="13.5" cy="6.5" r=".5" fill="#C5A15A" />
+              <circle cx="17.5" cy="10.5" r=".5" fill="#C5A15A" />
+              <circle cx="8.5" cy="7.5" r=".5" fill="#C5A15A" />
+              <circle cx="6.5" cy="12.5" r=".5" fill="#C5A15A" />
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+            </svg>
+            <span>{tPalette('title')}</span>
+          </div>
+
+          <button
+            type="button"
+            className={styles.paletteToggleBtn}
+            onClick={() => setPaletteOpen(!paletteOpen)}
+            aria-expanded={paletteOpen}
+            aria-label={
+              paletteOpen ? 'Hide colour palette' : 'Show colour palette'
+            }
           >
-            <circle cx="13.5" cy="6.5" r=".5" fill="#C5A15A" />
-            <circle cx="17.5" cy="10.5" r=".5" fill="#C5A15A" />
-            <circle cx="8.5" cy="7.5" r=".5" fill="#C5A15A" />
-            <circle cx="6.5" cy="12.5" r=".5" fill="#C5A15A" />
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
-          </svg>
-          <span>{tPalette('title')}</span>
+            {paletteOpen ? 'Hide Palette ▴' : 'Show Palette ▾'}
+          </button>
         </div>
 
-        <div className={styles.swatchGroup}>
-          {/* Swatch 1: Warm Ivory */}
-          <div className={styles.swatchItem}>
-            <div
-              className={styles.swatchColor}
-              style={{
-                backgroundColor: '#F7F4EA',
-                border: '1px solid #DED8CA',
-              }}
-            />
-            <div className={styles.swatchText}>
-              <span className={styles.swatchName}>{tPalette('warmIvory')}</span>
-              <span className={styles.swatchHex}>
-                {tPalette('warmIvoryHex')}
-              </span>
-              <span className={styles.swatchRole}>
-                {tPalette('warmIvoryRole')}
-              </span>
-            </div>
+        {paletteOpen && (
+          <div className={styles.swatchGroup}>
+            {SWATCHES.map((swatch) => (
+              <button
+                key={swatch.hex}
+                type="button"
+                className={styles.swatchButton}
+                onClick={() => handleCopySwatch(swatch.hex)}
+                title={`Click to copy ${swatch.hex}`}
+              >
+                <div className={styles.swatchItem}>
+                  <div
+                    className={styles.swatchColor}
+                    style={{
+                      backgroundColor: swatch.hex,
+                      border: swatch.border,
+                    }}
+                  />
+                  <div className={styles.swatchText}>
+                    <span className={styles.swatchName}>
+                      {tPalette(
+                        swatch.nameKey as
+                          | 'warmIvory'
+                          | 'forestGreen'
+                          | 'mutedGold'
+                          | 'ink'
+                          | 'sand',
+                      )}
+                    </span>
+                    <span className={styles.swatchHex}>
+                      {copiedHex === swatch.hex ? 'Copied!' : swatch.hex}
+                    </span>
+                    <span className={styles.swatchRole}>
+                      {tPalette(
+                        swatch.roleKey as
+                          | 'warmIvoryRole'
+                          | 'forestGreenRole'
+                          | 'mutedGoldRole'
+                          | 'inkRole'
+                          | 'sandRole',
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </button>
+            ))}
           </div>
-
-          {/* Swatch 2: Forest Green */}
-          <div className={styles.swatchItem}>
-            <div
-              className={styles.swatchColor}
-              style={{ backgroundColor: '#183D32' }}
-            />
-            <div className={styles.swatchText}>
-              <span className={styles.swatchName}>
-                {tPalette('forestGreen')}
-              </span>
-              <span className={styles.swatchHex}>
-                {tPalette('forestGreenHex')}
-              </span>
-              <span className={styles.swatchRole}>
-                {tPalette('forestGreenRole')}
-              </span>
-            </div>
-          </div>
-
-          {/* Swatch 3: Muted Gold */}
-          <div className={styles.swatchItem}>
-            <div
-              className={styles.swatchColor}
-              style={{ backgroundColor: '#C5A15A' }}
-            />
-            <div className={styles.swatchText}>
-              <span className={styles.swatchName}>{tPalette('mutedGold')}</span>
-              <span className={styles.swatchHex}>
-                {tPalette('mutedGoldHex')}
-              </span>
-              <span className={styles.swatchRole}>
-                {tPalette('mutedGoldRole')}
-              </span>
-            </div>
-          </div>
-
-          {/* Swatch 4: Ink */}
-          <div className={styles.swatchItem}>
-            <div
-              className={styles.swatchColor}
-              style={{ backgroundColor: '#292B28' }}
-            />
-            <div className={styles.swatchText}>
-              <span className={styles.swatchName}>{tPalette('ink')}</span>
-              <span className={styles.swatchHex}>{tPalette('inkHex')}</span>
-              <span className={styles.swatchRole}>{tPalette('inkRole')}</span>
-            </div>
-          </div>
-
-          {/* Swatch 5: Sand */}
-          <div className={styles.swatchItem}>
-            <div
-              className={styles.swatchColor}
-              style={{
-                backgroundColor: '#E5E0D3',
-                border: '1px solid #DED8CA',
-              }}
-            />
-            <div className={styles.swatchText}>
-              <span className={styles.swatchName}>{tPalette('sand')}</span>
-              <span className={styles.swatchHex}>{tPalette('sandHex')}</span>
-              <span className={styles.swatchRole}>{tPalette('sandRole')}</span>
-            </div>
-          </div>
-        </div>
+        )}
       </footer>
     </div>
   );

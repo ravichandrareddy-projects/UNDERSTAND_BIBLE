@@ -11,6 +11,8 @@ export function TopBar({ locale }: { locale: Locale }) {
   const tHeader = useTranslations('header');
   const pathname = usePathname();
   const [langOpen, setLangOpen] = useState(false);
+  const [notifOpen, setNotifOpen] = useState(false);
+  const [hasUnread, setHasUnread] = useState(true);
 
   return (
     <header className={styles.topBar}>
@@ -113,24 +115,86 @@ export function TopBar({ locale }: { locale: Locale }) {
         </div>
 
         {/* Notifications */}
-        <button
-          type="button"
-          className={styles.iconButton}
-          aria-label="Notifications"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            width="18"
-            height="18"
-            fill="none"
-            stroke="#292B28"
-            strokeWidth="2"
+        <div style={{ position: 'relative' }}>
+          <button
+            type="button"
+            className={styles.iconButton}
+            onClick={() => {
+              setNotifOpen(!notifOpen);
+              setLangOpen(false);
+            }}
+            aria-expanded={notifOpen}
+            aria-label="Notifications"
           >
-            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-          </svg>
-          <span className={styles.notifDot} />
-        </button>
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="#292B28"
+              strokeWidth="2"
+            >
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+            </svg>
+            {hasUnread && <span className={styles.notifDot} />}
+          </button>
+
+          {notifOpen && (
+            <div className={styles.notifDropdown}>
+              <div className={styles.notifHeader}>
+                <span className={styles.notifTitle}>Notifications</span>
+                {hasUnread && (
+                  <button
+                    type="button"
+                    className={styles.notifClearBtn}
+                    onClick={() => setHasUnread(false)}
+                  >
+                    Mark all as read
+                  </button>
+                )}
+              </div>
+
+              <div className={styles.notifItem}>
+                <div className={styles.notifItemTitle}>
+                  <span style={{ color: '#183D32' }}>●</span> Today&apos;s
+                  Reading Ready
+                </div>
+                <div className={styles.notifItemDesc}>
+                  John 3 – 4 is scheduled for today. (~15 minutes)
+                </div>
+                <Link
+                  href="/read"
+                  locale={locale}
+                  className={styles.notifActionLink}
+                  onClick={() => setNotifOpen(false)}
+                >
+                  Start Reading →
+                </Link>
+              </div>
+
+              <div className={styles.notifItem}>
+                <div className={styles.notifItemTitle}>
+                  <span style={{ color: '#C5A15A' }}>★</span> Weekly Reading
+                  Habit
+                </div>
+                <div className={styles.notifItemDesc}>
+                  You have logged reading for 4 days this week. Keep going!
+                </div>
+              </div>
+
+              <div className={styles.notifItem}>
+                <div className={styles.notifItemTitle}>
+                  <span style={{ color: '#8B7038' }}>✓</span> Offline Editions
+                  Ready
+                </div>
+                <div className={styles.notifItemDesc}>
+                  World English Bible and King James Version are saved offline.
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Profile Avatar */}
         <Link

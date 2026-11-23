@@ -11,7 +11,7 @@ export function BottomNav({ locale }: { locale: Locale }) {
 
   const isHome = pathname === '/today' || pathname === '/';
   const isRead = pathname.startsWith('/read');
-  const isSearch = pathname.startsWith('/search');
+  const isVamsavali = pathname.startsWith('/vamsavali');
   const isExplore = pathname.startsWith('/explore');
   const isPlans = pathname.startsWith('/plans');
   const isSettings = pathname.startsWith('/settings');
@@ -68,12 +68,12 @@ export function BottomNav({ locale }: { locale: Locale }) {
         <span>{tNav('read')}</span>
       </Link>
 
-      {/* Search */}
+      {/* Vamsavali — Requirement F: Dedicated visible mobile tab */}
       <Link
-        href="/search"
+        href="/vamsavali"
         locale={locale}
-        className={`${styles.navItem} ${isSearch ? styles.active : ''}`}
-        aria-current={isSearch ? 'page' : undefined}
+        className={`${styles.navItem} ${isVamsavali ? styles.active : ''}`}
+        aria-current={isVamsavali ? 'page' : undefined}
       >
         <span className={styles.navIcon} aria-hidden="true">
           <svg
@@ -84,11 +84,13 @@ export function BottomNav({ locale }: { locale: Locale }) {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            <circle cx="12" cy="5" r="3" />
+            <circle cx="6" cy="19" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <path d="M12 8v4M6 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
           </svg>
         </span>
-        <span>{tNav('search')}</span>
+        <span>{tNav('vamsavali')}</span>
       </Link>
 
       {/* Explore */}
