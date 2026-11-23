@@ -1,0 +1,15 @@
+{
+  "id": "std",
+  "authority": "step-tvtms-nrsv",
+  "revision": "83d8d2924a8cd2b7b98b80f997aff9546a56391cda9c60a3cbb3fcc451342347",
+  "definition": "The StandardRef column of the expanded NRSV-based TVTMS edition in Older Formats at the pinned commit. Preserve its numeric subverse discriminator, including zero. For recognized USFM book codes store BOOK.chapter.verse[.segment]. Unsupported titles, codes and compounds require explicit review. The StandardRef in a rule is not evidence of applicability to an edition by itself.",
+  "definition_lines": [3, 26, 36, 38, 43, 60, 61, 3695],
+  "optional_paratext": {
+    "status": "UNVERIFIED_FOR_SELECTED_FILE",
+    "evidence_urls": [
+      "https://github.com/sillsdev/libpalaso",
+      "https://raw.githubusercontent.com/sillsdev/libpalaso/master/SIL.Scripture/Resources/eng.vrs.txt"
+    ],
+    "disposition": "Excluded. The repository identifies a software licence. No edition-specific Paratext input, pinned file rights receipt or separate applicability review has been admitted."
+  }
+}

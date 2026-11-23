@@ -1,5 +1,11 @@
 # Understand Bible decision requests
 
+## 2026-11-23 · OC-05 staging scope approved, editorial decisions pending
+
+The owner accepted OC-04 and OC-07 for staging. The architecture's final identity fallback conflicts with the approved requirement for reviewed equivalence. Apply identity only through a cited, explicitly reviewed edition/version range with declared exceptions. A missing or disputed rule produces an unaligned result. The alternative is to leave the entire candidate range unaligned until every exception is reviewed individually. Both choices preserve source labels. The range-based approach reduces review effort where the source supports it.
+
+The owner approved all four private staging work packages and directed that Genesis 2:25 remain pending for editorial review in all five versions. V-07 stays open. The next decision belongs to the owner or designated language and versification reviewers. Record a written decision for the exact edition, content version, claim and exceptions, or leave the claim pending. A reviewer can dispute a proposed match or revoke an earlier approval. The next review packet includes an ordinary identity, a Telugu bridge, a BSB omission and DRA additions. A live reader integration or additional source would require its own scope and permissions. [Plan](OC-05_PLAN.md) · [Editorial workflow](../packages/ingest/versify/README.md)
+
 ## 2026-11-23 · Antigravity contract follow-up
 
 The owner requires edition-specific canons, action-level rights, verified pairwise alignment and authentic Scripture. These are settled requirements. The proposed transport applies them across all 13 resources. Antigravity should acknowledge versioned labels, edition and rights envelopes, source-aware pagination and explicit unavailable states before binding live data. Keep fixtures behind labelled demo mode. If the UI retains its field names, use an explicit adapter with the same semantics. An unchecked fallback can misidentify demo text as a licensed edition. [Contract audit](API_CONTRACT_REVIEW.md)

@@ -1,0 +1,32 @@
+{
+  "source_id": "step-tvtms-nrsv",
+  "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+  "url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/Older%20Formats/TVTMS%20-%20till%20Dec%202024%20NRSV-based%20Translators%20Versification%20Traditions%20with%20Methodology%20for%20Standardisation%20for%20Eng%2BHeb%2BLat%2BGrk%2BOthers%20-%20STEPBible.org%20CC%20BY.txt",
+  "path": "Older Formats/TVTMS - till Dec 2024 NRSV-based Translators Versification Traditions with Methodology for Standardisation for Eng+Heb+Lat+Grk+Others - STEPBible.org CC BY.txt",
+  "sha256": "83d8d2924a8cd2b7b98b80f997aff9546a56391cda9c60a3cbb3fcc451342347",
+  "bytes": 5398278,
+  "checked_at": "2026-11-23T17:14:40+00:00",
+  "raw_path": "data/sources/versification/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/83d8d2924a8cd2b7b98b80f997aff9546a56391cda9c60a3cbb3fcc451342347.txt",
+  "evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/README.md",
+      "checked_at": "2026-11-23T17:14:35+00:00",
+      "sha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
+      "snapshot": "data/sources/evidence/261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "checked_at": "2026-11-23T17:14:37+00:00",
+      "sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276",
+      "snapshot": "data/sources/evidence/0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276"
+    }
+  ],
+  "licence": "CC BY 4.0",
+  "attribution": "STEPBible.org, based on work at Tyndale House, Cambridge. TVTMS, CC BY 4.0. Understand Bible extracted rule metadata and evaluated it against local edition inventories.",
+  "permissions": {
+    "store": "VERIFIED",
+    "local_processing": "VERIFIED",
+    "derive": "VERIFIED",
+    "redistribute_with_credit": "VERIFIED"
+  }
+}

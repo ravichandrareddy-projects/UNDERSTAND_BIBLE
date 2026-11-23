@@ -1,0 +1,47 @@
+# OC-05 · Verse Alignment Engine implementation plan
+
+**Decision requested:** approve a private alignment engine and review workflow for the five accepted staging versions. The first deliverable would be the exact definition of the standard verse key and a rights-checked mapping-source manifest. A passage would become eligible for linked reading only when both sides have reviewed evidence for that passage.
+
+## Starting point and dependencies
+
+OC-04 supplies immutable archive versions, original book/chapter/verse labels, verse ledgers and separately anchored notes. OC-07 supplies version-specific canon coverage, action-level grants, attribution and isolated PostgreSQL staging. Their accepted receipts cover WEB (31,103 verse rows), BSB (31,086), Douay-Rheims (35,811), Telugu IRV (31,004) and Hindi IRV (31,104). That gives 160,108 source rows and ten unordered edition pairs. Ordinals are available for paging within a source. [OC-04 report](OC-04_REPORT.md) · [OC-07 report](OC-07_REPORT.md) · [Validation receipts](../data/manifests/validation/oc04.json)
+
+D-005 proposes a standard scheme based on STEPBible TVTMS. Its exact revision, subverse conventions and coverage of additions are still open. The repository has a TIPNR study receipt, but no tracked TVTMS mapping manifest or Paratext `.vrs` input. OC-05 can use the accepted native book catalogues. OC-06 owns broader canon definitions and localized names. OC-08 consumes alignment diagnostics. OC-10 and OC-09/29 own the eventual parallel and rights-gated reader APIs. Antigravity owns frontend integration. [Data architecture §§2, 3.1 and 6](BIBLE_DATA_ARCHITECTURE.md) · [D-005](PROJECT_DECISIONS.md) · [Task dependencies](OPENCODE_TASKS.md) · [Reader contract review](API_CONTRACT_REVIEW.md)
+
+## Implementation sequence after approval
+
+| Work package | Deliverable and decision gate | Engineering effort |
+| --- | --- | ---: |
+| 1. Establish the mapping authority | Inspect TVTMS's exact standard, file-level terms, book codes, segments and edition applicability. Record upstream revision, file hash, row locator, evidence date, attribution and permitted processing/redistribution. Evaluate optional Paratext files separately. Use only cleared mapping metadata. Flag any unsupported tradition or book. | 1–2 days |
+| 2. Version the evidence and mappings | Add private PostgreSQL migrations for the planned `versification_scheme`, `versification_map` and `edition_versification_override` concepts, mapping revisions and ordered source/standard members. Store repeatable scheme inputs and reviewed overrides under `data/versification/`. Test up/down/up in a disposable database. | 1–2 days |
+| 3. Build the staged resolver | Implement `packages/ingest/versify/`. Apply reviewed edition-version overrides, then reviewed scheme rules within their declared scope. An identity rule must cite evidence, bound its range and enumerate exceptions. Conflicting evidence, stale checksums or missing review yield an explicit unaligned reason. Produce per-edition coverage and the exception queue. | 2–3 days |
+| 4. Compose and verify pairs | Implement an internal staging query for two edition versions and a reference range. Return ordered source rows on each side, mapping revision, relation, status and reason. Test all ten pairings in both directions. Deliver a review report with verified coverage, confirmed absences, open cases and rights checks. | 2–3 days |
+
+**Estimated total: 6–10 engineering days** for one engineer with the existing local PostgreSQL setup. Human review and source-permission turnaround are additional. Start review with representative Telugu bridges, a BSB omission, a DRA addition and an ordinary identity range. Use that measured rate and the remaining exception count to estimate the editorial workload. Full verified coverage depends on the available evidence.
+
+### Mapping and review rules
+
+- Identify a source member by edition, full archive SHA-256, book, source chapter and literal verse label. Preserve its display ordinal. Standard members include the scheme revision, stable book identity, chapter, verse and any approved subverse segment. An integer sort key alone cannot distinguish segments.
+- Represent one-to-one, renumbered, split, merged, bridged and many-to-many relations with ordered member lists. Preserve the original row and note anchor once. A bridge can cover several standard members. A verified absence has evidence for the missing side. A book outside a version's canon, a note-only source row and an unresolved correspondence each have distinct outcomes.
+- Record source revision/hash and precise evidence locator, edition/version and range, mapping kind, confidence and rationale, reviewer identity, decision timestamp and review state. An importer may propose a rule. A named reviewer approves its scope and exceptions. High confidence alone cannot authorize alignment. A changed edition checksum, rule revision, superseded review or conflicting override invalidates the affected pair result until reviewed again.
+- Compose a pair through compatible, reviewed standard members on **both** sides. If only part of a split or bridge is evidenced, mark the ambiguous portion unaligned and preserve both sides' order. The contract must support separate positions. Equal labels, equal chapter lengths, matching ordinals and bridge-prefix matches cannot trigger synchronized scrolling.
+- Keep processing local and check each edition's grants for the action used. Retain edition identity, version, rights and attribution for both inputs, plus mapping-source credit. Read restricted material only in private staging. Both IRVs' external AI, embeddings and synthesized speech remain held. The five approved versions define the entire pilot. The implementation writes private mapping artifacts and leaves production scripture, publication flags and frontend components untouched.
+
+## Test strategy and acceptance
+
+| Test family | Required assertions |
+| --- | --- |
+| Telugu bridges and Hindi control | Inventory all 88 Telugu bridges. Exercise DEU 1:3-4 and MAT 1:22-23 against approved or deliberately missing evidence. A bridge remains one source row, including on reverse lookup. Exercise Hindi independently. Equal John 3 counts without mappings must return unaligned. |
+| BSB gaps and WEB note-only rows | Check all 16 BSB internal gaps, including MAT 17:21 and ACT 8:37. Preserve the preceding note. Distinguish BSB's missing marker from WEB's ACT 8:37 marker with an empty body and a footnote. Require evidence before declaring a standard member absent. |
+| DRA membership and additions | Cover TOB, JDT, WIS, SIR, BAR, 1MA and 2MA against a 66-book edition. Verify outside-canon status. Test Daniel 13–14, extended Daniel 3, Esther's 16 chapters and Psalm numbering at independently reviewed coordinates. |
+| Splits, moves and negative evidence | Exercise 3 John 14–15, differing Romans chapter ends, superscriptions, segment suffixes and a many-to-many case. Use reference-only synthetic fixtures when necessary. Test conflicting sources, partial mappings, unjustified identity, missing reviewer and stale edition/map versions. |
+| Database, replay and rights | Check duplicate/invalid members, failed-import rollback, deterministic rebuild, repeated seed, revocation of a previously reviewed map, and denial when either edition loses its required grant. Assert KJV stays unavailable, IRV holds persist, production verse/publication counts stay zero, and the reader role cannot query private staging. |
+| Completeness and handoff | Account for each of the 160,108 original rows exactly once in each edition's coverage ledger, including rows with several mapping members. Report verified, disputed and unresolved counts separately, plus standard-side absences per book. Verify role and pair results across all ten pairings and prevent stale cached pair results after revocation. |
+
+**V-07 remains a full-coverage gate.** Accounting for every input is an engineering check. A range with unresolved mappings does not pass V-07. Run in-scope analogues of GT-01 and GT-04–09 with staged editions or clearly identified synthetic metadata. In particular, GT-05's superscription convention needs its own reviewed evidence. Mark literal KJV, WLC, WEB+DC and other unavailable-edition scenarios as deferred. GT-02/03 can exercise chapter-boundary mechanics with synthetic references only. Reserve public API/UI goldens for OC-09/10. [Acceptance criteria](TESTING_AND_ACCEPTANCE_CRITERIA.md)
+
+## Risks and owner decision
+
+The largest risk is treating a scheme's general rule as proof for a particular edition. Bound every reviewed rule to a specific version and range, and allow a reviewer to quarantine exceptions. A second risk is losing segment or canon detail when joining through the standard scheme. Require explicit members and report any unrepresentable reference. Unclear mapping-source rights or unavailable language review may reduce verified coverage. In either case, retain the unaligned result and identify the exact evidence or review still needed.
+
+**Requested approval:** authorize these four staging work packages for the five editions, with explicit reviewed identity rules and V-07 reported separately from input accounting. Codex would prepare candidates and diagnostics. The owner or designated language/versification reviewers would approve disputed mappings and ranges. Production seeding, publication, further Bible acquisitions and frontend integration remain separate milestones.

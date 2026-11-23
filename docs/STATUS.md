@@ -1,5 +1,9 @@
 # Understand Bible status
 
+## 2026-11-23 · OC-05 private staging engine implemented, V-07 open
+
+OC-05 builds on the accepted OC-04/07 commit `561fd391f53ad7168291a35b071f76e2d43ee9ce`. The staging resolver checked 160,108 native rows in all 20 directions. All 640,432 results are unaligned. Of these, 17,492 fall outside the target book catalogue and 622,940 still require evidence or review. All 12,798 candidate claims await a decision, including the five edition-specific claims for Genesis 2:25. Editorial review is the next step. Production has zero verses and zero published versions. [Report](OC-05_REPORT.md) · [Checklist](OC-05_CHECKLIST.md) · [Coverage](../data/manifests/validation/oc05.json)
+
 ## 2026-11-23 · Antigravity contract review and catalogue verification
 
 The fast-forward-only pull confirmed that Antigravity's `7ca0d22` is integrated. Codex reviewed all 13 browser resources, 15 method/path combinations and 23 named interfaces. The fourth database migration separates edition-version coverage from canon membership. Live PostgreSQL tests confirmed 337 version/book records, native 66/73-book catalogues, explicit alternate-canon gaps and isolation of metadata-only Orthodox profiles. Every one of the 160,108 staged verse rows was checked again against its private ledger. Production and publication counts remain zero. Antigravity's follow-up at `51f2913` accepts labels, cursors and error semantics. Its proposed numeric alignment and static offline fallback require correction before reader integration. [Contract audit](API_CONTRACT_REVIEW.md) · [Database report](OC-07_REPORT.md) · [Staging report](OC-04_REPORT.md)

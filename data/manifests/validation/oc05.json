@@ -1,0 +1,3346 @@
+{
+  "authority": {
+    "source_id": "step-tvtms-nrsv",
+    "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+    "url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/Older%20Formats/TVTMS%20-%20till%20Dec%202024%20NRSV-based%20Translators%20Versification%20Traditions%20with%20Methodology%20for%20Standardisation%20for%20Eng%2BHeb%2BLat%2BGrk%2BOthers%20-%20STEPBible.org%20CC%20BY.txt",
+    "path": "Older Formats/TVTMS - till Dec 2024 NRSV-based Translators Versification Traditions with Methodology for Standardisation for Eng+Heb+Lat+Grk+Others - STEPBible.org CC BY.txt",
+    "sha256": "83d8d2924a8cd2b7b98b80f997aff9546a56391cda9c60a3cbb3fcc451342347",
+    "bytes": 5398278,
+    "checked_at": "2026-11-23T17:14:40+00:00",
+    "raw_path": "data/sources/versification/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/83d8d2924a8cd2b7b98b80f997aff9546a56391cda9c60a3cbb3fcc451342347.txt",
+    "evidence": [
+      {
+        "url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/README.md",
+        "checked_at": "2026-11-23T17:14:35+00:00",
+        "sha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
+        "snapshot": "data/sources/evidence/261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1"
+      },
+      {
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+        "checked_at": "2026-11-23T17:14:37+00:00",
+        "sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276",
+        "snapshot": "data/sources/evidence/0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276"
+      }
+    ],
+    "licence": "CC BY 4.0",
+    "attribution": "STEPBible.org, based on work at Tyndale House, Cambridge. TVTMS, CC BY 4.0. Understand Bible extracted rule metadata and evaluated it against local edition inventories.",
+    "permissions": {
+      "store": "VERIFIED",
+      "local_processing": "VERIFIED",
+      "derive": "VERIFIED",
+      "redistribute_with_credit": "VERIFIED"
+    }
+  },
+  "editions": {
+    "eng-web": {
+      "edition": "eng-web",
+      "checksum": "e36d23c5d28517a69faf91654cc6fc6657a298d9b6d66496166491f3ceab9749",
+      "ledger": "bfee50b18c629aa302eee65a6dc033c5780dd7803b34bed79066134b83b2ef23",
+      "attribution": "World English Bible, eBible.org. Reserve the WEB name for unchanged text.",
+      "terms": "Public domain. World English Bible is a trademark of eBible.org.",
+      "conditions": [
+        "Preserve original text, source identification and edition notices. Rights refer to text only."
+      ],
+      "source_url": "https://eBible.org/Scriptures/engwebp_usfm.zip",
+      "rights": {
+        "store": "VERIFIED",
+        "validate_text": "VERIFIED",
+        "local_retrieval": "VERIFIED"
+      },
+      "native_rows": 31103,
+      "review_revision": "72e162b578aa504518065a450ff829033d60eea189da0cfeba970d8733a30f58",
+      "claims": 2153,
+      "row_status": {
+        "NO_RULE": 28945,
+        "PENDING_REVIEW": 2153,
+        "NOTE_ONLY": 5
+      },
+      "review_queue": {
+        "path": "data/sources/versification/reports/eng-web/41f4a08e227ca4dff9a931c127d66cb2465cb9866d6e3e3d5882c7db3a9c0f87.jsonl.gz",
+        "sha256": "41f4a08e227ca4dff9a931c127d66cb2465cb9866d6e3e3d5882c7db3a9c0f87"
+      },
+      "structural_exceptions": [],
+      "note_only": [
+        [
+          "LUK",
+          "17",
+          "36"
+        ],
+        [
+          "ACT",
+          "8",
+          "37"
+        ],
+        [
+          "ACT",
+          "15",
+          "34"
+        ],
+        [
+          "ACT",
+          "24",
+          "7"
+        ],
+        [
+          "ROM",
+          "16",
+          "25"
+        ]
+      ],
+      "genesis_2_25": [
+        "aae75ea46a44f7f38fe63a3a6bd0f1dc4976e815160331715c049c65dfd2838c"
+      ],
+      "absence_proposals": [],
+      "standard_side": {
+        "reference_positions_in_native_books": 31423,
+        "approved_covered": 0,
+        "confirmed_absent": 0,
+        "unresolved": 31423,
+        "conflicting": 0,
+        "by_book": {
+          "1CH": {
+            "total": 944,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 944
+          },
+          "1CO": {
+            "total": 439,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 439
+          },
+          "1JN": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1KI": {
+            "total": 887,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 887
+          },
+          "1PE": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1SA": {
+            "total": 812,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 812
+          },
+          "1TH": {
+            "total": 89,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 89
+          },
+          "1TI": {
+            "total": 115,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 115
+          },
+          "2CH": {
+            "total": 822,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 822
+          },
+          "2CO": {
+            "total": 259,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 259
+          },
+          "2JN": {
+            "total": 13,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 13
+          },
+          "2KI": {
+            "total": 719,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 719
+          },
+          "2PE": {
+            "total": 61,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 61
+          },
+          "2SA": {
+            "total": 695,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 695
+          },
+          "2TH": {
+            "total": 47,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 47
+          },
+          "2TI": {
+            "total": 83,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 83
+          },
+          "3JN": {
+            "total": 15,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 15
+          },
+          "ACT": {
+            "total": 1007,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1007
+          },
+          "AMO": {
+            "total": 148,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 148
+          },
+          "COL": {
+            "total": 95,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 95
+          },
+          "DAN": {
+            "total": 369,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 369
+          },
+          "DEU": {
+            "total": 959,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 959
+          },
+          "ECC": {
+            "total": 222,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 222
+          },
+          "EPH": {
+            "total": 155,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 155
+          },
+          "EST": {
+            "total": 281,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 281
+          },
+          "EXO": {
+            "total": 1262,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1262
+          },
+          "EZK": {
+            "total": 1273,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1273
+          },
+          "EZR": {
+            "total": 280,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 280
+          },
+          "GAL": {
+            "total": 149,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 149
+          },
+          "GEN": {
+            "total": 1533,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1533
+          },
+          "HAB": {
+            "total": 56,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 56
+          },
+          "HAG": {
+            "total": 40,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 40
+          },
+          "HEB": {
+            "total": 303,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 303
+          },
+          "HOS": {
+            "total": 201,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 201
+          },
+          "ISA": {
+            "total": 1294,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1294
+          },
+          "JAS": {
+            "total": 108,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 108
+          },
+          "JDG": {
+            "total": 620,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 620
+          },
+          "JER": {
+            "total": 1364,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1364
+          },
+          "JHN": {
+            "total": 881,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 881
+          },
+          "JOB": {
+            "total": 1072,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1072
+          },
+          "JOL": {
+            "total": 73,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 73
+          },
+          "JON": {
+            "total": 48,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 48
+          },
+          "JOS": {
+            "total": 673,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 673
+          },
+          "JUD": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "LAM": {
+            "total": 154,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 154
+          },
+          "LEV": {
+            "total": 861,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 861
+          },
+          "LUK": {
+            "total": 1151,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1151
+          },
+          "MAL": {
+            "total": 55,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 55
+          },
+          "MAT": {
+            "total": 1071,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1071
+          },
+          "MIC": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "MRK": {
+            "total": 678,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 678
+          },
+          "NAM": {
+            "total": 49,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 49
+          },
+          "NEH": {
+            "total": 406,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 406
+          },
+          "NUM": {
+            "total": 1292,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1292
+          },
+          "OBA": {
+            "total": 21,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 21
+          },
+          "PHM": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "PHP": {
+            "total": 104,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 104
+          },
+          "PRO": {
+            "total": 921,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 921
+          },
+          "PSA": {
+            "total": 2477,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 2477
+          },
+          "REV": {
+            "total": 405,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 405
+          },
+          "ROM": {
+            "total": 433,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 433
+          },
+          "RUT": {
+            "total": 85,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 85
+          },
+          "SNG": {
+            "total": 117,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 117
+          },
+          "TIT": {
+            "total": 46,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 46
+          },
+          "ZEC": {
+            "total": 213,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 213
+          },
+          "ZEP": {
+            "total": 53,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 53
+          }
+        }
+      },
+      "reviewed_absence_claims": 0
+    },
+    "eng-bsb": {
+      "edition": "eng-bsb",
+      "checksum": "75ca91d5a5c69ca4cbdeabdb03ea1a458db20cf3966abe15d86df086acf7fbc4",
+      "ledger": "c0e296e4aedddd3f79294e4c48ffde32bea25a5cdd42b553b2011e8ae276f658",
+      "attribution": "Holy Bible, Berean Standard Bible (BSB), Berean Bible Translation Committee. Credit appreciated. Use the name with verbatim text.",
+      "terms": "Public domain dedication, 30 April 2023.",
+      "conditions": [
+        "Preserve original text, source identification and edition notices. Rights refer to text only."
+      ],
+      "source_url": "https://eBible.org/Scriptures/engbsb_usfm.zip",
+      "rights": {
+        "store": "VERIFIED",
+        "validate_text": "VERIFIED",
+        "local_retrieval": "VERIFIED"
+      },
+      "native_rows": 31086,
+      "review_revision": "55e6bc1ac6b38bba83251de8431f11f5e061d387cc7497538f25543ba159c43d",
+      "claims": 2153,
+      "row_status": {
+        "NO_RULE": 28949,
+        "PENDING_REVIEW": 2137
+      },
+      "review_queue": {
+        "path": "data/sources/versification/reports/eng-bsb/4c4c192deae56eb6b0a359d9702e92a78b50eb56c06fff82b32d46c025dfa5dc.jsonl.gz",
+        "sha256": "4c4c192deae56eb6b0a359d9702e92a78b50eb56c06fff82b32d46c025dfa5dc"
+      },
+      "structural_exceptions": [
+        [
+          "MAT",
+          "17",
+          "22",
+          "unlabelled interval 21-21"
+        ],
+        [
+          "MAT",
+          "18",
+          "12",
+          "unlabelled interval 11-11"
+        ],
+        [
+          "MAT",
+          "23",
+          "15",
+          "unlabelled interval 14-14"
+        ],
+        [
+          "MRK",
+          "7",
+          "17",
+          "unlabelled interval 16-16"
+        ],
+        [
+          "MRK",
+          "9",
+          "45",
+          "unlabelled interval 44-44"
+        ],
+        [
+          "MRK",
+          "9",
+          "47",
+          "unlabelled interval 46-46"
+        ],
+        [
+          "MRK",
+          "11",
+          "27",
+          "unlabelled interval 26-26"
+        ],
+        [
+          "MRK",
+          "15",
+          "29",
+          "unlabelled interval 28-28"
+        ],
+        [
+          "LUK",
+          "17",
+          "37",
+          "unlabelled interval 36-36"
+        ],
+        [
+          "LUK",
+          "23",
+          "18",
+          "unlabelled interval 17-17"
+        ],
+        [
+          "JHN",
+          "5",
+          "5",
+          "unlabelled interval 4-4"
+        ],
+        [
+          "ACT",
+          "8",
+          "38",
+          "unlabelled interval 37-37"
+        ],
+        [
+          "ACT",
+          "15",
+          "35",
+          "unlabelled interval 34-34"
+        ],
+        [
+          "ACT",
+          "24",
+          "8",
+          "unlabelled interval 7-7"
+        ],
+        [
+          "ACT",
+          "28",
+          "30",
+          "unlabelled interval 29-29"
+        ],
+        [
+          "ROM",
+          "16",
+          "25",
+          "unlabelled interval 24-24"
+        ]
+      ],
+      "note_only": [],
+      "genesis_2_25": [
+        "717ca1920df7584f19907ebc2f555f7c8c88801c0aec678375694ac15e74a302"
+      ],
+      "absence_proposals": [
+        {
+          "local": [
+            "ACT",
+            "15",
+            "34"
+          ],
+          "claim": "025507cc3af76df55fa12d98ab6677ec86400f8acfd688b5b652eb7f9bea31c6",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "ACT",
+            "24",
+            "7"
+          ],
+          "claim": "435da87cc383e7c2021c5969455fa93d161e711c8976a0683650efd12ef1173b",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "ACT",
+            "28",
+            "29"
+          ],
+          "claim": "a806f0db58de62a18c4ec39b7b3b790d58e6dd8b488beec2b352f62044706f2b",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "ACT",
+            "8",
+            "37"
+          ],
+          "claim": "adcb9082e27891f3eb314d48ea480bcc3b5e109707d59937068638b8e9b3efe0",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "JHN",
+            "5",
+            "4"
+          ],
+          "claim": "ae5fbe257b0f006c761dd3485811a6ea4488c9336fa27817b0ef19273874fdb7",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "LUK",
+            "17",
+            "36"
+          ],
+          "claim": "ef4354fca67288bcc145005571cf9de14756506846800515e58c12ea123f064c",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "LUK",
+            "23",
+            "17"
+          ],
+          "claim": "92cd53a0bd97b87f91feebb45ea0df0551c3b5abca94a0736b7c4e41508ee342",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MAT",
+            "17",
+            "21"
+          ],
+          "claim": "f804911378df20c7b9c31e59d762cfefcf312e648f2809d2f754e390a5dd1329",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MAT",
+            "18",
+            "11"
+          ],
+          "claim": "43ef9ba53754b5292255548e5855635a7699aa3afa4e420225882f96807ddbe6",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MAT",
+            "23",
+            "14"
+          ],
+          "claim": "07ae2577d03c0fe46bde09de4bb9d0b6d3097822d92662aa500f9d10047edd76",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MRK",
+            "11",
+            "26"
+          ],
+          "claim": "e719d0ce077c3e1ac631aa1e5c5eaf6887a601ea733f506b19973ca125c2b3fa",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MRK",
+            "15",
+            "28"
+          ],
+          "claim": "5228a42c1e60972e6104b7efb1e1b9558d21920a50c63a7c59f1ddbb63e69ac3",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MRK",
+            "7",
+            "16"
+          ],
+          "claim": "8594fb9e19e8c325674f61610121f4cbab0f1f9e9a991880eecb20a3ac60adf4",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MRK",
+            "9",
+            "44"
+          ],
+          "claim": "489d36707c323c8a67ef67098fb4fc16b5c84758d343a20866adce213979c61d",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "MRK",
+            "9",
+            "46"
+          ],
+          "claim": "493557eba64be3760ae979fb0ec7b3ebc47a2099f7dda0cf49c156f64afdd0d9",
+          "status": "PENDING"
+        },
+        {
+          "local": [
+            "ROM",
+            "16",
+            "24"
+          ],
+          "claim": "77ce5c91058ecb6cf6991bc8fd1582c8ffe2733af93f347c056ce30324de3f9d",
+          "status": "PENDING"
+        }
+      ],
+      "standard_side": {
+        "reference_positions_in_native_books": 31423,
+        "approved_covered": 0,
+        "confirmed_absent": 0,
+        "unresolved": 31423,
+        "conflicting": 0,
+        "by_book": {
+          "1CH": {
+            "total": 944,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 944
+          },
+          "1CO": {
+            "total": 439,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 439
+          },
+          "1JN": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1KI": {
+            "total": 887,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 887
+          },
+          "1PE": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1SA": {
+            "total": 812,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 812
+          },
+          "1TH": {
+            "total": 89,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 89
+          },
+          "1TI": {
+            "total": 115,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 115
+          },
+          "2CH": {
+            "total": 822,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 822
+          },
+          "2CO": {
+            "total": 259,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 259
+          },
+          "2JN": {
+            "total": 13,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 13
+          },
+          "2KI": {
+            "total": 719,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 719
+          },
+          "2PE": {
+            "total": 61,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 61
+          },
+          "2SA": {
+            "total": 695,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 695
+          },
+          "2TH": {
+            "total": 47,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 47
+          },
+          "2TI": {
+            "total": 83,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 83
+          },
+          "3JN": {
+            "total": 15,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 15
+          },
+          "ACT": {
+            "total": 1007,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1007
+          },
+          "AMO": {
+            "total": 148,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 148
+          },
+          "COL": {
+            "total": 95,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 95
+          },
+          "DAN": {
+            "total": 369,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 369
+          },
+          "DEU": {
+            "total": 959,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 959
+          },
+          "ECC": {
+            "total": 222,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 222
+          },
+          "EPH": {
+            "total": 155,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 155
+          },
+          "EST": {
+            "total": 281,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 281
+          },
+          "EXO": {
+            "total": 1262,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1262
+          },
+          "EZK": {
+            "total": 1273,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1273
+          },
+          "EZR": {
+            "total": 280,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 280
+          },
+          "GAL": {
+            "total": 149,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 149
+          },
+          "GEN": {
+            "total": 1533,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1533
+          },
+          "HAB": {
+            "total": 56,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 56
+          },
+          "HAG": {
+            "total": 40,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 40
+          },
+          "HEB": {
+            "total": 303,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 303
+          },
+          "HOS": {
+            "total": 201,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 201
+          },
+          "ISA": {
+            "total": 1294,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1294
+          },
+          "JAS": {
+            "total": 108,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 108
+          },
+          "JDG": {
+            "total": 620,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 620
+          },
+          "JER": {
+            "total": 1364,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1364
+          },
+          "JHN": {
+            "total": 881,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 881
+          },
+          "JOB": {
+            "total": 1072,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1072
+          },
+          "JOL": {
+            "total": 73,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 73
+          },
+          "JON": {
+            "total": 48,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 48
+          },
+          "JOS": {
+            "total": 673,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 673
+          },
+          "JUD": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "LAM": {
+            "total": 154,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 154
+          },
+          "LEV": {
+            "total": 861,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 861
+          },
+          "LUK": {
+            "total": 1151,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1151
+          },
+          "MAL": {
+            "total": 55,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 55
+          },
+          "MAT": {
+            "total": 1071,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1071
+          },
+          "MIC": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "MRK": {
+            "total": 678,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 678
+          },
+          "NAM": {
+            "total": 49,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 49
+          },
+          "NEH": {
+            "total": 406,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 406
+          },
+          "NUM": {
+            "total": 1292,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1292
+          },
+          "OBA": {
+            "total": 21,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 21
+          },
+          "PHM": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "PHP": {
+            "total": 104,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 104
+          },
+          "PRO": {
+            "total": 921,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 921
+          },
+          "PSA": {
+            "total": 2477,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 2477
+          },
+          "REV": {
+            "total": 405,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 405
+          },
+          "ROM": {
+            "total": 433,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 433
+          },
+          "RUT": {
+            "total": 85,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 85
+          },
+          "SNG": {
+            "total": 117,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 117
+          },
+          "TIT": {
+            "total": 46,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 46
+          },
+          "ZEC": {
+            "total": 213,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 213
+          },
+          "ZEP": {
+            "total": 53,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 53
+          }
+        }
+      },
+      "reviewed_absence_claims": 0
+    },
+    "eng-dra": {
+      "edition": "eng-dra",
+      "checksum": "28147740343e44cede8c86cffb91973f934ddd892a887f621f4df816ffc86834",
+      "ledger": "6bf31bb569fa9ed2052643a7c19199aedfe54f12c674c2ab7040b52f5fd88edc",
+      "attribution": "Douay-Rheims 1899 American Edition, English College, Douai. Digital source eBible.org.",
+      "terms": "Public domain historical translation.",
+      "conditions": [
+        "Preserve original text, source identification and edition notices. Rights refer to text only."
+      ],
+      "source_url": "https://eBible.org/Scriptures/engDRA_usfm.zip",
+      "rights": {
+        "store": "VERIFIED",
+        "validate_text": "VERIFIED",
+        "local_retrieval": "VERIFIED"
+      },
+      "native_rows": 35811,
+      "review_revision": "acf34f84e3ed16f11c67a0760e7de4db38484405805e9812b8842ed89902f211",
+      "claims": 4191,
+      "row_status": {
+        "NO_RULE": 31620,
+        "PENDING_REVIEW": 4191
+      },
+      "review_queue": {
+        "path": "data/sources/versification/reports/eng-dra/8f44c603a5ab2e554e7897698bae09dca475f725b8942fc8286a5766b9dc20e5.jsonl.gz",
+        "sha256": "8f44c603a5ab2e554e7897698bae09dca475f725b8942fc8286a5766b9dc20e5"
+      },
+      "structural_exceptions": [],
+      "note_only": [],
+      "genesis_2_25": [
+        "6d31178fa0c60680a9b89e75db9a115a551c487180476fa742398ae0c2344a29"
+      ],
+      "absence_proposals": [],
+      "standard_side": {
+        "reference_positions_in_native_books": 36186,
+        "approved_covered": 0,
+        "confirmed_absent": 0,
+        "unresolved": 36186,
+        "conflicting": 0,
+        "by_book": {
+          "1CH": {
+            "total": 944,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 944
+          },
+          "1CO": {
+            "total": 439,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 439
+          },
+          "1JN": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1KI": {
+            "total": 887,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 887
+          },
+          "1MA": {
+            "total": 934,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 934
+          },
+          "1PE": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1SA": {
+            "total": 812,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 812
+          },
+          "1TH": {
+            "total": 89,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 89
+          },
+          "1TI": {
+            "total": 115,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 115
+          },
+          "2CH": {
+            "total": 822,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 822
+          },
+          "2CO": {
+            "total": 259,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 259
+          },
+          "2JN": {
+            "total": 13,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 13
+          },
+          "2KI": {
+            "total": 719,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 719
+          },
+          "2MA": {
+            "total": 561,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 561
+          },
+          "2PE": {
+            "total": 61,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 61
+          },
+          "2SA": {
+            "total": 695,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 695
+          },
+          "2TH": {
+            "total": 47,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 47
+          },
+          "2TI": {
+            "total": 83,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 83
+          },
+          "3JN": {
+            "total": 15,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 15
+          },
+          "ACT": {
+            "total": 1007,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1007
+          },
+          "AMO": {
+            "total": 148,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 148
+          },
+          "BAR": {
+            "total": 215,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 215
+          },
+          "COL": {
+            "total": 95,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 95
+          },
+          "DAN": {
+            "total": 369,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 369
+          },
+          "DEU": {
+            "total": 959,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 959
+          },
+          "ECC": {
+            "total": 222,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 222
+          },
+          "EPH": {
+            "total": 155,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 155
+          },
+          "EST": {
+            "total": 281,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 281
+          },
+          "EXO": {
+            "total": 1262,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1262
+          },
+          "EZK": {
+            "total": 1273,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1273
+          },
+          "EZR": {
+            "total": 280,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 280
+          },
+          "GAL": {
+            "total": 149,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 149
+          },
+          "GEN": {
+            "total": 1533,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1533
+          },
+          "HAB": {
+            "total": 56,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 56
+          },
+          "HAG": {
+            "total": 40,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 40
+          },
+          "HEB": {
+            "total": 303,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 303
+          },
+          "HOS": {
+            "total": 201,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 201
+          },
+          "ISA": {
+            "total": 1294,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1294
+          },
+          "JAS": {
+            "total": 108,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 108
+          },
+          "JDG": {
+            "total": 620,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 620
+          },
+          "JDT": {
+            "total": 430,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 430
+          },
+          "JER": {
+            "total": 1364,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1364
+          },
+          "JHN": {
+            "total": 881,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 881
+          },
+          "JOB": {
+            "total": 1072,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1072
+          },
+          "JOL": {
+            "total": 73,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 73
+          },
+          "JON": {
+            "total": 48,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 48
+          },
+          "JOS": {
+            "total": 673,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 673
+          },
+          "JUD": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "LAM": {
+            "total": 154,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 154
+          },
+          "LEV": {
+            "total": 861,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 861
+          },
+          "LUK": {
+            "total": 1151,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1151
+          },
+          "MAL": {
+            "total": 55,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 55
+          },
+          "MAT": {
+            "total": 1071,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1071
+          },
+          "MIC": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "MRK": {
+            "total": 678,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 678
+          },
+          "NAM": {
+            "total": 49,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 49
+          },
+          "NEH": {
+            "total": 406,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 406
+          },
+          "NUM": {
+            "total": 1292,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1292
+          },
+          "OBA": {
+            "total": 21,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 21
+          },
+          "PHM": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "PHP": {
+            "total": 104,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 104
+          },
+          "PRO": {
+            "total": 921,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 921
+          },
+          "PSA": {
+            "total": 2477,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 2477
+          },
+          "REV": {
+            "total": 405,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 405
+          },
+          "ROM": {
+            "total": 433,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 433
+          },
+          "RUT": {
+            "total": 85,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 85
+          },
+          "SIR": {
+            "total": 1844,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1844
+          },
+          "SNG": {
+            "total": 117,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 117
+          },
+          "TIT": {
+            "total": 46,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 46
+          },
+          "TOB": {
+            "total": 329,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 329
+          },
+          "WIS": {
+            "total": 450,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 450
+          },
+          "ZEC": {
+            "total": 213,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 213
+          },
+          "ZEP": {
+            "total": 53,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 53
+          }
+        }
+      },
+      "reviewed_absence_claims": 0
+    },
+    "tel-irv": {
+      "edition": "tel-irv",
+      "checksum": "2c90088101dc614422e753f10b79dccae968db28a2fd979dfc5f82b944bf8b4f",
+      "ledger": "6725f7eb47fc312130dc34da2a9f38d6e5570f713d554c434e22e82679dde398",
+      "attribution": "Indian Revised Version, Telugu. Copyright © 2017, 2019 Bridge Connectivity Solutions. Via eBible.org. CC BY-SA 4.0. Original text unchanged.",
+      "terms": "CC BY-SA 4.0 International, text only.",
+      "conditions": [
+        "Preserve original text, source identification and edition notices. Rights refer to text only.",
+        "Supply copyright, credit, edition URL and licence link with copies. Identify modifications and retain notices. Share adapted material on compatible ShareAlike terms, without added restrictions or implied endorsement.",
+        "Local technical inventory is approved. External processing, vector outputs and new audio require a separate rights/workflow review. Illustrations and separately recorded performances are excluded."
+      ],
+      "source_url": "https://eBible.org/Scriptures/tel2017_usfm.zip",
+      "rights": {
+        "store": "VERIFIED",
+        "validate_text": "VERIFIED",
+        "local_retrieval": "VERIFIED"
+      },
+      "native_rows": 31004,
+      "review_revision": "3dffb819e375ecb99d45a3ea67b89cc88fd7e3e2d45638e97efc94c08f35fc5b",
+      "claims": 2138,
+      "row_status": {
+        "NO_RULE": 28866,
+        "PENDING_REVIEW": 2138
+      },
+      "review_queue": {
+        "path": "data/sources/versification/reports/tel-irv/627e2b60921ea6ad018e70223a0907e629af03df4d5ee245a5327620831b8fda.jsonl.gz",
+        "sha256": "627e2b60921ea6ad018e70223a0907e629af03df4d5ee245a5327620831b8fda"
+      },
+      "structural_exceptions": [
+        [
+          "DEU",
+          "1",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "4",
+          "6-8",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "5",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "6",
+          "13-14",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "12",
+          "14-15",
+          "bridge or suffix"
+        ],
+        [
+          "2SA",
+          "17",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "JOB",
+          "32",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "JOB",
+          "38",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "JOB",
+          "38",
+          "22-23",
+          "bridge or suffix"
+        ],
+        [
+          "PSA",
+          "132",
+          "3-5",
+          "bridge or suffix"
+        ],
+        [
+          "PRO",
+          "26",
+          "18-19",
+          "bridge or suffix"
+        ],
+        [
+          "ISA",
+          "9",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "EZK",
+          "3",
+          "24-25",
+          "bridge or suffix"
+        ],
+        [
+          "EZK",
+          "18",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "1",
+          "22-23",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "2",
+          "17-18",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "3",
+          "1-2",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "4",
+          "14-16",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "9",
+          "20-21",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "10",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "11",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "11",
+          "16-17",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "12",
+          "15-16",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "13",
+          "34-35",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "13",
+          "53-54",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "15",
+          "7-9",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "20",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "MAT",
+          "22",
+          "31-32",
+          "bridge or suffix"
+        ],
+        [
+          "MRK",
+          "9",
+          "43-44",
+          "bridge or suffix"
+        ],
+        [
+          "MRK",
+          "9",
+          "45-46",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "39-40",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "48-49",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "54-55",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "70-73",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "74-75",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "1",
+          "76-78",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "2",
+          "22-24",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "2",
+          "30-32",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "6",
+          "17-18",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "11",
+          "50-51",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "11",
+          "53-54",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "16",
+          "27-28",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "19",
+          "45-46",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "20",
+          "39-40",
+          "bridge or suffix"
+        ],
+        [
+          "LUK",
+          "20",
+          "42-43",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "5",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "12",
+          "10-11",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "12",
+          "14-15",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "19",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "JHN",
+          "19",
+          "8-9",
+          "bridge or suffix"
+        ],
+        [
+          "ACT",
+          "24",
+          "20-21",
+          "bridge or suffix"
+        ],
+        [
+          "ACT",
+          "26",
+          "17-18",
+          "bridge or suffix"
+        ],
+        [
+          "ACT",
+          "26",
+          "22-23",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "1",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "1",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "5",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "8",
+          "3-4",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "8",
+          "38-39",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "9",
+          "1-2",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "9",
+          "27-28",
+          "bridge or suffix"
+        ],
+        [
+          "ROM",
+          "12",
+          "7-8",
+          "bridge or suffix"
+        ],
+        [
+          "1CO",
+          "4",
+          "15-16",
+          "bridge or suffix"
+        ],
+        [
+          "1CO",
+          "12",
+          "24-25",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "3",
+          "14-15",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "3",
+          "16-17",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "4",
+          "1-3",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "4",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "EPH",
+          "6",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "1",
+          "25-26",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "1",
+          "29-30",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "2",
+          "9-11",
+          "bridge or suffix"
+        ],
+        [
+          "PHP",
+          "3",
+          "10-11",
+          "bridge or suffix"
+        ],
+        [
+          "COL",
+          "1",
+          "3-5",
+          "bridge or suffix"
+        ],
+        [
+          "1TH",
+          "3",
+          "2-3",
+          "bridge or suffix"
+        ],
+        [
+          "1TH",
+          "4",
+          "11-12",
+          "bridge or suffix"
+        ],
+        [
+          "2TH",
+          "1",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "2TH",
+          "1",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "2TI",
+          "2",
+          "25-26",
+          "bridge or suffix"
+        ],
+        [
+          "2TI",
+          "3",
+          "16-17",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "1",
+          "13-14",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "2",
+          "4-5",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "2",
+          "9-10",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "2",
+          "12-13",
+          "bridge or suffix"
+        ],
+        [
+          "TIT",
+          "3",
+          "6-7",
+          "bridge or suffix"
+        ],
+        [
+          "PHM",
+          "1",
+          "4-5",
+          "bridge or suffix"
+        ],
+        [
+          "HEB",
+          "6",
+          "4-5",
+          "bridge or suffix"
+        ],
+        [
+          "REV",
+          "16",
+          "5-6",
+          "bridge or suffix"
+        ],
+        [
+          "REV",
+          "18",
+          "9-10",
+          "bridge or suffix"
+        ]
+      ],
+      "note_only": [],
+      "genesis_2_25": [
+        "d05fdca7e8e622fbd7e0a679907b5e3e1f1f895bab2a6c3074ce384ceb477e43"
+      ],
+      "absence_proposals": [],
+      "standard_side": {
+        "reference_positions_in_native_books": 31423,
+        "approved_covered": 0,
+        "confirmed_absent": 0,
+        "unresolved": 31423,
+        "conflicting": 0,
+        "by_book": {
+          "1CH": {
+            "total": 944,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 944
+          },
+          "1CO": {
+            "total": 439,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 439
+          },
+          "1JN": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1KI": {
+            "total": 887,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 887
+          },
+          "1PE": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1SA": {
+            "total": 812,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 812
+          },
+          "1TH": {
+            "total": 89,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 89
+          },
+          "1TI": {
+            "total": 115,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 115
+          },
+          "2CH": {
+            "total": 822,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 822
+          },
+          "2CO": {
+            "total": 259,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 259
+          },
+          "2JN": {
+            "total": 13,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 13
+          },
+          "2KI": {
+            "total": 719,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 719
+          },
+          "2PE": {
+            "total": 61,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 61
+          },
+          "2SA": {
+            "total": 695,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 695
+          },
+          "2TH": {
+            "total": 47,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 47
+          },
+          "2TI": {
+            "total": 83,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 83
+          },
+          "3JN": {
+            "total": 15,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 15
+          },
+          "ACT": {
+            "total": 1007,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1007
+          },
+          "AMO": {
+            "total": 148,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 148
+          },
+          "COL": {
+            "total": 95,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 95
+          },
+          "DAN": {
+            "total": 369,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 369
+          },
+          "DEU": {
+            "total": 959,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 959
+          },
+          "ECC": {
+            "total": 222,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 222
+          },
+          "EPH": {
+            "total": 155,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 155
+          },
+          "EST": {
+            "total": 281,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 281
+          },
+          "EXO": {
+            "total": 1262,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1262
+          },
+          "EZK": {
+            "total": 1273,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1273
+          },
+          "EZR": {
+            "total": 280,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 280
+          },
+          "GAL": {
+            "total": 149,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 149
+          },
+          "GEN": {
+            "total": 1533,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1533
+          },
+          "HAB": {
+            "total": 56,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 56
+          },
+          "HAG": {
+            "total": 40,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 40
+          },
+          "HEB": {
+            "total": 303,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 303
+          },
+          "HOS": {
+            "total": 201,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 201
+          },
+          "ISA": {
+            "total": 1294,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1294
+          },
+          "JAS": {
+            "total": 108,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 108
+          },
+          "JDG": {
+            "total": 620,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 620
+          },
+          "JER": {
+            "total": 1364,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1364
+          },
+          "JHN": {
+            "total": 881,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 881
+          },
+          "JOB": {
+            "total": 1072,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1072
+          },
+          "JOL": {
+            "total": 73,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 73
+          },
+          "JON": {
+            "total": 48,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 48
+          },
+          "JOS": {
+            "total": 673,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 673
+          },
+          "JUD": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "LAM": {
+            "total": 154,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 154
+          },
+          "LEV": {
+            "total": 861,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 861
+          },
+          "LUK": {
+            "total": 1151,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1151
+          },
+          "MAL": {
+            "total": 55,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 55
+          },
+          "MAT": {
+            "total": 1071,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1071
+          },
+          "MIC": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "MRK": {
+            "total": 678,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 678
+          },
+          "NAM": {
+            "total": 49,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 49
+          },
+          "NEH": {
+            "total": 406,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 406
+          },
+          "NUM": {
+            "total": 1292,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1292
+          },
+          "OBA": {
+            "total": 21,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 21
+          },
+          "PHM": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "PHP": {
+            "total": 104,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 104
+          },
+          "PRO": {
+            "total": 921,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 921
+          },
+          "PSA": {
+            "total": 2477,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 2477
+          },
+          "REV": {
+            "total": 405,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 405
+          },
+          "ROM": {
+            "total": 433,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 433
+          },
+          "RUT": {
+            "total": 85,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 85
+          },
+          "SNG": {
+            "total": 117,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 117
+          },
+          "TIT": {
+            "total": 46,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 46
+          },
+          "ZEC": {
+            "total": 213,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 213
+          },
+          "ZEP": {
+            "total": 53,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 53
+          }
+        }
+      },
+      "reviewed_absence_claims": 0
+    },
+    "hin-irv": {
+      "edition": "hin-irv",
+      "checksum": "7fe5d5b089c42e3f1b1f533a8042a757aed773880f1e3e824fc905f8dd7f1f0a",
+      "ledger": "f0dd6b64646418788f3287274111c2c670657882dc183b6c9f8c17bb9b1517b5",
+      "attribution": "Indian Revised Version, Hindi. Copyright © 2017, 2018, 2019 Bridge Connectivity Solutions. Via eBible.org. CC BY-SA 4.0. Original text unchanged.",
+      "terms": "CC BY-SA 4.0 International, text only.",
+      "conditions": [
+        "Preserve original text, source identification and edition notices. Rights refer to text only.",
+        "Supply copyright, credit, edition URL and licence link with copies. Identify modifications and retain notices. Share adapted material on compatible ShareAlike terms, without added restrictions or implied endorsement.",
+        "Local technical inventory is approved. External processing, vector outputs and new audio require a separate rights/workflow review. Illustrations and separately recorded performances are excluded."
+      ],
+      "source_url": "https://eBible.org/Scriptures/hin2017_usfm.zip",
+      "rights": {
+        "store": "VERIFIED",
+        "validate_text": "VERIFIED",
+        "local_retrieval": "VERIFIED"
+      },
+      "native_rows": 31104,
+      "review_revision": "db9e7a437072b7690554b5fdae6ebc7a37b0fc4e18daf674f778701e421facdd",
+      "claims": 2163,
+      "row_status": {
+        "NO_RULE": 28941,
+        "PENDING_REVIEW": 2163
+      },
+      "review_queue": {
+        "path": "data/sources/versification/reports/hin-irv/bc5cf617ff64ac86daf7223c7acbd35cda85ea94eb3dbf5cf3137cb962e238d6.jsonl.gz",
+        "sha256": "bc5cf617ff64ac86daf7223c7acbd35cda85ea94eb3dbf5cf3137cb962e238d6"
+      },
+      "structural_exceptions": [],
+      "note_only": [],
+      "genesis_2_25": [
+        "4a8be0ea0209da8c8443d993aac2c89dfd2379adb234fbea0de798bfa3bf49ae"
+      ],
+      "absence_proposals": [],
+      "standard_side": {
+        "reference_positions_in_native_books": 31423,
+        "approved_covered": 0,
+        "confirmed_absent": 0,
+        "unresolved": 31423,
+        "conflicting": 0,
+        "by_book": {
+          "1CH": {
+            "total": 944,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 944
+          },
+          "1CO": {
+            "total": 439,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 439
+          },
+          "1JN": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1KI": {
+            "total": 887,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 887
+          },
+          "1PE": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "1SA": {
+            "total": 812,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 812
+          },
+          "1TH": {
+            "total": 89,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 89
+          },
+          "1TI": {
+            "total": 115,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 115
+          },
+          "2CH": {
+            "total": 822,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 822
+          },
+          "2CO": {
+            "total": 259,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 259
+          },
+          "2JN": {
+            "total": 13,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 13
+          },
+          "2KI": {
+            "total": 719,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 719
+          },
+          "2PE": {
+            "total": 61,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 61
+          },
+          "2SA": {
+            "total": 695,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 695
+          },
+          "2TH": {
+            "total": 47,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 47
+          },
+          "2TI": {
+            "total": 83,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 83
+          },
+          "3JN": {
+            "total": 15,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 15
+          },
+          "ACT": {
+            "total": 1007,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1007
+          },
+          "AMO": {
+            "total": 148,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 148
+          },
+          "COL": {
+            "total": 95,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 95
+          },
+          "DAN": {
+            "total": 369,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 369
+          },
+          "DEU": {
+            "total": 959,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 959
+          },
+          "ECC": {
+            "total": 222,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 222
+          },
+          "EPH": {
+            "total": 155,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 155
+          },
+          "EST": {
+            "total": 281,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 281
+          },
+          "EXO": {
+            "total": 1262,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1262
+          },
+          "EZK": {
+            "total": 1273,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1273
+          },
+          "EZR": {
+            "total": 280,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 280
+          },
+          "GAL": {
+            "total": 149,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 149
+          },
+          "GEN": {
+            "total": 1533,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1533
+          },
+          "HAB": {
+            "total": 56,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 56
+          },
+          "HAG": {
+            "total": 40,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 40
+          },
+          "HEB": {
+            "total": 303,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 303
+          },
+          "HOS": {
+            "total": 201,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 201
+          },
+          "ISA": {
+            "total": 1294,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1294
+          },
+          "JAS": {
+            "total": 108,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 108
+          },
+          "JDG": {
+            "total": 620,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 620
+          },
+          "JER": {
+            "total": 1364,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1364
+          },
+          "JHN": {
+            "total": 881,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 881
+          },
+          "JOB": {
+            "total": 1072,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1072
+          },
+          "JOL": {
+            "total": 73,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 73
+          },
+          "JON": {
+            "total": 48,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 48
+          },
+          "JOS": {
+            "total": 673,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 673
+          },
+          "JUD": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "LAM": {
+            "total": 154,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 154
+          },
+          "LEV": {
+            "total": 861,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 861
+          },
+          "LUK": {
+            "total": 1151,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1151
+          },
+          "MAL": {
+            "total": 55,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 55
+          },
+          "MAT": {
+            "total": 1071,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1071
+          },
+          "MIC": {
+            "total": 105,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 105
+          },
+          "MRK": {
+            "total": 678,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 678
+          },
+          "NAM": {
+            "total": 49,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 49
+          },
+          "NEH": {
+            "total": 406,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 406
+          },
+          "NUM": {
+            "total": 1292,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 1292
+          },
+          "OBA": {
+            "total": 21,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 21
+          },
+          "PHM": {
+            "total": 25,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 25
+          },
+          "PHP": {
+            "total": 104,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 104
+          },
+          "PRO": {
+            "total": 921,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 921
+          },
+          "PSA": {
+            "total": 2477,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 2477
+          },
+          "REV": {
+            "total": 405,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 405
+          },
+          "ROM": {
+            "total": 433,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 433
+          },
+          "RUT": {
+            "total": 85,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 85
+          },
+          "SNG": {
+            "total": 117,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 117
+          },
+          "TIT": {
+            "total": 46,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 46
+          },
+          "ZEC": {
+            "total": 213,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 213
+          },
+          "ZEP": {
+            "total": 53,
+            "covered": 0,
+            "confirmed_absent": 0,
+            "unresolved": 53
+          }
+        }
+      },
+      "reviewed_absence_claims": 0
+    }
+  },
+  "pairs": [
+    {
+      "from": "eng-web",
+      "to": "eng-bsb",
+      "revision": "5c02be221dc8223682e7f207fcecc5994cf155d5cecf5c35488112294fd2c934",
+      "rows": 31103,
+      "aligned": 0,
+      "unaligned": 31103,
+      "unresolved": 31103,
+      "reasons": {
+        "NOTE_ONLY": 5,
+        "NO_RULE": 28945,
+        "PENDING_REVIEW": 2153
+      }
+    },
+    {
+      "from": "eng-web",
+      "to": "eng-dra",
+      "revision": "1346ad2e574df923511c45f684c766e1b24a7ffdf1662404526db7950fee1835",
+      "rows": 31103,
+      "aligned": 0,
+      "unaligned": 31103,
+      "unresolved": 31103,
+      "reasons": {
+        "NOTE_ONLY": 5,
+        "NO_RULE": 28945,
+        "PENDING_REVIEW": 2153
+      }
+    },
+    {
+      "from": "eng-web",
+      "to": "tel-irv",
+      "revision": "2e2b5a2dc03e6ca4fecef6f341d902969e949916c3db3e03ac94bbeb4a34f310",
+      "rows": 31103,
+      "aligned": 0,
+      "unaligned": 31103,
+      "unresolved": 31103,
+      "reasons": {
+        "NOTE_ONLY": 5,
+        "NO_RULE": 28945,
+        "PENDING_REVIEW": 2153
+      }
+    },
+    {
+      "from": "eng-web",
+      "to": "hin-irv",
+      "revision": "7bf181e7bbeb1d443757c8687e247d0ab9705ad9ac0bb91ac56f31f6693c4a8f",
+      "rows": 31103,
+      "aligned": 0,
+      "unaligned": 31103,
+      "unresolved": 31103,
+      "reasons": {
+        "NOTE_ONLY": 5,
+        "NO_RULE": 28945,
+        "PENDING_REVIEW": 2153
+      }
+    },
+    {
+      "from": "eng-bsb",
+      "to": "eng-web",
+      "revision": "c8e74bd67984b226833353dd5bc7bd43e5def8d170727c7ca8d768c640b44d8c",
+      "rows": 31086,
+      "aligned": 0,
+      "unaligned": 31086,
+      "unresolved": 31086,
+      "reasons": {
+        "NO_RULE": 28949,
+        "PENDING_REVIEW": 2137
+      }
+    },
+    {
+      "from": "eng-bsb",
+      "to": "eng-dra",
+      "revision": "4167e8fc9399e628c6a5178f6292edf12fa43fa95b24137bcab97a76f8c9574f",
+      "rows": 31086,
+      "aligned": 0,
+      "unaligned": 31086,
+      "unresolved": 31086,
+      "reasons": {
+        "NO_RULE": 28949,
+        "PENDING_REVIEW": 2137
+      }
+    },
+    {
+      "from": "eng-bsb",
+      "to": "tel-irv",
+      "revision": "0b55beeec47700cbf2c320150a8f8edc9162164f57626a5bc3e81b32f4e9aa89",
+      "rows": 31086,
+      "aligned": 0,
+      "unaligned": 31086,
+      "unresolved": 31086,
+      "reasons": {
+        "NO_RULE": 28949,
+        "PENDING_REVIEW": 2137
+      }
+    },
+    {
+      "from": "eng-bsb",
+      "to": "hin-irv",
+      "revision": "0cd104fc126f96d45b29308923ab187eb49b0aeb9b8070d38bdbd6580b4892f8",
+      "rows": 31086,
+      "aligned": 0,
+      "unaligned": 31086,
+      "unresolved": 31086,
+      "reasons": {
+        "NO_RULE": 28949,
+        "PENDING_REVIEW": 2137
+      }
+    },
+    {
+      "from": "eng-dra",
+      "to": "eng-web",
+      "revision": "47bc31c09657031ca9d7744720055c2a7c5bf76d020143e4b09ed0bf78eb99d9",
+      "rows": 35811,
+      "aligned": 0,
+      "unaligned": 35811,
+      "unresolved": 31438,
+      "reasons": {
+        "BOOK_OUTSIDE_TARGET_CANON": 4373,
+        "NO_RULE": 28886,
+        "PENDING_REVIEW": 2552
+      }
+    },
+    {
+      "from": "eng-dra",
+      "to": "eng-bsb",
+      "revision": "c87e302f260c3cab8306bf65211084d68a9843cf892e3192c2f66bd0ea7a9fb5",
+      "rows": 35811,
+      "aligned": 0,
+      "unaligned": 35811,
+      "unresolved": 31438,
+      "reasons": {
+        "BOOK_OUTSIDE_TARGET_CANON": 4373,
+        "NO_RULE": 28886,
+        "PENDING_REVIEW": 2552
+      }
+    },
+    {
+      "from": "eng-dra",
+      "to": "tel-irv",
+      "revision": "54c810190987e4b4e8629f540a49cb6f2720d7a287ba151fc73b37f827657076",
+      "rows": 35811,
+      "aligned": 0,
+      "unaligned": 35811,
+      "unresolved": 31438,
+      "reasons": {
+        "BOOK_OUTSIDE_TARGET_CANON": 4373,
+        "NO_RULE": 28886,
+        "PENDING_REVIEW": 2552
+      }
+    },
+    {
+      "from": "eng-dra",
+      "to": "hin-irv",
+      "revision": "e8fff5c44c09bb2034846315fe6bedc1778670934aa2f77ecb024252d7261118",
+      "rows": 35811,
+      "aligned": 0,
+      "unaligned": 35811,
+      "unresolved": 31438,
+      "reasons": {
+        "BOOK_OUTSIDE_TARGET_CANON": 4373,
+        "NO_RULE": 28886,
+        "PENDING_REVIEW": 2552
+      }
+    },
+    {
+      "from": "tel-irv",
+      "to": "eng-web",
+      "revision": "1cb6630e4342ff7e4b7508337263284b08b8c7922f99530a5facb39110a9bfb3",
+      "rows": 31004,
+      "aligned": 0,
+      "unaligned": 31004,
+      "unresolved": 31004,
+      "reasons": {
+        "NO_RULE": 28866,
+        "PENDING_REVIEW": 2138
+      }
+    },
+    {
+      "from": "tel-irv",
+      "to": "eng-bsb",
+      "revision": "c7a9f15b9d54a2cb3072ccbe98402b6c24313b37ad6607b542475e96910483ee",
+      "rows": 31004,
+      "aligned": 0,
+      "unaligned": 31004,
+      "unresolved": 31004,
+      "reasons": {
+        "NO_RULE": 28866,
+        "PENDING_REVIEW": 2138
+      }
+    },
+    {
+      "from": "tel-irv",
+      "to": "eng-dra",
+      "revision": "12820b1e67c3ce0c8548597c078410236f773c031f41a60700ecd21c9525335a",
+      "rows": 31004,
+      "aligned": 0,
+      "unaligned": 31004,
+      "unresolved": 31004,
+      "reasons": {
+        "NO_RULE": 28866,
+        "PENDING_REVIEW": 2138
+      }
+    },
+    {
+      "from": "tel-irv",
+      "to": "hin-irv",
+      "revision": "c6a26ea4978efe4eac750a17e358832ab5cd5583a8454b87fbc9bc87b8616e99",
+      "rows": 31004,
+      "aligned": 0,
+      "unaligned": 31004,
+      "unresolved": 31004,
+      "reasons": {
+        "NO_RULE": 28866,
+        "PENDING_REVIEW": 2138
+      }
+    },
+    {
+      "from": "hin-irv",
+      "to": "eng-web",
+      "revision": "68338640d939393279949707e075d2f80e1a380d36f851865bf59183ac009c2b",
+      "rows": 31104,
+      "aligned": 0,
+      "unaligned": 31104,
+      "unresolved": 31104,
+      "reasons": {
+        "NO_RULE": 28941,
+        "PENDING_REVIEW": 2163
+      }
+    },
+    {
+      "from": "hin-irv",
+      "to": "eng-bsb",
+      "revision": "0a60928369ed7fd176a70cb7f834ce25e5f1c168963c43b7fd425b68fec29f43",
+      "rows": 31104,
+      "aligned": 0,
+      "unaligned": 31104,
+      "unresolved": 31104,
+      "reasons": {
+        "NO_RULE": 28941,
+        "PENDING_REVIEW": 2163
+      }
+    },
+    {
+      "from": "hin-irv",
+      "to": "eng-dra",
+      "revision": "94611af5008ba7c54ac84f3d170e27c60b3278261a74e3cf1c13f8a1d256fff8",
+      "rows": 31104,
+      "aligned": 0,
+      "unaligned": 31104,
+      "unresolved": 31104,
+      "reasons": {
+        "NO_RULE": 28941,
+        "PENDING_REVIEW": 2163
+      }
+    },
+    {
+      "from": "hin-irv",
+      "to": "tel-irv",
+      "revision": "636684b690626e2574ab9ce59155169d289bb8d12004948520cf28302f847eb4",
+      "rows": 31104,
+      "aligned": 0,
+      "unaligned": 31104,
+      "unresolved": 31104,
+      "reasons": {
+        "NO_RULE": 28941,
+        "PENDING_REVIEW": 2163
+      }
+    }
+  ],
+  "v07": "NOT_VERIFIED"
+}

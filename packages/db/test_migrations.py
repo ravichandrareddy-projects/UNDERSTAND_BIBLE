@@ -22,6 +22,24 @@ def check_synthetic_policy():
             ('fixture','commercial','VERIFIED');
         INSERT INTO content.version VALUES ('fixture',repeat('1',64),1,now(),current_date,current_date,
             'notice',repeat('0',64),false);
+        INSERT INTO staging.versification_scheme VALUES (repeat('2',64),'{}','{}',true);
+        INSERT INTO staging.versification_map VALUES (repeat('3',64),repeat('2',64),'fixture',repeat('1',64),
+            repeat('4',64),'TST','1','3-4','bridge',ARRAY['TST.1.3','TST.1.4'],'{"anchor":"fixture"}','editorial',true);
+        DO $$ BEGIN
+          BEGIN
+            INSERT INTO staging.versification_review (claim,decision,reviewer,reviewed_at,receipt,locator)
+                VALUES (repeat('3',64),'APPROVED','',now(),repeat('5',64),'fixture only');
+            RAISE EXCEPTION 'blank reviewer accepted';
+          EXCEPTION WHEN check_violation THEN NULL; END;
+          IF EXISTS (SELECT FROM staging.versification_review) THEN RAISE EXCEPTION 'failed review persisted'; END IF;
+        END $$;
+        INSERT INTO staging.versification_review (claim,decision,reviewer,reviewed_at,receipt,locator)
+          SELECT repeat('3',64),'APPROVED','fixture reviewer',now(),repeat('5',64),'synthetic decision'
+          FROM generate_series(1,2) ON CONFLICT (claim,receipt) DO NOTHING;
+        SELECT count(*) FROM staging.versification_review WHERE decision='APPROVED';
+        INSERT INTO staging.versification_review (claim,decision,reviewer,reviewed_at,receipt,locator)
+          VALUES (repeat('3',64),'REVOKED','fixture reviewer',now(),repeat('6',64),'synthetic revocation');
+        SELECT decision FROM staging.versification_review ORDER BY reviewed_at DESC,sequence DESC LIMIT 1;
         INSERT INTO content.verse VALUES ('fixture',repeat('1',64),'TST','1',1,'3-4','synthetic');
         INSERT INTO content.version_book VALUES ('fixture',repeat('1',64),'XTR',1,1,1),
             ('fixture',repeat('1',64),'TST',2,1,1);
@@ -43,6 +61,8 @@ def check_synthetic_policy():
         SELECT count(*) FROM reader.book_catalogue WHERE edition='fixture';
         ROLLBACK;""")
     assert rows.splitlines() == [
+        "1",
+        "REVOKED",
         "0",
         "3-4",
         "XTR|appendix",
@@ -67,7 +87,7 @@ def check():
         )
     migration("up")
     migration("up")
-    assert db("SELECT count(*) FROM public.ub_migration") == "4"
+    assert db("SELECT count(*) FROM public.ub_migration") == "5"
     assert (
         db("SELECT count(*) FROM pg_partition_tree('content.verse') WHERE isleaf")
         == "2"
@@ -89,7 +109,7 @@ def check():
     )
     migration("up")
     print(
-        "PASS: four migrations up/up/down/up, partitioning, forced RLS, gated verses and edition-specific catalogues"
+        "PASS: five migrations up/up/down/up, partitioning, forced RLS, gated verses and edition-specific catalogues"
     )
 
 

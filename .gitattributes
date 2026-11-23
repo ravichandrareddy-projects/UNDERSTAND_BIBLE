@@ -1,1 +1,2 @@
 /infra/minio/start-minio.sh text eol=lf
+/data/manifests/validation/oc05.json text eol=lf
