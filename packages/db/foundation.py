@@ -13,6 +13,14 @@ import zipfile
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 APPROVED = ("eng-web", "eng-bsb", "eng-dra", "tel-irv", "hin-irv")
+EDITION_CANON = {
+    "eng-web": "protestant",
+    "eng-bsb": "protestant",
+    "eng-dra": "catholic",
+    "tel-irv": "protestant",
+    "hin-irv": "protestant",
+    "eng-kjv": "protestant",
+}
 ACTIONS = "collect store validate_text host display redistribute offline cache index commercial local_retrieval external_ai embed synthesize_speech recorded_audio".split()
 LOCK = "SELECT pg_advisory_xact_lock(7140207);"
 BOOT = """CREATE TABLE IF NOT EXISTS public.ub_migration
@@ -134,23 +142,47 @@ def seed():
     if set(records) != set(APPROVED) | {"eng-kjv"}:
         raise ValueError("rights registry differs from the approved pilot scope")
     stmts = [insert("action", "id", [a], "id") for a in ACTIONS]
-    for canon, model in [("protestant", "eng-web"), ("catholic", "eng-dra")]:
-        stmts += [
-            insert("tradition", "id", [canon], "id"),
-            insert("canon", "id tradition", [canon, canon], "id"),
-        ]
+    profiles = [
+        ("protestant", "eng-web", "Pilot order from WEB."),
+        (
+            "catholic",
+            "eng-dra",
+            "Pilot order from Douay-Rheims, including its integrated additions.",
+        ),
+        (
+            "orthodox-greek",
+            None,
+            "Greek usage. Review Esdras naming, Psalm 151 and appendix treatment against the selected edition.",
+        ),
+        (
+            "orthodox-slavonic",
+            None,
+            "Slavonic usage. Review the edition's Esdras numbering and book order independently of Greek usage.",
+        ),
+    ]
+    for canon, model, description in profiles:
+        stmts.append(insert("tradition", "id", [canon], "id"))
+        if model is None:
+            # Reserve each profile without overwriting a later reviewed Orthodox definition.
+            stmts.append(
+                f"INSERT INTO content.canon (id,tradition,description) VALUES ({q(canon)},{q(canon)},{q(description)}) ON CONFLICT (id) DO NOTHING;"
+            )
+            continue
+        stmts.append(
+            insert(
+                "canon",
+                "id tradition definition_status description",
+                [canon, canon, "edition_sourced", description],
+                "id",
+            )
+        )
+        stmts.append(f"DELETE FROM content.canon_book WHERE canon={q(canon)};")
         stmts.extend(
             insert("canon_book", "canon ordinal book", [canon, i, b], "canon ordinal")
             for i, b in enumerate(records[model]["book_order"], 1)
         )
     for id, r in records.items():
-        canon = "catholic" if id == "eng-dra" else "protestant"
-        if (
-            id in APPROVED
-            and r["book_order"]
-            != records["eng-dra" if id == "eng-dra" else "eng-web"]["book_order"]
-        ):
-            raise ValueError("edition requires its own canon order")
+        canon = EDITION_CANON[id]
         lang = {"eng": "en", "tel": "te", "hin": "hi"}[id.split("-")[0]]
         stmts += [
             insert(
@@ -228,6 +260,24 @@ def seed():
                     "edition checksum",
                 )
             )
+            inventory = m["inventory"]
+            order = inventory["books_in_source_index_order"]
+            counts = inventory["chapter_verse_marker_counts"]
+            if order != r["book_order"] or set(order) != set(counts):
+                raise ValueError("version coverage differs from its edition receipt")
+            stmts.append(
+                f"DELETE FROM content.version_book WHERE edition={q(id)} AND checksum={q(m['sha256'])};"
+            )
+            for ordinal, book in enumerate(order, 1):
+                chapters = counts[book]
+                stmts.append(
+                    insert(
+                        "version_book",
+                        "edition checksum book source_order chapter_count verse_rows",
+                        [id, m["sha256"], book, ordinal, len(chapters), sum(chapters)],
+                        "edition checksum book",
+                    )
+                )
     db(tx("\n".join(stmts)))
 
 

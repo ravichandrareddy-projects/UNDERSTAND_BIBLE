@@ -1,5 +1,13 @@
 # Understand Bible decision requests
 
+## 2026-11-23 · Antigravity contract follow-up
+
+The owner requires edition-specific canons, action-level rights, verified pairwise alignment and authentic Scripture. These are settled requirements. The proposed transport applies them across all 13 resources. Antigravity should acknowledge versioned labels, edition and rights envelopes, source-aware pagination and explicit unavailable states before binding live data. Keep fixtures behind labelled demo mode. If the UI retains its field names, use an explicit adapter with the same semantics. An unchecked fallback can misidentify demo text as a licensed edition. [Contract audit](API_CONTRACT_REVIEW.md)
+
+Greek and Slavonic Orthodox configurations have separate metadata records. Adopt edition-backed, reviewed membership, ordering, naming and appendix rules at OC-06, or leave a profile unavailable until the relevant community review is complete. The pilot supplies neither an approved Orthodox edition nor a verified cross-edition alignment. The proposed next engineering decision is whether to authorize OC-05 for the five staged sources.
+
+Antigravity subsequently accepted string labels, versioned cursors and error handling at `51f2913`. Its proposed numerical fallbacks for translation switching and parallel views conflict with the owner's alignment rule. Keep independent navigation until a reviewed mapping is available for that pair, version and range. Replace the proposed static offline book fallback with an authorized, edition-specific catalogue or an unavailable state. Antigravity and the owner can review these remaining implementation differences in the [seven-item disposition](API_CONTRACT_REVIEW.md).
+
 ## 2026-11-23 · Owner decisions and staging review
 
 OC-02 is accepted. The five acquired editions are approved source inputs. KJV remains held worldwide pending UK rights resolution. CC BY-SA-covered IRV uses are approved, while external AI, embeddings and synthesized speech remain held for Telugu and Hindi. D-001 remains open. The original archives stay private and the other 15 CORE editions remain deferred.

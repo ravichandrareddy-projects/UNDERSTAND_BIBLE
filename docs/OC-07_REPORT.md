@@ -31,3 +31,28 @@ The owner approved CC BY-SA-covered uses for the IRVs. The separate external AI,
 The local review cluster persists under ignored `.local/oc07/cluster`. To reopen it on this workstation, run `& .local/oc07/pgsql/bin/pg_ctl.exe -D .local/oc07/cluster -l .local/oc07/server.log -o "-h 127.0.0.1 -p 55437" -w start` from the workspace. Use database `postgres` and the local administrative account `ub_owner` for the verification scripts. Stop it with `& .local/oc07/pgsql/bin/pg_ctl.exe -D .local/oc07/cluster -m fast -w stop`. Secrets and cluster files are ignored by Git.
 
 Antigravity's `7ca0d22` handoff arrived during the work. Codex accepts its browser route names and mapped them to the planned service resources. Source-label strings, content versions, pagination and DRA coverage require frontend acknowledgement. The public Fastify contract still exposes only health. Next decision is review of the database/staging evidence and contract changes before alignment or publication.
+
+## 2026-11-23 · Antigravity contract and edition catalogue follow-up
+
+`git pull --ff-only origin main` reported “Already up to date.” The remote tip was Antigravity's `7ca0d22`, already an ancestor of the local database and parser checkpoint `7aa19c3`. Antigravity later committed its reader acknowledgement at `51f2913`. The updated branch includes that commit, and the audit addresses all seven items. The UI handoff, checklist and frontend components were inspected read-only. The [method and TypeScript review](API_CONTRACT_REVIEW.md) records fields, incorrect assumptions, dependencies and the fixture fallback for all 13 resources.
+
+Migration 004 adds private per-version source book coverage and the gated `reader.book_catalogue` view. The seed now uses each named edition's own verified source order for its version, independent of its tradition. Protestant and Catholic profiles carry edition-sourced order. Greek and Slavonic Orthodox profiles are separate, metadata-only entries until reviewed definitions exist. A later reviewed profile is preserved on reseed. An alternate canon can include unavailable books with unknown counts. The typed query returns the catalogue and display rights in one SQL statement. [Migration](../packages/db/migrations/004_edition_catalogue.up.sql) · [Typed queries](../packages/db/reader.ts) · [Wire types](../packages/contracts/reader.ts)
+
+| Check run in this phase | Observed result |
+| --- | --- |
+| `python -B packages/db/foundation.py up` and `seed` twice | PostgreSQL 17.12, four migrations and 337 source-version/book rows. Seeding retained six edition records, five versions and 90 action decisions. |
+| `python -B packages/db/test_migrations.py` | Fresh disposable cluster passed up/up/down/up, partitions, forced RLS, source order differing from canon order, appendix status, unavailable membership and rights revocation. |
+| `python -B packages/db/test_rights.py` | All five catalogues matched their manifests book by book. A temporary transaction showed 73 DRA books, 66 Telugu IRV books, seven unavailable Catholic books for Telugu and zero Orthodox catalogue rows. KJV, IRV action holds, unpublished state, missing evidence and revoked grants passed. |
+| `node packages/db/test_reader_queries.mjs` | Actual TypeScript queries passed against the local server. The first call required a Windows process permission retry. The psql test adapter was corrected to read multiline PostgreSQL JSON. The final run checked identity, rights, attribution, native and alternate canons, wrong-version and held-edition denials. |
+| `node node_modules/vitest/vitest.mjs run` in `apps/api` | Nine tests passed. Health was available. Held and unpublished resources returned HTTP 404 without a verse payload. |
+| Backend lint, formatting and typechecks | See the phase verification commands below. |
+
+Both test clusters run only on loopback. The disposable rollback test uses a different cluster from the five staged sources. No public endpoint or mapping service was enabled. The only remote operation in this phase was the requested GitHub pull. Existing local PostgreSQL and development tools were reused.
+
+Phase verification commands passed locally:
+
+- `ruff format` on the three changed Python files and `ruff check --no-cache packages/db packages/ingest/parse packages/ingest/recheck.py`.
+- `node node_modules/prettier/bin/prettier.cjs --check` on the changed TypeScript, JavaScript and maintained supporting Markdown.
+- `node node_modules/eslint/bin/eslint.js apps/api packages/db/reader.ts packages/db/test_reader_queries.mjs packages/contracts/reader.ts --max-warnings=0`.
+- `node node_modules/typescript/bin/tsc --noEmit -p apps/api/tsconfig.json` and `node node_modules/typescript/bin/tsc --noEmit --strict --module nodenext --target es2022 --skipLibCheck packages/db/reader.ts packages/contracts/reader.ts`.
+- A local coverage comparison matched all 23 interface declarations and all 15 method/path combinations in the 13 Antigravity resources to the audit. The staging validation JSON and frontend-owned paths had no diff.

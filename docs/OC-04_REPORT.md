@@ -44,3 +44,11 @@ Both values are retained with distinct meanings. The registry uses the archived 
 4. The original ZIPs and private ledgers stay under ignored `data/sources/bible-texts/`. [Archive manifests and original hashes](../data/manifests/bible) · [Parser and verifier](../packages/ingest/parse)
 
 The database received only the five approved editions. All parsing and verification ran locally. No additional editions or audio were acquired. Owner review precedes OC-05 alignment, production seeding or reader publication.
+
+## 2026-11-23 · Independent revalidation during API contract review
+
+The existing staged imports at `7aa19c3` were revalidated in place. `python -B packages/ingest/pilot.py verify eng-web eng-bsb eng-dra tel-irv hin-irv` rechecked each original ZIP and member, rights receipt and per-chapter inventory. `python -B packages/ingest/parse/validate_staging.py` read back all five editions from live PostgreSQL against their individual source spans, USJ, exact text hashes and annotation projections. It reproduced the checked-in [validation receipt](../data/manifests/validation/oc04.json) without a diff.
+
+The separate totals were WEB 31,103, BSB 31,086, Douay-Rheims 35,811, Telugu IRV 31,004 and Hindi IRV 31,104. All 88 Telugu bridges retain their printed labels, all 16 internal BSB gaps retain their adjacent notes, and DRA retains all seven additional books. Local source addresses remain edition- and version-specific. No cross-edition alignment has been certified. Linked parallel reading depends on OC-05's reviewed mappings.
+
+`python -B packages/ingest/parse/test_usfm.py -v` passed four parser tests. `python -B packages/ingest/test_pilot.py -v` passed eight source-gate tests. This phase used the five existing archives and staged versions. It made no new imports, production inserts or requests to Scripture publishers. [Contract corrections](API_CONTRACT_REVIEW.md)

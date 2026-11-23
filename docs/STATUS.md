@@ -1,5 +1,9 @@
 # Understand Bible status
 
+## 2026-11-23 · Antigravity contract review and catalogue verification
+
+The fast-forward-only pull confirmed that Antigravity's `7ca0d22` is integrated. Codex reviewed all 13 browser resources, 15 method/path combinations and 23 named interfaces. The fourth database migration separates edition-version coverage from canon membership. Live PostgreSQL tests confirmed 337 version/book records, native 66/73-book catalogues, explicit alternate-canon gaps and isolation of metadata-only Orthodox profiles. Every one of the 160,108 staged verse rows was checked again against its private ledger. Production and publication counts remain zero. Antigravity's follow-up at `51f2913` accepts labels, cursors and error semantics. Its proposed numeric alignment and static offline fallback require correction before reader integration. [Contract audit](API_CONTRACT_REVIEW.md) · [Database report](OC-07_REPORT.md) · [Staging report](OC-04_REPORT.md)
+
 ## 2026-11-23 · OC-02 accepted, OC-07 and OC-04 ready for owner review
 
 The owner accepted the five source editions and retained the KJV and IRV derivative-use holds. A live local PostgreSQL 17.12 rights registry passed its seed, migration and role checks before parsing. Private staging contains 160,108 verified verse rows across 337 canonical book instances and 6,090 chapters. Zero editions are published. Antigravity's browser routes have a documented service mapping. Label, pagination and position changes await joint review. [OC-07 database report](OC-07_REPORT.md) · [OC-04 parsing report](OC-04_REPORT.md) · [Reader contract](../packages/contracts/reader-proposal.md)

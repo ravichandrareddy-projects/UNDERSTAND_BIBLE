@@ -1,6 +1,7 @@
 /** Proposed reader wire types. Edition IDs and source labels are opaque strings. */
 export interface Translation {
   id: string;
+  rights: { action: 'display'; status: 'VERIFIED' };
   title: string;
   language: string;
   canon: string;
@@ -12,12 +13,30 @@ export interface Translation {
   evidenceUrls: string[];
 }
 
-export interface ReaderBook {
+/** The selected canon can include books for which this archive has no text. */
+export interface CatalogueEntry {
   book: string;
   ordinal: number;
+  sourceOrder: number | null;
+  available: boolean;
+  membership: 'member' | 'appendix' | null;
+  chapterCount: number | null;
+  verseRows: number | null;
+}
+
+export interface BookCatalogue<Book extends CatalogueEntry = ReaderBook> {
+  translation: Translation;
+  selectedCanon: string;
+  books: Book[];
+}
+
+export interface ReaderBook extends CatalogueEntry {
   name: string;
   nameLanguage: string;
-  chapters: string[];
+  testament?: 'OT' | 'NT';
+  /** Reviewed picker section for the selected tradition, including deuterocanonical material. */
+  section?: string;
+  chapters: string[] | null;
 }
 
 export interface ReaderVerse {
@@ -52,3 +71,16 @@ export interface ReadingPosition {
   scrollFraction: number;
   updatedAt: string;
 }
+
+export interface ReadingPositionResponse {
+  translation: Translation;
+  position: ReadingPosition;
+}
+
+/** The server assigns updatedAt. Initial writes default scrollFraction to zero. */
+export type ReadingPositionInput = Omit<
+  ReadingPosition,
+  'updatedAt' | 'scrollFraction'
+> & {
+  scrollFraction?: number;
+};

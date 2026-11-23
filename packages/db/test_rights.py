@@ -1,6 +1,6 @@
 """Integration assertions. Requires a seeded PostgreSQL database; synthetic changes roll back."""
 
-from foundation import APPROVED, db
+from foundation import APPROVED, db, manifest
 
 
 def run():
@@ -10,6 +10,26 @@ def run():
     assert db("SELECT count(*) FROM reader.translations") == "0"
     for edition in APPROVED:
         assert db(f"SELECT content.allowed('{edition}','validate_text')") == "t"
+        m = manifest(edition)
+        order = m["inventory"]["books_in_source_index_order"]
+        counts = m["inventory"]["chapter_verse_marker_counts"]
+        expected = [f"{book}|{len(counts[book])}|{sum(counts[book])}" for book in order]
+        rows = db(f"""SELECT book,chapter_count,verse_rows FROM content.version_book
+                    WHERE edition='{edition}' AND checksum='{m["sha256"]}' ORDER BY source_order""")
+        assert rows.splitlines() == expected, edition
+    assert (
+        db("SELECT count(*) FROM content.version_book WHERE edition='eng-kjv'") == "0"
+    )
+    assert db("SELECT count(*) FROM reader.book_catalogue") == "0"
+    catalogues = db("""BEGIN;
+        UPDATE content.version SET published=true WHERE edition IN ('eng-dra','tel-irv');
+        SET LOCAL ROLE ub_reader;
+        SELECT count(*) FROM reader.book_catalogue WHERE edition='eng-dra' AND selected_canon='catholic';
+        SELECT count(*) FROM reader.book_catalogue WHERE edition='tel-irv' AND selected_canon='protestant';
+        SELECT count(*) FROM reader.book_catalogue WHERE edition='tel-irv' AND selected_canon='catholic' AND NOT available;
+        SELECT count(*) FROM reader.book_catalogue WHERE selected_canon IN ('orthodox-greek','orthodox-slavonic');
+        ROLLBACK;""")
+    assert catalogues.splitlines() == ["73", "66", "7", "0"], catalogues
     assert (
         db("""SELECT count(*) FROM content.permission WHERE
         (edition='eng-kjv' OR (edition IN ('tel-irv','hin-irv') AND action IN

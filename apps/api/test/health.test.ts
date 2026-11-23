@@ -8,12 +8,17 @@ afterAll(() => app.close());
 
 it.each([
   '/api/v1/editions',
+  '/api/v1/bible/books?editionId=eng-dra',
   '/api/v1/bible/text?editionId=eng-kjv&bookId=GEN&chapter=1',
+  '/api/v1/bible/text?editionId=tel-irv&bookId=DEU&chapter=1&action=external_ai',
+  '/api/v1/understand/chapter?editionId=hin-irv&chapter=GEN.1',
+  '/v1/parallel?left=tel-irv&right=eng-web&book=DEU&ch=1',
   '/v1/editions/tel-irv/chapters/GEN.1?action=collect',
   '/data/sources/bible-texts/staging',
 ])('keeps unpublished reader resources inaccessible at %s', async (url) => {
   const response = await app.inject({ method: 'GET', url });
   expect(response.statusCode).toBe(404);
+  expect(response.json()).not.toHaveProperty('verses');
 });
 
 it('serves the documented liveness response without external services', async () => {
