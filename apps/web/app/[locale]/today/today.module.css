@@ -1,0 +1,659 @@
+.dashboardContainer {
+  padding: 0 var(--space-8) var(--space-8);
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Two-column layout: Left Main (flex: 1.8), Right Sidebar (flex: 1) */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ============================================================
+   1. HERO CARD (Verse of the Day)
+   ============================================================ */
+.heroCard {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-color: #f8f5eb;
+  border: 1px solid #ebe4d5;
+  box-shadow: 0 4px 20px rgba(41, 43, 40, 0.05);
+  min-height: 270px;
+  display: flex;
+  align-items: center;
+}
+
+.heroArtwork {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+[dir='rtl'] .heroArtwork {
+  right: auto;
+  left: 0;
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: right center;
+}
+
+[dir='rtl'] .heroImg {
+  object-position: left center;
+}
+
+.heroArtOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #f8f5eb 0%,
+    rgba(248, 245, 235, 0.8) 12%,
+    rgba(248, 245, 235, 0.15) 30%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+[dir='rtl'] .heroArtOverlay {
+  background: linear-gradient(
+    to left,
+    #f8f5eb 0%,
+    rgba(248, 245, 235, 0.8) 12%,
+    rgba(248, 245, 235, 0.15) 30%,
+    transparent 55%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 440px;
+  padding: 32px 36px;
+}
+
+.quoteMark {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 0.75;
+  color: #c5a15a;
+  margin-bottom: 8px;
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #292b28;
+  line-height: 1.35;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.quoteRefRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.quoteDash {
+  width: 20px;
+  height: 1.5px;
+  background-color: #c5a15a;
+  border-radius: 1px;
+}
+
+.quoteRef {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #292b28;
+  font-style: normal;
+}
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #183d32;
+  color: #ffffff;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(24, 61, 50, 0.2);
+}
+
+.heroButton:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   2. SECTION HEADERS
+   ============================================================ */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #292b28;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viewAllLink {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #71716a;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition-fast);
+}
+
+.viewAllLink:hover {
+  color: #183d32;
+}
+
+/* ============================================================
+   3. CONTINUE READING CARD
+   ============================================================ */
+.continueCard {
+  background: #faf8f3;
+  border: 1px solid #ebe4d5;
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 2px 8px rgba(41, 43, 40, 0.03);
+  transition: all var(--transition-fast);
+}
+
+.continueCard:hover {
+  box-shadow: 0 4px 12px rgba(41, 43, 40, 0.06);
+  border-color: #c5a15a;
+}
+
+.continueThumb {
+  width: 96px;
+  height: 74px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  background-color: #d8d2c4;
+}
+
+.continueInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.continueBook {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #292b28;
+  margin-bottom: 2px;
+}
+
+.continueChapter {
+  font-size: 13px;
+  color: #71716a;
+  margin-bottom: 10px;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progressBarTrack {
+  flex: 1;
+  height: 6px;
+  background-color: #e5e0d3;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: #183d32;
+  border-radius: 9999px;
+}
+
+.progressPercent {
+  font-size: 12px;
+  font-weight: 600;
+  color: #71716a;
+}
+
+.continueButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background-color: #183d32;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.continueButton:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ============================================================
+   4. DISCOVER SECTION (3 Cards)
+   ============================================================ */
+.discoverGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .discoverGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.discoverCard {
+  background: #faf8f3;
+  border: 1px solid #ebe4d5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(41, 43, 40, 0.03);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.discoverCard:hover {
+  box-shadow: 0 4px 14px rgba(41, 43, 40, 0.08);
+  border-color: #c5a15a;
+  transform: translateY(-2px);
+}
+
+.discoverThumb {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: #d8d2c4;
+  overflow: hidden;
+}
+
+.discoverBody {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.discoverTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.discoverCardTitle {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #292b28;
+}
+
+.discoverArrow {
+  color: #71716a;
+  transition: transform var(--transition-fast);
+}
+
+.discoverCard:hover .discoverArrow {
+  color: #183d32;
+  transform: translateX(2px);
+}
+
+[dir='rtl'] .discoverCard:hover .discoverArrow {
+  transform: translateX(-2px);
+}
+
+.discoverCardDesc {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #71716a;
+  margin: 0;
+}
+
+/* ============================================================
+   5. RIGHT COLUMN: TODAY'S READING
+   ============================================================ */
+.readingCard {
+  position: relative;
+  background: #faf8f3;
+  border: 1px solid #ebe4d5;
+  border-radius: 16px;
+  padding: 22px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(41, 43, 40, 0.04);
+}
+
+.readingCardHeaderImg {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  width: 120px;
+  height: 60px;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+[dir='rtl'] .readingCardHeaderImg {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.readingCardContent {
+  position: relative;
+  z-index: 2;
+}
+
+.readingHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #292b28;
+  margin-bottom: 12px;
+}
+
+.readingCardHeading {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.readingCardTop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: 8px;
+}
+
+.readingBadge {
+  display: inline-block;
+  background-color: #efe8d6;
+  color: #8b7038;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.planTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #292b28;
+  margin-bottom: 16px;
+}
+
+.readingDetailsList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #ebe4d5;
+  margin-bottom: 18px;
+}
+
+.readingDetailItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ebe4d5;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #292b28;
+}
+
+.readingDetailItem svg {
+  color: #71716a;
+  flex-shrink: 0;
+}
+
+.startReadingBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px;
+  background-color: #183d32;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.startReadingBtn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ============================================================
+   6. RIGHT COLUMN: READING PROGRESS
+   ============================================================ */
+.progressCard {
+  background: #faf8f3;
+  border: 1px solid #ebe4d5;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(41, 43, 40, 0.04);
+}
+
+.progressHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.progressCardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #292b28;
+}
+
+.progressSubtitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #292b28;
+  margin-bottom: 16px;
+}
+
+.weekDaysRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dayCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.dayCircle {
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.dayCircleChecked {
+  background-color: #183d32;
+}
+
+.dayCircleEmpty {
+  border: 1.5px solid #d5cebe;
+  background-color: transparent;
+}
+
+.dayLabel {
+  font-size: 11px;
+  color: #71716a;
+}
+
+.progressStatRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #292b28;
+  margin-bottom: 12px;
+}
+
+.statLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #292b28;
+}
+
+.statLeft svg {
+  color: #71716a;
+}
+
+.statRight {
+  font-weight: 700;
+  color: #292b28;
+}
+
+/* ============================================================
+   7. DESIGN COLOUR PALETTE FOOTER BAR
+   ============================================================ */
+.paletteBar {
+  background: #faf8f3;
+  border: 1px solid #ebe4d5;
+  border-radius: 12px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(41, 43, 40, 0.03);
+}
+
+.paletteTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #292b28;
+}
+
+.swatchGroup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.swatchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.swatchColor {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.swatchText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.swatchName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #292b28;
+}
+
+.swatchHex {
+  font-size: 11px;
+  font-weight: 500;
+  color: #71716a;
+}
+
+.swatchRole {
+  font-size: 10px;
+  color: #9a988f;
+}

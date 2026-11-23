@@ -1,0 +1,25 @@
+.header {
+  padding: var(--space-6) var(--space-4);
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-block-end: var(--space-2);
+}
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+@media (min-width: 768px) {
+  .header {
+    padding: var(--space-8) var(--space-6);
+  }
+  .title {
+    font-size: var(--text-3xl);
+  }
+}

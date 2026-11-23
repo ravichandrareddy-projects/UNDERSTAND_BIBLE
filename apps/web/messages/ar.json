@@ -1,0 +1,220 @@
+{
+  "app": {
+    "name": "فهم الكتاب المقدس",
+    "tagline": "اقرأ. افهم. انمُ."
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "today": "اليوم",
+    "read": "اقرأ الكتاب المقدس",
+    "understand": "افهم",
+    "discover": "اكتشف",
+    "vamsavali": "سلاسل الأنساب",
+    "geography": "الجغرافيا",
+    "plans": "خطط القراءة",
+    "bookmarks": "الإشارات المرجعية",
+    "settings": "الإعدادات",
+    "library": "المكتبة",
+    "search": "ابحث",
+    "explore": "استكشف"
+  },
+  "header": {
+    "greeting": "صباح الخير",
+    "date": "الإثنين، ٢٣ نوفمبر ٢٠٢٦"
+  },
+  "hero": {
+    "quote": "سِرَاجٌ لِرِجْلِي كَلَامُكَ وَنُورٌ لِسَبِيلِي.",
+    "reference": "مزمور ١١٩: ١٠٥",
+    "readPassage": "اقرأ نص اليوم"
+  },
+  "continueReading": {
+    "title": "تابع القراءة",
+    "viewAll": "عرض الكل",
+    "bookTitle": "الإنجيل بحسب يوحنا",
+    "chapterProgress": "الإصحاح ٣ من ٢١",
+    "progressPercent": "١٤٪",
+    "continue": "متابعة"
+  },
+  "todaysReading": {
+    "title": "قراءة اليوم",
+    "dayBadge": "اليوم ١٢ من ٣٠",
+    "planTitle": "حياة يسوع",
+    "passage": "يوحنا ٣ – ٤",
+    "keyTheme": "الموضوع الرئيسي: حياة جديدة في المسيح",
+    "duration": "نحو ١٥ دقيقة",
+    "startButton": "ابدأ قراءة اليوم"
+  },
+  "readingProgress": {
+    "title": "تقدم القراءة",
+    "subtitle": "٤ أيام هذا الأسبوع",
+    "thisWeek": "هذا الأسبوع",
+    "weekRatio": "٤ / ٧ أيام",
+    "overall": "التقدم الإجمالي",
+    "overallPercent": "١٢٪",
+    "days": {
+      "mon": "إثن",
+      "tue": "ثلا",
+      "wed": "أرب",
+      "thu": "خمي",
+      "fri": "جمع",
+      "sat": "سبت",
+      "sun": "أحد"
+    }
+  },
+  "discover": {
+    "title": "اكتشف",
+    "exploreAll": "استكشف الكل",
+    "peopleTitle": "شخصيات الكتاب المقدس",
+    "peopleDesc": "استكشف حيوات وإيمان ودروس الشخصيات الرئيسية.",
+    "placesTitle": "الأماكن والجغرافيا",
+    "placesDesc": "اكتشف أراضي ومدن والمواقع الرئيسية في الكتاب المقدس.",
+    "themesTitle": "المواضيع والتعاليم",
+    "themesDesc": "ادرس أهم المواضيع والتعاليم وخطة الله عبر الأسفار."
+  },
+  "paletteBar": {
+    "title": "لوحة الألوان المعتمدة للتصميم",
+    "warmIvory": "عاجي دافئ",
+    "warmIvoryHex": "#F7F4EA",
+    "warmIvoryRole": "الخلفية",
+    "forestGreen": "أخضر غابي",
+    "forestGreenHex": "#183D32",
+    "forestGreenRole": "أساسي",
+    "mutedGold": "ذهبي هادئ",
+    "mutedGoldHex": "#C5A15A",
+    "mutedGoldRole": "تمييز",
+    "ink": "حبري",
+    "inkHex": "#292B28",
+    "inkRole": "النص",
+    "sand": "رملي",
+    "sandHex": "#E5E0D3",
+    "sandRole": "سطح ثانوي"
+  },
+  "welcome": {
+    "title": "مرحباً في فهم الكتاب المقدس",
+    "subtitle": "مساحة هادئة لقراءة الكتاب المقدس وفهمه",
+    "chooseLanguage": "اختر لغتك",
+    "getStarted": "ابدأ",
+    "continueWith": "تابع بـ {language}"
+  },
+  "onboarding": {
+    "title": "إعداد القراءة",
+    "tradition": "اختر تقليدك",
+    "traditionDesc": "يحدد هذا الكتب التي تظهر في كتابك المقدس",
+    "protestant": "بروتستانتي",
+    "catholic": "كاثوليكي",
+    "orthodox": "أرثوذكسي شرقي",
+    "edition": "اختر كتابك المقدس",
+    "editionDesc": "اختر ترجمة رئيسية",
+    "parallel": "اقرأ جنباً إلى جنب",
+    "parallelDesc": "أضف ترجمة ثانية للمقارنة",
+    "skip": "تخطَّ الآن",
+    "next": "التالي",
+    "finish": "ابدأ القراءة"
+  },
+  "today": {
+    "title": "اليوم",
+    "continueReading": "تابع القراءة",
+    "startReading": "ابدأ القراءة",
+    "startReadingDesc": "ابدأ رحلتك مع تكوين ١",
+    "verseOfDay": "آية اليوم",
+    "recentHighlights": "التمييزات الأخيرة",
+    "noHighlights": "ستظهر تمييزاتك هنا",
+    "readingPlan": "قراءة اليوم"
+  },
+  "reader": {
+    "title": "القارئ",
+    "loading": "جارٍ تحميل الإصحاح...",
+    "placeholder": "[سيظهر نص الكتاب المقدس هنا عند اتصال الطبعات عبر واجهة برمجة التطبيقات]",
+    "placeholderNote": "هذا عنصر نائب. سيتم تحميل النص الفعلي من الطبعات المرخصة عبر واجهة برمجة التطبيقات.",
+    "nextChapter": "الإصحاح التالي",
+    "prevChapter": "الإصحاح السابق",
+    "understand": "افهم",
+    "parallel": "متوازٍ",
+    "bookChapter": "الكتاب والإصحاح",
+    "verseActions": "إجراءات الآية",
+    "highlight": "تمييز",
+    "bookmark": "إشارة مرجعية",
+    "note": "إضافة ملاحظة",
+    "copy": "نسخ",
+    "share": "مشاركة",
+    "creditLine": "سيظهر إسناد الطبعة هنا"
+  },
+  "bookPicker": {
+    "title": "الكتب",
+    "search": "ابحث عن كتب...",
+    "oldTestament": "العهد القديم",
+    "newTestament": "العهد الجديد",
+    "deuterocanon": "الأسفار القانونية الثانية",
+    "notInEdition": "غير موجود في هذه الطبعة",
+    "chapters": "الإصحاحات"
+  },
+  "search": {
+    "title": "الباحث عن الآيات",
+    "placeholder": "ابحث عن آية أو موضوع...",
+    "examples": "جرّب: \"المحبة تتأنى\"، \"يوحنا ٣:١٦\"",
+    "noResults": "لم يُعثر على تطابق قريب. جرّب كلمات أخرى أو ابحث بمرجع.",
+    "filters": "عوامل التصفية",
+    "results": "{count, plural, =0 {لا نتائج} =1 {نتيجة واحدة} other {# نتائج}}"
+  },
+  "understand": {
+    "title": "افهم",
+    "quick": "مختصر",
+    "detailed": "مفصّل",
+    "loading": "جارٍ تحميل الشرح...",
+    "placeholder": "ستظهر شروحات الإصحاح هنا عندما تتوفر واجهة برمجة تطبيقات الفهم.",
+    "reviewed": "تمت المراجعة",
+    "aiDrafted": "مسودة ذكاء اصطناعي، تم التحقق تلقائياً",
+    "reportProblem": "الإبلاغ عن مشكلة",
+    "readChapter": "اقرأ الإصحاح"
+  },
+  "explore": {
+    "title": "استكشف",
+    "people": "الأشخاص",
+    "peopleDesc": "اكتشف الأشخاص المذكورين في الكتاب المقدس",
+    "vamsavali": "سلاسل الأنساب",
+    "vamsavaliDesc": "استكشف شجرات العائلة والأنساب",
+    "geography": "الجغرافيا",
+    "geographyDesc": "الأماكن الكتابية وأهميتها",
+    "timeline": "الجدول الزمني",
+    "timelineDesc": "الأحداث في سياقها التاريخي"
+  },
+  "plans": {
+    "title": "خطط القراءة",
+    "myPlans": "خططي",
+    "browse": "تصفح الخطط",
+    "custom": "خطة مخصصة",
+    "noPlans": "لا توجد خطط نشطة بعد",
+    "startPlan": "ابدأ خطة",
+    "progress": "التقدم"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "language": "اللغة",
+    "tradition": "التقليد",
+    "theme": "المظهر",
+    "light": "فاتح",
+    "dark": "داكن",
+    "sepia": "بني داكن",
+    "textSize": "حجم النص",
+    "lineSpacing": "تباعد الأسطر",
+    "font": "الخط",
+    "serif": "بخطوط ذيلية",
+    "sansSerif": "بدون خطوط ذيلية",
+    "verseNumbers": "أرقام الآيات",
+    "notifications": "الإشعارات",
+    "offlineDownloads": "التنزيلات للاستخدام دون إنترنت",
+    "privacy": "الخصوصية",
+    "about": "حول"
+  },
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "error": "حدث خطأ ما",
+    "retry": "حاول مجدداً",
+    "back": "رجوع",
+    "close": "إغلاق",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "offline": "أنت غير متصل بالإنترنت",
+    "installApp": "تثبيت التطبيق"
+  }
+}

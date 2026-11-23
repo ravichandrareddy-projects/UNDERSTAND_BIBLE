@@ -1,0 +1,220 @@
+{
+  "app": {
+    "name": "UNDERSTAND BIBLE",
+    "tagline": "Read. Understand. Grow."
+  },
+  "nav": {
+    "home": "Home",
+    "today": "Today",
+    "read": "Read Bible",
+    "understand": "Understand",
+    "discover": "Discover",
+    "vamsavali": "Vamsavali (Genealogy)",
+    "geography": "Geography",
+    "plans": "Reading Plans",
+    "bookmarks": "Bookmarks",
+    "settings": "Settings",
+    "library": "Library",
+    "search": "Search",
+    "explore": "Explore"
+  },
+  "header": {
+    "greeting": "Good morning",
+    "date": "Monday, November 23, 2026"
+  },
+  "hero": {
+    "quote": "Your word is a lamp to my feet and a light to my path.",
+    "reference": "Psalm 119:105",
+    "readPassage": "Read today's passage"
+  },
+  "continueReading": {
+    "title": "Continue Reading",
+    "viewAll": "View All",
+    "bookTitle": "The Gospel According to John",
+    "chapterProgress": "Chapter 3 of 21",
+    "progressPercent": "14%",
+    "continue": "Continue"
+  },
+  "todaysReading": {
+    "title": "Today's Reading",
+    "dayBadge": "Day 12 of 30",
+    "planTitle": "The Life of Jesus",
+    "passage": "John 3 – 4",
+    "keyTheme": "Key Theme: New Life in Christ",
+    "duration": "~ 15 minutes",
+    "startButton": "Start Today's Reading"
+  },
+  "readingProgress": {
+    "title": "Reading Progress",
+    "subtitle": "4 days this week",
+    "thisWeek": "This Week",
+    "weekRatio": "4 / 7 days",
+    "overall": "Overall Progress",
+    "overallPercent": "12%",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    }
+  },
+  "discover": {
+    "title": "Discover",
+    "exploreAll": "Explore All",
+    "peopleTitle": "People of the Bible",
+    "peopleDesc": "Explore the lives, faith and lessons of key people.",
+    "placesTitle": "Places & Geography",
+    "placesDesc": "Discover the lands, cities and key locations of the Bible.",
+    "themesTitle": "Themes & Topics",
+    "themesDesc": "Study major themes, teachings and God's plan across Scripture."
+  },
+  "paletteBar": {
+    "title": "Design Colour Palette (Approved)",
+    "warmIvory": "Warm Ivory",
+    "warmIvoryHex": "#F7F4EA",
+    "warmIvoryRole": "Background",
+    "forestGreen": "Forest Green",
+    "forestGreenHex": "#183D32",
+    "forestGreenRole": "Primary",
+    "mutedGold": "Muted Gold",
+    "mutedGoldHex": "#C5A15A",
+    "mutedGoldRole": "Accent",
+    "ink": "Ink",
+    "inkHex": "#292B28",
+    "inkRole": "Text",
+    "sand": "Sand",
+    "sandHex": "#E5E0D3",
+    "sandRole": "Secondary Surface"
+  },
+  "welcome": {
+    "title": "Welcome to Understand Bible",
+    "subtitle": "A peaceful space for reading and understanding Scripture",
+    "chooseLanguage": "Choose your language",
+    "getStarted": "Get Started",
+    "continueWith": "Continue with {language}"
+  },
+  "onboarding": {
+    "title": "Set up your reading",
+    "tradition": "Choose your tradition",
+    "traditionDesc": "This determines which books appear in your Bible",
+    "protestant": "Protestant",
+    "catholic": "Catholic",
+    "orthodox": "Eastern Orthodox",
+    "edition": "Choose your Bible",
+    "editionDesc": "Select a primary Bible translation",
+    "parallel": "Read alongside",
+    "parallelDesc": "Optionally add a second translation for comparison",
+    "skip": "Skip for now",
+    "next": "Next",
+    "finish": "Start Reading"
+  },
+  "today": {
+    "title": "Today",
+    "continueReading": "Continue Reading",
+    "startReading": "Start Reading",
+    "startReadingDesc": "Begin your journey with Genesis 1",
+    "verseOfDay": "Verse of the Day",
+    "recentHighlights": "Recent Highlights",
+    "noHighlights": "Your highlights will appear here",
+    "readingPlan": "Today's Reading"
+  },
+  "reader": {
+    "title": "Reader",
+    "loading": "Loading chapter...",
+    "placeholder": "[Scripture text will appear here when editions are connected via the API]",
+    "placeholderNote": "This is a placeholder. Real Bible text will be loaded from licensed editions via the Understand Bible API.",
+    "nextChapter": "Next Chapter",
+    "prevChapter": "Previous Chapter",
+    "understand": "Understand",
+    "parallel": "Parallel",
+    "bookChapter": "Book & Chapter",
+    "verseActions": "Verse Actions",
+    "highlight": "Highlight",
+    "bookmark": "Bookmark",
+    "note": "Add Note",
+    "copy": "Copy",
+    "share": "Share",
+    "creditLine": "Edition attribution will appear here"
+  },
+  "bookPicker": {
+    "title": "Books",
+    "search": "Search books...",
+    "oldTestament": "Old Testament",
+    "newTestament": "New Testament",
+    "deuterocanon": "Deuterocanon",
+    "notInEdition": "Not in this edition",
+    "chapters": "Chapters"
+  },
+  "search": {
+    "title": "Verse Finder",
+    "placeholder": "Search for a verse or topic...",
+    "examples": "Try: \"love is patient\", \"John 3:16\"",
+    "noResults": "No close match found. Try other words, or search by a reference.",
+    "filters": "Filters",
+    "results": "{count, plural, =0 {No results} =1 {1 result} other {# results}}"
+  },
+  "understand": {
+    "title": "Understand",
+    "quick": "Quick",
+    "detailed": "Detailed",
+    "loading": "Loading explanation...",
+    "placeholder": "Chapter explanations will appear here when the UNDERSTAND API is available.",
+    "reviewed": "Reviewed",
+    "aiDrafted": "AI-drafted, automatically checked",
+    "reportProblem": "Report a problem",
+    "readChapter": "Read the chapter"
+  },
+  "explore": {
+    "title": "Explore",
+    "people": "People",
+    "peopleDesc": "Discover the people mentioned in Scripture",
+    "vamsavali": "Vamsavali",
+    "vamsavaliDesc": "Explore family lines and genealogies",
+    "geography": "Geography",
+    "geographyDesc": "Biblical places and their significance",
+    "timeline": "Timeline",
+    "timelineDesc": "Events in historical context"
+  },
+  "plans": {
+    "title": "Reading Plans",
+    "myPlans": "My Plans",
+    "browse": "Browse Plans",
+    "custom": "Custom Plan",
+    "noPlans": "No active plans yet",
+    "startPlan": "Start a Plan",
+    "progress": "Progress"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "tradition": "Tradition",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "sepia": "Sepia",
+    "textSize": "Text Size",
+    "lineSpacing": "Line Spacing",
+    "font": "Font",
+    "serif": "Serif",
+    "sansSerif": "Sans Serif",
+    "verseNumbers": "Verse Numbers",
+    "notifications": "Notifications",
+    "offlineDownloads": "Offline Downloads",
+    "privacy": "Privacy",
+    "about": "About"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "back": "Back",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "offline": "You are offline",
+    "installApp": "Install App"
+  }
+}

@@ -1,0 +1,261 @@
+/* ============================================================
+   UNDERSTAND BIBLE — Design Tokens & Interchangeable Palettes
+   Supports:
+   - Palettes: Sacred & Elegant (Default), Heritage (Alternative)
+   - Modes: Light, Dark, Sepia for each palette
+   - Direction: LTR and RTL
+   - Per-script typography: Latin, Telugu, Arabic
+   ============================================================ */
+
+:root,
+[data-palette='sacred'] {
+  /* —— Sacred & Elegant (Default Light) —— */
+  --color-primary: #183d32; /* Forest Green */
+  --color-primary-hover: #1a4a3b;
+  --color-primary-active: #0f2e24;
+  --color-accent: #c5a15a; /* Muted Gold */
+  --color-accent-hover: #d4b06a;
+  --color-accent-active: #b8944d;
+
+  --color-bg: #f7f4ea; /* Warm Ivory */
+  --color-bg-secondary: #e5e0d3; /* Sand */
+  --color-bg-elevated: #ffffff;
+  --color-surface: #f7f4ea;
+  --color-surface-hover: #f0ece0;
+
+  --color-text: #292b28; /* Ink */
+  --color-text-secondary: #5a5d58;
+  --color-text-muted: #8a8d86;
+  --color-text-on-primary: #f7f4ea;
+  --color-text-on-accent: #292b28;
+
+  --color-border: #d4cfc2;
+  --color-border-subtle: #e5e0d3;
+
+  --color-error: #b33a3a;
+  --color-success: #2e7d3e;
+  --color-warning: #c5a15a;
+
+  /* —— Spacing —— */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+
+  /* —— Border Radius —— */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* —— Shadows —— */
+  --shadow-sm: 0 1px 2px rgba(41, 43, 40, 0.06);
+  --shadow-md: 0 2px 8px rgba(41, 43, 40, 0.08);
+  --shadow-lg: 0 4px 16px rgba(41, 43, 40, 0.12);
+
+  /* —— Typography —— */
+  --font-serif: 'Cormorant Garamond', 'Noto Serif', 'Georgia', serif;
+  --font-sans: 'Noto Sans', system-ui, -apple-system, sans-serif;
+  --font-scripture: var(--font-serif);
+
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-scripture: 1.8;
+
+  /* —— Layout —— */
+  --max-width-reader: 42rem;
+  --max-width-content: 72rem;
+  --nav-height: 3.5rem;
+  --bottom-nav-height: 4rem;
+
+  /* —— Transitions —— */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* —— Z-index —— */
+  --z-nav: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+  --z-tooltip: 400;
+}
+
+/* ============================================================
+   PALETTE 1: Sacred & Elegant (Dark & Sepia)
+   ============================================================ */
+
+[data-palette='sacred'][data-theme='dark'],
+:root[data-theme='dark']:not([data-palette='heritage']) {
+  --color-primary: #2d6b55;
+  --color-primary-hover: #358062;
+  --color-primary-active: #245848;
+  --color-accent: #c5a15a;
+  --color-accent-hover: #d4b06a;
+  --color-accent-active: #b8944d;
+
+  --color-bg: #1a1d1a;
+  --color-bg-secondary: #242724;
+  --color-bg-elevated: #2e322e;
+  --color-surface: #1a1d1a;
+  --color-surface-hover: #2e322e;
+
+  --color-text: #e8e5dc;
+  --color-text-secondary: #b0ada4;
+  --color-text-muted: #787570;
+  --color-text-on-primary: #e8e5dc;
+  --color-text-on-accent: #1a1d1a;
+
+  --color-border: #3a3d3a;
+  --color-border-subtle: #2e322e;
+
+  --color-error: #e06060;
+  --color-success: #4caf50;
+  --color-warning: #d4b06a;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+[data-palette='sacred'][data-theme='sepia'],
+:root[data-theme='sepia']:not([data-palette='heritage']) {
+  --color-primary: #183d32;
+  --color-primary-hover: #1a4a3b;
+  --color-primary-active: #0f2e24;
+  --color-accent: #c5a15a;
+
+  --color-bg: #f4e8d1;
+  --color-bg-secondary: #e8dcc5;
+  --color-bg-elevated: #faf0dd;
+  --color-surface: #f4e8d1;
+  --color-surface-hover: #ede1ca;
+
+  --color-text: #3d3027;
+  --color-text-secondary: #6b5d50;
+  --color-text-muted: #9a8c7f;
+  --color-text-on-primary: #f4e8d1;
+  --color-text-on-accent: #3d3027;
+
+  --color-border: #d4c6b0;
+  --color-border-subtle: #e8dcc5;
+}
+
+/* ============================================================
+   PALETTE 2: Heritage (Interchangeable Alternative Theme)
+   ============================================================ */
+
+[data-palette='heritage'] {
+  --color-primary: #1c2d42; /* Deep Byzantine Navy */
+  --color-primary-hover: #273c57;
+  --color-primary-active: #121e2d;
+  --color-accent: #b8860b; /* Dark Goldenrod / Burnished Bronze */
+  --color-accent-hover: #c9971c;
+  --color-accent-active: #9e7206;
+
+  --color-bg: #faf7f0; /* Soft Parchment */
+  --color-bg-secondary: #ede7dc;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #faf7f0;
+  --color-surface-hover: #f2ece0;
+
+  --color-text: #1f2421; /* Charcoal */
+  --color-text-secondary: #555b57;
+  --color-text-muted: #848c86;
+  --color-text-on-primary: #faf7f0;
+  --color-text-on-accent: #1f2421;
+
+  --color-border: #d8d1c5;
+  --color-border-subtle: #ede7dc;
+
+  --color-error: #c0392b;
+  --color-success: #27ae60;
+  --color-warning: #b8860b;
+}
+
+[data-palette='heritage'][data-theme='dark'] {
+  --color-primary: #345277;
+  --color-primary-hover: #3f638f;
+  --color-primary-active: #2a4362;
+  --color-accent: #d4af37;
+  --color-accent-hover: #e0bf4e;
+  --color-accent-active: #bd9c2b;
+
+  --color-bg: #14181e;
+  --color-bg-secondary: #1d222b;
+  --color-bg-elevated: #262d38;
+  --color-surface: #14181e;
+  --color-surface-hover: #262d38;
+
+  --color-text: #eae6df;
+  --color-text-secondary: #a8a49c;
+  --color-text-muted: #747069;
+  --color-text-on-primary: #eae6df;
+  --color-text-on-accent: #14181e;
+
+  --color-border: #2e3542;
+  --color-border-subtle: #222832;
+
+  --color-error: #e74c3c;
+  --color-success: #2ecc71;
+  --color-warning: #d4af37;
+}
+
+[data-palette='heritage'][data-theme='sepia'] {
+  --color-primary: #1c2d42;
+  --color-primary-hover: #273c57;
+  --color-primary-active: #121e2d;
+  --color-accent: #b8860b;
+
+  --color-bg: #f5ece1;
+  --color-bg-secondary: #e9ddd0;
+  --color-bg-elevated: #fcf5ed;
+  --color-surface: #f5ece1;
+  --color-surface-hover: #efe3d5;
+
+  --color-text: #382f2d;
+  --color-text-secondary: #665b58;
+  --color-text-muted: #948885;
+  --color-text-on-primary: #f5ece1;
+  --color-text-on-accent: #382f2d;
+
+  --color-border: #d3c4b6;
+  --color-border-subtle: #e9ddd0;
+}
+
+/* ============================================================
+   PER-SCRIPT TYPOGRAPHY
+   ============================================================ */
+
+:root[lang='te'],
+[lang='te'] {
+  --font-serif: 'Noto Serif Telugu', serif;
+  --font-sans: 'Noto Sans Telugu', sans-serif;
+  --font-scripture: var(--font-serif);
+  --text-lg: 1.1875rem; /* 19px for Telugu conjuncts */
+  --leading-scripture: 1.85;
+}
+
+:root[lang='ar'],
+[lang='ar'] {
+  --font-serif: 'Noto Naskh Arabic', serif;
+  --font-sans: 'Noto Sans Arabic', sans-serif;
+  --font-scripture: var(--font-serif);
+  --text-lg: 1.25rem; /* 20px for Tashkeel vowel marks */
+  --leading-scripture: 1.9;
+}

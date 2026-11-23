@@ -1,0 +1,28 @@
+{
+  "name": "Understand Bible",
+  "short_name": "UB",
+  "description": "A peaceful space for reading and understanding Scripture",
+  "start_url": "/en/today",
+  "display": "standalone",
+  "background_color": "#F7F4EA",
+  "theme_color": "#183D32",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
