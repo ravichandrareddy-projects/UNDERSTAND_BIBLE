@@ -9,6 +9,7 @@
 .pnpm-store
 pnpm-lock.yaml
 data/sources
+data/manifests
 data/raw
 data/processed
 data/bundles

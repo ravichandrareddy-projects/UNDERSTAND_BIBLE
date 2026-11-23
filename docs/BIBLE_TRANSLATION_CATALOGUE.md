@@ -385,3 +385,7 @@ Columns: **Coverage** from eBible metadata (DC = deuterocanon/apocrypha books). 
 - Telugu translations overview — https://en.wikipedia.org/wiki/Bible_translations_into_Telugu
 - Orthodox Study Bible front matter — https://g.christianbook.com/g/netstorage/pdf/sample/003590.pdf
 - USFM / USX / USFX — https://ubsicap.github.io/usfm/ ; https://ebible.org/usfx/ ; usfm3 parser — https://pypi.org/project/usfm3/
+
+## OC-02 pilot catalogue addendum · 2026-11-23
+
+The original 81-edition research snapshot above is preserved. The official book indexes confirmed 66 books each for KJV, WEB, BSB, Telugu IRV and Hindi IRV, and 73 for the 1899 American Douay-Rheims. The pilot acquired the unchanged USFM archives for WEB, BSB, Douay-Rheims and the two IRVs. The KJV 1769 source includes Strong's numbers and has a UK territorial hold. Full archive hashes, measured counts, publisher credits, source dates and exact edition URLs are in the [OC-02 report](OC-02_REPORT.md) and [rights registry](../data/rights/edition_rights.json).

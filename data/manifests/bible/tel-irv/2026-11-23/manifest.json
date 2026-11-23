@@ -1,0 +1,2325 @@
+{
+  "edition_id": "tel-irv",
+  "source_id": "tel2017",
+  "edition": "Indian Revised Version, Telugu",
+  "publisher": "Bridge Connectivity Solutions Pvt. Ltd.",
+  "source_url": "https://eBible.org/Scriptures/tel2017_usfm.zip",
+  "repository": "eBible.org",
+  "retrieved_at": "2026-11-23T14:44:28+00:00",
+  "source_version_date": "2020-02-11",
+  "raw_path": "data/sources/bible-texts/raw/tel-irv/2026-11-23/2c90088101dc614422e753f10b79dccae968db28a2fd979dfc5f82b944bf8b4f/tel2017_usfm.zip",
+  "bytes": 2074760,
+  "sha256": "2c90088101dc614422e753f10b79dccae968db28a2fd979dfc5f82b944bf8b4f",
+  "licence": "CC BY-SA 4.0 International, text only.",
+  "licence_status": "VERIFIED for local acquisition and inventory",
+  "attribution": "Indian Revised Version, Telugu. Copyright © 2017, 2019 Bridge Connectivity Solutions. Via eBible.org. CC BY-SA 4.0. Original text unchanged.",
+  "conditions": [
+    "Preserve original text, source identification and edition notices. Rights refer to text only.",
+    "Supply copyright, credit, edition URL and licence link with copies. Identify modifications and retain notices. Share adapted material on compatible ShareAlike terms, without added restrictions or implied endorsement.",
+    "Local technical inventory is approved. External processing, vector outputs and new audio require a separate rights/workflow review. Illustrations and separately recorded performances are excluded."
+  ],
+  "evidence": [
+    {
+      "url": "https://ebible.org/details.php?id=tel2017",
+      "checked_at": "2026-11-23T14:44:20+00:00",
+      "sha256": "8dbbb8ea5f908be3dd81e9e41e0d1a8bf37d0efb9c9282febce2c178c1851c4d",
+      "snapshot": "data/sources/evidence/8dbbb8ea5f908be3dd81e9e41e0d1a8bf37d0efb9c9282febce2c178c1851c4d",
+      "review_sha256": "f8fc2e74a2d0210783e2a72d87807092f91053d4a621ad2fefef51a5fb0a4695"
+    },
+    {
+      "url": "https://eBible.org/tel2017/",
+      "checked_at": "2026-11-23T14:44:21+00:00",
+      "sha256": "4551c6ba2f782a12493b8c1904b56b23d5f2cfaa77a67f0850cbd9ae00b3a08b",
+      "snapshot": "data/sources/evidence/4551c6ba2f782a12493b8c1904b56b23d5f2cfaa77a67f0850cbd9ae00b3a08b",
+      "review_sha256": "4551c6ba2f782a12493b8c1904b56b23d5f2cfaa77a67f0850cbd9ae00b3a08b"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "checked_at": "2026-11-23T14:44:23+00:00",
+      "sha256": "a416d2c14af5a6c6f950dac75dc9a7ad968b0987eabc6b9913bf6e025273febd",
+      "snapshot": "data/sources/evidence/a416d2c14af5a6c6f950dac75dc9a7ad968b0987eabc6b9913bf6e025273febd",
+      "review_sha256": "a416d2c14af5a6c6f950dac75dc9a7ad968b0987eabc6b9913bf6e025273febd"
+    }
+  ],
+  "inventory": {
+    "files": [
+      {
+        "path": "02-GENtel2017.usfm",
+        "bytes": 508765,
+        "sha256": "7156bd820aa297af36a21d81bb70bb8d7605d1a36edb01143b673eca7c48ceba"
+      },
+      {
+        "path": "03-EXOtel2017.usfm",
+        "bytes": 421856,
+        "sha256": "4a506f21ef385380609c6e3d10e11350d9cfe02e739063394e16f14e2bbb4d99"
+      },
+      {
+        "path": "04-LEVtel2017.usfm",
+        "bytes": 312717,
+        "sha256": "c891e2743d5bce0d59e498b5fc1d2478eac1f2b3296e047d2a9c823afccd61ff"
+      },
+      {
+        "path": "05-NUMtel2017.usfm",
+        "bytes": 422600,
+        "sha256": "0a348912c532cdf1640b75319a773a55096e73afc637cef4478cf84caa9d5a3d"
+      },
+      {
+        "path": "06-DEUtel2017.usfm",
+        "bytes": 347652,
+        "sha256": "ce1139beec6423735e807560b8c08c1bac61fa4fd182e65ab13814ed07dc809f"
+      },
+      {
+        "path": "07-JOStel2017.usfm",
+        "bytes": 236108,
+        "sha256": "b8e1639ed89451845d5ffd6b46f9c6a514086c5b2d71f4e93cec0f6f515fd37c"
+      },
+      {
+        "path": "08-JDGtel2017.usfm",
+        "bytes": 259161,
+        "sha256": "4964b037f3aec4ad106a0a04043f2b814e0705ea845ee49dce45802855fa5d41"
+      },
+      {
+        "path": "09-RUTtel2017.usfm",
+        "bytes": 39049,
+        "sha256": "a7154583781816348a3382f2a3334087ef93763848eaab545904f3dd9fa80af9"
+      },
+      {
+        "path": "10-1SAtel2017.usfm",
+        "bytes": 333218,
+        "sha256": "d875d9ab2c10be0cf3281589dea282d2d1ba11b60396b9f2fcc26e7e01ae19b2"
+      },
+      {
+        "path": "11-2SAtel2017.usfm",
+        "bytes": 281170,
+        "sha256": "afc134960e1c3c88b7d9ab836b1a8172515877ff3295932fff6d326deb46d464"
+      },
+      {
+        "path": "12-1KItel2017.usfm",
+        "bytes": 314161,
+        "sha256": "81fbd732e5ce8dc69c6d959fad71931d54cf2cf40129bb307ed7308937c0d5d9"
+      },
+      {
+        "path": "13-2KItel2017.usfm",
+        "bytes": 321595,
+        "sha256": "ac6ba4a07c357501ff2e8023b955523f5740aa302792453d7b227e6a30c26463"
+      },
+      {
+        "path": "14-1CHtel2017.usfm",
+        "bytes": 301435,
+        "sha256": "55dda4639be4c8d16ec88c2429fadf471a5a804fdc450fc3ea1f138aaacf9085"
+      },
+      {
+        "path": "15-2CHtel2017.usfm",
+        "bytes": 344976,
+        "sha256": "5b3a092a7cf1eee02281821a85bb83676f2f023feaab1220efeba243000c64c6"
+      },
+      {
+        "path": "16-EZRtel2017.usfm",
+        "bytes": 96993,
+        "sha256": "a419787891bc98ce468a070c0c8906bbbc3519de7f088102b448a7c6c8fb4993"
+      },
+      {
+        "path": "17-NEHtel2017.usfm",
+        "bytes": 143718,
+        "sha256": "01a334fd62a9f6ab12e544a8918202af0aa080568bebe5e400b7f4ad9a1023a2"
+      },
+      {
+        "path": "18-ESTtel2017.usfm",
+        "bytes": 75183,
+        "sha256": "7903002ca54d1f083083a76a7f59c7e73d85805a00e1c726b0047e85f75ab5d3"
+      },
+      {
+        "path": "19-JOBtel2017.usfm",
+        "bytes": 283439,
+        "sha256": "1842a737226c35afd45929eba734973cc740b7d2fbf59dc95494b4366fe77c3b"
+      },
+      {
+        "path": "20-PSAtel2017.usfm",
+        "bytes": 647019,
+        "sha256": "19d44344009672e099a7db6479342d1108ae66a7b3275fdc0685665ae26541bd"
+      },
+      {
+        "path": "21-PROtel2017.usfm",
+        "bytes": 229038,
+        "sha256": "cc1d4b574ca86a56aa1000646368db2b02f350413da917b705ebe57312867412"
+      },
+      {
+        "path": "22-ECCtel2017.usfm",
+        "bytes": 80071,
+        "sha256": "735af2c308233992757bf367a3b414fa984eded1bd1a02f97fa35efefdfe8530"
+      },
+      {
+        "path": "23-SNGtel2017.usfm",
+        "bytes": 46100,
+        "sha256": "54f83e89e765b71cad015544135fd9240394d6d5a21be18898f8f3e8809bc9a3"
+      },
+      {
+        "path": "24-ISAtel2017.usfm",
+        "bytes": 512814,
+        "sha256": "e785a0e55d9dcbd001d41c33deb0846a0f25f924e1fc2e6b2abe34943da2f6b9"
+      },
+      {
+        "path": "25-JERtel2017.usfm",
+        "bytes": 576529,
+        "sha256": "d49ea2ccf1ecc1bf9fb217d53f01171c87e62a38cf93c3b39387fc0eeec6c5f9"
+      },
+      {
+        "path": "26-LAMtel2017.usfm",
+        "bytes": 54178,
+        "sha256": "39e648eb324b1d3073059b140814ab79c34d01e5b6ef8dc4e41817e99701db36"
+      },
+      {
+        "path": "27-EZKtel2017.usfm",
+        "bytes": 500341,
+        "sha256": "41282178e385fa6d3c58cf790792dedbcfc94c7acd128a6b77e08f913cdd052c"
+      },
+      {
+        "path": "28-DANtel2017.usfm",
+        "bytes": 166047,
+        "sha256": "9e11db6e8f1fce532f6d8113ab74f69f5e1f58be69d1d732712aec615bb5b49f"
+      },
+      {
+        "path": "29-HOStel2017.usfm",
+        "bytes": 83857,
+        "sha256": "b95feaf797d3aca4f53e92f455c3c16aa8e2051e87d0bdf345e71e3a6d781c30"
+      },
+      {
+        "path": "30-JOLtel2017.usfm",
+        "bytes": 30346,
+        "sha256": "2e47c62bfe3213088b69a742f7f749f27e15367784b7880b853ccf0e3d51ec7c"
+      },
+      {
+        "path": "31-AMOtel2017.usfm",
+        "bytes": 61514,
+        "sha256": "173946a575419669a3285d55d1a205c949be98a46e30c7ab5fc244c0a190d37c"
+      },
+      {
+        "path": "32-OBAtel2017.usfm",
+        "bytes": 11872,
+        "sha256": "f037375e2988b4e01a2fc34092b1289a22593785ebb05352250d0b7e8408c130"
+      },
+      {
+        "path": "33-JONtel2017.usfm",
+        "bytes": 21087,
+        "sha256": "1b90c1a01841e357d56e6e9668d892f0ce32cd3aa8b9e23fe048bec7d47c7a62"
+      },
+      {
+        "path": "34-MICtel2017.usfm",
+        "bytes": 47971,
+        "sha256": "c74e66ab00cb49141fa5ee7b5f9aba00ddd6751383f72aed09f69f7303502356"
+      },
+      {
+        "path": "35-NAMtel2017.usfm",
+        "bytes": 23200,
+        "sha256": "d509f08cf967e9025d47e6e8461324f919c793ee7ba8acec1e3a8ec9552fa135"
+      },
+      {
+        "path": "36-HABtel2017.usfm",
+        "bytes": 23807,
+        "sha256": "9e638a419b8b4d9f73716d3cbdaf0ed965b9557ad480e97e30150db5a4ac0840"
+      },
+      {
+        "path": "37-ZEPtel2017.usfm",
+        "bytes": 25680,
+        "sha256": "b3d463cd70bb6e934354d38d1b4ddb4cc4e703aa7dd24630a1793133f65ea6d4"
+      },
+      {
+        "path": "38-HAGtel2017.usfm",
+        "bytes": 19117,
+        "sha256": "91d67ceb1c646955f99fabac1c5e41b6b3e86fc1147be3510a2badb7f87960dd"
+      },
+      {
+        "path": "39-ZECtel2017.usfm",
+        "bytes": 88687,
+        "sha256": "c9821eedcae444697527bcddc3cecfc55e8ab099f2f40133db092ca3889de1b3"
+      },
+      {
+        "path": "40-MALtel2017.usfm",
+        "bytes": 30984,
+        "sha256": "fa3ab956de64005dddd31011c0bc696bba866a7568a8e9d4b7cd73487577dc94"
+      },
+      {
+        "path": "46-MATtel2017.usfm",
+        "bytes": 344827,
+        "sha256": "e2ef57f401310ac36bee0d285f7e6d8c1d785bed0c1a6905d00b316c12a6aba8"
+      },
+      {
+        "path": "47-MRKtel2017.usfm",
+        "bytes": 221892,
+        "sha256": "1a99ec23c096a6a4b8343016ec7ae3b56f965efe6d61cf3de42e6d51c73d52b0"
+      },
+      {
+        "path": "48-LUKtel2017.usfm",
+        "bytes": 370391,
+        "sha256": "4fa2fb8f456d5fba989b0f25eeca2dbba3edc7d9cfc67236c8223ea3d2d9fbe3"
+      },
+      {
+        "path": "49-JHNtel2017.usfm",
+        "bytes": 280991,
+        "sha256": "ca43f7692008f82fcf54f5b4ef520b878a246937ca79dba0dce6850220cb6549"
+      },
+      {
+        "path": "51-ROMtel2017.usfm",
+        "bytes": 148161,
+        "sha256": "995a5bb63dcd53a437047644a63643682bb734161dd1f3f1bb5a8c90645d12ff"
+      },
+      {
+        "path": "52-1COtel2017.usfm",
+        "bytes": 145391,
+        "sha256": "aee0d7faaebc46bf55065d2a31790df56aef055c67e30915b4e242a351e44ba8"
+      },
+      {
+        "path": "53-2COtel2017.usfm",
+        "bytes": 91845,
+        "sha256": "e655bdbcb302ac3ba1191e738ffb985f9977bc7bc340322b1924547975c44f56"
+      },
+      {
+        "path": "54-GALtel2017.usfm",
+        "bytes": 52447,
+        "sha256": "0bd64c2a036e2975df8744cb9091ea9336817dde2ce3fa4bd36a610f9eb561a6"
+      },
+      {
+        "path": "55-EPHtel2017.usfm",
+        "bytes": 47765,
+        "sha256": "29113e064554a3421163f7641bc1f21867f77dfaf00d49ec32ff6422eb2fd771"
+      },
+      {
+        "path": "56-PHPtel2017.usfm",
+        "bytes": 39184,
+        "sha256": "3ae37fdea3abc533d50544f70c3e186c64825522385b38f31af1d19ba379fe76"
+      },
+      {
+        "path": "57-COLtel2017.usfm",
+        "bytes": 37362,
+        "sha256": "077fdde4966de751d64ddf40b04b1c6d2b664c93c70757cebba0ba9569cf728a"
+      },
+      {
+        "path": "58-1THtel2017.usfm",
+        "bytes": 32537,
+        "sha256": "2a1305c582464f1a5cdf27021e5bbd96a9e819c8cddeb51dd8385e2483f1c5be"
+      },
+      {
+        "path": "59-2THtel2017.usfm",
+        "bytes": 19587,
+        "sha256": "70317f186a3dc29ae6acf664f45a3795122d6624fdde69b46c7fd9229d795db4"
+      },
+      {
+        "path": "60-1TItel2017.usfm",
+        "bytes": 38446,
+        "sha256": "a5fce852ee209405118024da2768a585899f05d517051d731069fb84e3a7b0cc"
+      },
+      {
+        "path": "61-2TItel2017.usfm",
+        "bytes": 28527,
+        "sha256": "583ce318a16ab18c7f37703e71092e51e8f7cab3254dc4565dda24ce93c227f3"
+      },
+      {
+        "path": "62-TITtel2017.usfm",
+        "bytes": 19528,
+        "sha256": "e5175f141d12e5e798bcadf520b4e9756d1a462d4e337b53d712994e52c24712"
+      },
+      {
+        "path": "63-PHMtel2017.usfm",
+        "bytes": 10209,
+        "sha256": "79e39abdf4c49a97e8b815094033fc991bc6737ac603c55a0d608e3736cef409"
+      },
+      {
+        "path": "64-HEBtel2017.usfm",
+        "bytes": 116255,
+        "sha256": "6b091a8f5f8fe69bc916f820d885b6c7a3cdbc7b2b0d8c43f0906049f250f4fd"
+      },
+      {
+        "path": "65-JAStel2017.usfm",
+        "bytes": 38895,
+        "sha256": "58b417f67d9fc9f29a844acc16e13983ad5842bc7340ba507912fceeaf4dee9c"
+      },
+      {
+        "path": "67-2PEtel2017.usfm",
+        "bytes": 26832,
+        "sha256": "369cb75cc9369899e19ad9854abb54040a4c3577595ece9d7cdfbd55aea41fc3"
+      },
+      {
+        "path": "68-1JNtel2017.usfm",
+        "bytes": 39039,
+        "sha256": "e2ac150e12cb6266a3e94abc7f2402a1cc01f931a669a4b02888a7322e2999d3"
+      },
+      {
+        "path": "69-2JNtel2017.usfm",
+        "bytes": 7141,
+        "sha256": "0140f96128d44a288a85e22f109ea74e66921ebaf68ca0f26f278e6feb7e7991"
+      },
+      {
+        "path": "71-JUDtel2017.usfm",
+        "bytes": 13791,
+        "sha256": "977f00b60cf5c55cc158cf0abcf3126bc60f620734c2a992a53882f81a214925"
+      },
+      {
+        "path": "72-REVtel2017.usfm",
+        "bytes": 170928,
+        "sha256": "a344c61430a6acad6f4d513f5b6af94c4b49a79c74a3c479c62705c76519b5fe"
+      },
+      {
+        "path": "74-ACTtel2017.usfm",
+        "bytes": 334549,
+        "sha256": "6e549ab82e9c97cfee9b51509e3ae64cd7490d609916452b4be66ce659a698b0"
+      },
+      {
+        "path": "90-1PEtel2017.usfm",
+        "bytes": 40702,
+        "sha256": "0e231ac66084f38bed7e832d551158f142ce4488d57f27e580c91db7b4fc4189"
+      },
+      {
+        "path": "94-3JNtel2017.usfm",
+        "bytes": 8282,
+        "sha256": "feb81fe7f3632aa3190630f20bfded93907aef691467d132f02192ec284548f4"
+      },
+      {
+        "path": "copr.htm",
+        "bytes": 3221,
+        "sha256": "0bf7db927422cf7b57f7465dfce9fb445864c09e5badb192c2cd8550307498ed"
+      },
+      {
+        "path": "keys.asc",
+        "bytes": 21585,
+        "sha256": "8659487be35d9a79b8bb41eb68db1e96e9a1933792f683b88e0de50cd3841942"
+      },
+      {
+        "path": "signature.txt.asc",
+        "bytes": 6991,
+        "sha256": "bc705f09ab28c5945e99d09cd5653f4750c9e41cadcda01a0e6201376edc04ad"
+      },
+      {
+        "path": "akshar.css",
+        "bytes": 11382,
+        "sha256": "0022fa9f8fb3a66fb1436006080f7665aacfa36a3c97d7580cfc190d1bb1dd6b"
+      }
+    ],
+    "books_in_source_index_order": [
+      "GEN",
+      "EXO",
+      "LEV",
+      "NUM",
+      "DEU",
+      "JOS",
+      "JDG",
+      "RUT",
+      "1SA",
+      "2SA",
+      "1KI",
+      "2KI",
+      "1CH",
+      "2CH",
+      "EZR",
+      "NEH",
+      "EST",
+      "JOB",
+      "PSA",
+      "PRO",
+      "ECC",
+      "SNG",
+      "ISA",
+      "JER",
+      "LAM",
+      "EZK",
+      "DAN",
+      "HOS",
+      "JOL",
+      "AMO",
+      "OBA",
+      "JON",
+      "MIC",
+      "NAM",
+      "HAB",
+      "ZEP",
+      "HAG",
+      "ZEC",
+      "MAL",
+      "MAT",
+      "MRK",
+      "LUK",
+      "JHN",
+      "ACT",
+      "ROM",
+      "1CO",
+      "2CO",
+      "GAL",
+      "EPH",
+      "PHP",
+      "COL",
+      "1TH",
+      "2TH",
+      "1TI",
+      "2TI",
+      "TIT",
+      "PHM",
+      "HEB",
+      "JAS",
+      "1PE",
+      "2PE",
+      "1JN",
+      "2JN",
+      "3JN",
+      "JUD",
+      "REV"
+    ],
+    "noncanonical_files_by_id": [],
+    "chapter_verse_marker_counts": {
+      "GEN": [
+        31,
+        25,
+        24,
+        26,
+        32,
+        22,
+        24,
+        22,
+        29,
+        32,
+        32,
+        20,
+        18,
+        24,
+        21,
+        16,
+        27,
+        33,
+        38,
+        18,
+        34,
+        24,
+        20,
+        67,
+        34,
+        35,
+        46,
+        22,
+        35,
+        43,
+        55,
+        32,
+        20,
+        31,
+        29,
+        43,
+        36,
+        30,
+        23,
+        23,
+        57,
+        38,
+        34,
+        34,
+        28,
+        34,
+        31,
+        22,
+        33,
+        26
+      ],
+      "EXO": [
+        22,
+        25,
+        22,
+        31,
+        23,
+        30,
+        25,
+        32,
+        35,
+        29,
+        10,
+        51,
+        22,
+        31,
+        27,
+        36,
+        16,
+        27,
+        25,
+        26,
+        36,
+        31,
+        33,
+        18,
+        40,
+        37,
+        21,
+        43,
+        46,
+        38,
+        18,
+        35,
+        23,
+        35,
+        35,
+        38,
+        29,
+        31,
+        43,
+        38
+      ],
+      "LEV": [
+        17,
+        16,
+        17,
+        35,
+        19,
+        30,
+        38,
+        36,
+        24,
+        20,
+        47,
+        8,
+        59,
+        57,
+        33,
+        34,
+        16,
+        30,
+        37,
+        27,
+        24,
+        33,
+        44,
+        23,
+        55,
+        46,
+        34
+      ],
+      "NUM": [
+        54,
+        34,
+        51,
+        49,
+        31,
+        27,
+        89,
+        26,
+        23,
+        36,
+        35,
+        16,
+        33,
+        45,
+        41,
+        50,
+        13,
+        32,
+        22,
+        29,
+        35,
+        41,
+        30,
+        25,
+        18,
+        65,
+        23,
+        31,
+        40,
+        16,
+        54,
+        42,
+        56,
+        29,
+        34,
+        13
+      ],
+      "DEU": [
+        45,
+        37,
+        29,
+        49,
+        33,
+        25,
+        26,
+        20,
+        29,
+        22,
+        32,
+        32,
+        18,
+        29,
+        23,
+        22,
+        20,
+        22,
+        21,
+        20,
+        23,
+        30,
+        25,
+        22,
+        19,
+        19,
+        26,
+        68,
+        29,
+        20,
+        30,
+        52,
+        29,
+        12
+      ],
+      "JOS": [
+        18,
+        24,
+        17,
+        24,
+        15,
+        27,
+        26,
+        35,
+        27,
+        43,
+        23,
+        24,
+        33,
+        15,
+        63,
+        10,
+        18,
+        28,
+        51,
+        9,
+        45,
+        34,
+        16,
+        33
+      ],
+      "JDG": [
+        36,
+        23,
+        31,
+        24,
+        31,
+        40,
+        25,
+        35,
+        57,
+        18,
+        40,
+        15,
+        25,
+        20,
+        20,
+        31,
+        13,
+        31,
+        30,
+        48,
+        25
+      ],
+      "RUT": [
+        22,
+        23,
+        18,
+        22
+      ],
+      "1SA": [
+        28,
+        36,
+        21,
+        22,
+        12,
+        21,
+        17,
+        22,
+        27,
+        27,
+        15,
+        25,
+        23,
+        52,
+        35,
+        23,
+        58,
+        30,
+        24,
+        42,
+        15,
+        23,
+        29,
+        22,
+        44,
+        25,
+        12,
+        25,
+        11,
+        31,
+        13
+      ],
+      "2SA": [
+        27,
+        32,
+        39,
+        10,
+        24,
+        22,
+        29,
+        18,
+        13,
+        19,
+        27,
+        30,
+        39,
+        33,
+        37,
+        23,
+        28,
+        33,
+        43,
+        26,
+        22,
+        51,
+        39,
+        25
+      ],
+      "1KI": [
+        53,
+        46,
+        28,
+        34,
+        18,
+        38,
+        51,
+        66,
+        28,
+        29,
+        43,
+        33,
+        34,
+        31,
+        34,
+        34,
+        24,
+        46,
+        21,
+        43,
+        29,
+        53
+      ],
+      "2KI": [
+        18,
+        25,
+        27,
+        44,
+        27,
+        33,
+        20,
+        29,
+        37,
+        36,
+        21,
+        21,
+        25,
+        29,
+        38,
+        20,
+        41,
+        37,
+        37,
+        21,
+        26,
+        20,
+        37,
+        20,
+        30
+      ],
+      "1CH": [
+        54,
+        55,
+        24,
+        43,
+        26,
+        81,
+        40,
+        40,
+        44,
+        14,
+        47,
+        40,
+        14,
+        17,
+        29,
+        43,
+        27,
+        17,
+        19,
+        8,
+        30,
+        19,
+        32,
+        31,
+        31,
+        32,
+        34,
+        21,
+        30
+      ],
+      "2CH": [
+        17,
+        18,
+        17,
+        22,
+        14,
+        42,
+        22,
+        18,
+        31,
+        19,
+        23,
+        16,
+        22,
+        15,
+        19,
+        14,
+        19,
+        34,
+        11,
+        37,
+        20,
+        12,
+        21,
+        27,
+        28,
+        23,
+        9,
+        27,
+        36,
+        27,
+        21,
+        33,
+        25,
+        33,
+        27,
+        23
+      ],
+      "EZR": [
+        11,
+        70,
+        13,
+        24,
+        17,
+        22,
+        28,
+        36,
+        15,
+        44
+      ],
+      "NEH": [
+        11,
+        20,
+        32,
+        23,
+        19,
+        19,
+        73,
+        18,
+        38,
+        39,
+        36,
+        47,
+        31
+      ],
+      "EST": [
+        22,
+        23,
+        15,
+        17,
+        14,
+        14,
+        10,
+        17,
+        32,
+        3
+      ],
+      "JOB": [
+        22,
+        13,
+        26,
+        21,
+        27,
+        30,
+        21,
+        22,
+        35,
+        22,
+        20,
+        25,
+        28,
+        22,
+        35,
+        22,
+        16,
+        21,
+        29,
+        29,
+        34,
+        30,
+        17,
+        25,
+        6,
+        14,
+        23,
+        28,
+        25,
+        31,
+        40,
+        21,
+        33,
+        37,
+        16,
+        33,
+        24,
+        39,
+        30,
+        24,
+        34,
+        17
+      ],
+      "PSA": [
+        6,
+        12,
+        8,
+        8,
+        12,
+        10,
+        17,
+        9,
+        20,
+        18,
+        7,
+        8,
+        6,
+        7,
+        5,
+        11,
+        15,
+        50,
+        14,
+        9,
+        13,
+        31,
+        6,
+        10,
+        22,
+        12,
+        14,
+        9,
+        11,
+        12,
+        24,
+        11,
+        22,
+        22,
+        28,
+        12,
+        40,
+        22,
+        13,
+        17,
+        13,
+        11,
+        5,
+        26,
+        17,
+        11,
+        9,
+        14,
+        20,
+        23,
+        19,
+        9,
+        6,
+        7,
+        23,
+        13,
+        11,
+        11,
+        17,
+        12,
+        8,
+        12,
+        11,
+        10,
+        13,
+        20,
+        7,
+        35,
+        36,
+        5,
+        24,
+        20,
+        28,
+        23,
+        10,
+        12,
+        20,
+        72,
+        13,
+        19,
+        16,
+        8,
+        18,
+        12,
+        13,
+        17,
+        7,
+        18,
+        52,
+        17,
+        16,
+        15,
+        5,
+        23,
+        11,
+        13,
+        12,
+        9,
+        9,
+        5,
+        8,
+        28,
+        22,
+        35,
+        45,
+        48,
+        43,
+        13,
+        31,
+        7,
+        10,
+        10,
+        9,
+        8,
+        18,
+        19,
+        2,
+        29,
+        176,
+        7,
+        8,
+        9,
+        4,
+        8,
+        5,
+        6,
+        5,
+        6,
+        8,
+        8,
+        3,
+        16,
+        3,
+        3,
+        21,
+        26,
+        9,
+        8,
+        24,
+        13,
+        10,
+        7,
+        12,
+        15,
+        21,
+        10,
+        20,
+        14,
+        9,
+        6
+      ],
+      "PRO": [
+        33,
+        22,
+        35,
+        27,
+        23,
+        35,
+        27,
+        36,
+        18,
+        32,
+        31,
+        28,
+        25,
+        35,
+        33,
+        33,
+        28,
+        24,
+        29,
+        30,
+        31,
+        29,
+        35,
+        34,
+        28,
+        27,
+        27,
+        28,
+        27,
+        33,
+        31
+      ],
+      "ECC": [
+        18,
+        26,
+        22,
+        16,
+        20,
+        12,
+        29,
+        17,
+        18,
+        20,
+        10,
+        14
+      ],
+      "SNG": [
+        17,
+        17,
+        11,
+        16,
+        16,
+        13,
+        13,
+        14
+      ],
+      "ISA": [
+        31,
+        22,
+        26,
+        6,
+        30,
+        13,
+        25,
+        22,
+        20,
+        34,
+        16,
+        6,
+        22,
+        32,
+        9,
+        14,
+        14,
+        7,
+        25,
+        6,
+        17,
+        25,
+        18,
+        23,
+        12,
+        21,
+        13,
+        29,
+        24,
+        33,
+        9,
+        20,
+        24,
+        17,
+        10,
+        22,
+        38,
+        22,
+        8,
+        31,
+        29,
+        25,
+        28,
+        28,
+        25,
+        13,
+        15,
+        22,
+        26,
+        11,
+        23,
+        15,
+        12,
+        17,
+        13,
+        12,
+        21,
+        14,
+        21,
+        22,
+        11,
+        12,
+        19,
+        12,
+        25,
+        24
+      ],
+      "JER": [
+        19,
+        37,
+        25,
+        31,
+        31,
+        30,
+        34,
+        22,
+        26,
+        25,
+        23,
+        17,
+        27,
+        22,
+        21,
+        21,
+        27,
+        23,
+        15,
+        18,
+        14,
+        30,
+        40,
+        10,
+        38,
+        24,
+        22,
+        17,
+        32,
+        24,
+        40,
+        44,
+        26,
+        22,
+        19,
+        32,
+        21,
+        28,
+        18,
+        16,
+        18,
+        22,
+        13,
+        30,
+        5,
+        28,
+        7,
+        47,
+        39,
+        46,
+        64,
+        34
+      ],
+      "LAM": [
+        22,
+        22,
+        66,
+        22,
+        22
+      ],
+      "EZK": [
+        28,
+        10,
+        26,
+        17,
+        17,
+        14,
+        27,
+        18,
+        11,
+        22,
+        25,
+        28,
+        23,
+        23,
+        8,
+        63,
+        24,
+        31,
+        14,
+        49,
+        32,
+        31,
+        49,
+        27,
+        17,
+        21,
+        36,
+        26,
+        21,
+        26,
+        18,
+        32,
+        33,
+        31,
+        15,
+        38,
+        28,
+        23,
+        29,
+        49,
+        26,
+        20,
+        27,
+        31,
+        25,
+        24,
+        23,
+        35
+      ],
+      "DAN": [
+        21,
+        49,
+        30,
+        37,
+        31,
+        28,
+        28,
+        27,
+        27,
+        21,
+        45,
+        13
+      ],
+      "HOS": [
+        11,
+        23,
+        5,
+        19,
+        15,
+        11,
+        16,
+        14,
+        17,
+        15,
+        12,
+        14,
+        16,
+        9
+      ],
+      "JOL": [
+        20,
+        32,
+        21
+      ],
+      "AMO": [
+        15,
+        16,
+        15,
+        13,
+        27,
+        14,
+        17,
+        14,
+        15
+      ],
+      "OBA": [
+        21
+      ],
+      "JON": [
+        17,
+        10,
+        10,
+        11
+      ],
+      "MIC": [
+        16,
+        13,
+        12,
+        13,
+        15,
+        16,
+        20
+      ],
+      "NAM": [
+        15,
+        13,
+        19
+      ],
+      "HAB": [
+        17,
+        20,
+        19
+      ],
+      "ZEP": [
+        18,
+        15,
+        20
+      ],
+      "HAG": [
+        15,
+        23
+      ],
+      "ZEC": [
+        21,
+        13,
+        10,
+        14,
+        11,
+        15,
+        14,
+        23,
+        17,
+        12,
+        17,
+        14,
+        9,
+        21
+      ],
+      "MAL": [
+        14,
+        17,
+        18,
+        6
+      ],
+      "MAT": [
+        24,
+        22,
+        16,
+        23,
+        48,
+        34,
+        29,
+        34,
+        37,
+        41,
+        28,
+        49,
+        56,
+        36,
+        37,
+        28,
+        27,
+        35,
+        30,
+        33,
+        46,
+        45,
+        39,
+        51,
+        46,
+        75,
+        66,
+        20
+      ],
+      "MRK": [
+        45,
+        28,
+        35,
+        41,
+        43,
+        56,
+        37,
+        38,
+        48,
+        52,
+        33,
+        44,
+        37,
+        72,
+        47,
+        20
+      ],
+      "LUK": [
+        71,
+        48,
+        38,
+        44,
+        39,
+        48,
+        50,
+        56,
+        62,
+        42,
+        52,
+        59,
+        35,
+        35,
+        32,
+        30,
+        37,
+        43,
+        47,
+        45,
+        38,
+        71,
+        56,
+        53
+      ],
+      "JHN": [
+        51,
+        25,
+        36,
+        54,
+        46,
+        71,
+        53,
+        59,
+        41,
+        42,
+        57,
+        48,
+        38,
+        31,
+        27,
+        33,
+        26,
+        40,
+        40,
+        31,
+        25
+      ],
+      "ACT": [
+        26,
+        47,
+        26,
+        37,
+        42,
+        15,
+        60,
+        40,
+        43,
+        48,
+        30,
+        25,
+        52,
+        28,
+        41,
+        40,
+        34,
+        28,
+        41,
+        38,
+        40,
+        30,
+        35,
+        26,
+        27,
+        30,
+        44,
+        31
+      ],
+      "ROM": [
+        30,
+        29,
+        31,
+        25,
+        20,
+        23,
+        25,
+        37,
+        31,
+        21,
+        36,
+        20,
+        14,
+        23,
+        33,
+        27
+      ],
+      "1CO": [
+        31,
+        16,
+        23,
+        20,
+        13,
+        20,
+        40,
+        13,
+        27,
+        33,
+        34,
+        30,
+        13,
+        40,
+        58,
+        24
+      ],
+      "2CO": [
+        24,
+        17,
+        18,
+        18,
+        21,
+        18,
+        16,
+        24,
+        15,
+        18,
+        33,
+        21,
+        14
+      ],
+      "GAL": [
+        24,
+        21,
+        29,
+        31,
+        26,
+        18
+      ],
+      "EPH": [
+        23,
+        22,
+        19,
+        29,
+        33,
+        23
+      ],
+      "PHP": [
+        28,
+        28,
+        20,
+        23
+      ],
+      "COL": [
+        27,
+        23,
+        25,
+        18
+      ],
+      "1TH": [
+        10,
+        20,
+        12,
+        17,
+        28
+      ],
+      "2TH": [
+        10,
+        17,
+        18
+      ],
+      "1TI": [
+        20,
+        15,
+        16,
+        16,
+        25,
+        21
+      ],
+      "2TI": [
+        18,
+        25,
+        16,
+        22
+      ],
+      "TIT": [
+        15,
+        12,
+        14
+      ],
+      "PHM": [
+        24
+      ],
+      "HEB": [
+        14,
+        18,
+        19,
+        16,
+        14,
+        19,
+        28,
+        13,
+        28,
+        39,
+        40,
+        29,
+        25
+      ],
+      "JAS": [
+        27,
+        26,
+        18,
+        17,
+        20
+      ],
+      "1PE": [
+        25,
+        25,
+        22,
+        19,
+        14
+      ],
+      "2PE": [
+        21,
+        22,
+        18
+      ],
+      "1JN": [
+        10,
+        29,
+        24,
+        21,
+        21
+      ],
+      "2JN": [
+        13
+      ],
+      "3JN": [
+        15
+      ],
+      "JUD": [
+        25
+      ],
+      "REV": [
+        20,
+        29,
+        22,
+        11,
+        14,
+        17,
+        17,
+        13,
+        21,
+        11,
+        19,
+        18,
+        18,
+        20,
+        8,
+        20,
+        18,
+        23,
+        21,
+        15,
+        27,
+        21
+      ]
+    },
+    "label_findings": [
+      [
+        "DEU",
+        "1",
+        "3-4",
+        "bridge or suffix"
+      ],
+      [
+        "2SA",
+        "4",
+        "6-8",
+        "bridge or suffix"
+      ],
+      [
+        "2SA",
+        "5",
+        "6-7",
+        "bridge or suffix"
+      ],
+      [
+        "2SA",
+        "6",
+        "13-14",
+        "bridge or suffix"
+      ],
+      [
+        "2SA",
+        "12",
+        "14-15",
+        "bridge or suffix"
+      ],
+      [
+        "2SA",
+        "17",
+        "2-3",
+        "bridge or suffix"
+      ],
+      [
+        "JOB",
+        "32",
+        "11-12",
+        "bridge or suffix"
+      ],
+      [
+        "JOB",
+        "38",
+        "6-7",
+        "bridge or suffix"
+      ],
+      [
+        "JOB",
+        "38",
+        "22-23",
+        "bridge or suffix"
+      ],
+      [
+        "PSA",
+        "132",
+        "3-5",
+        "bridge or suffix"
+      ],
+      [
+        "PRO",
+        "26",
+        "18-19",
+        "bridge or suffix"
+      ],
+      [
+        "ISA",
+        "9",
+        "9-10",
+        "bridge or suffix"
+      ],
+      [
+        "EZK",
+        "3",
+        "24-25",
+        "bridge or suffix"
+      ],
+      [
+        "EZK",
+        "18",
+        "6-7",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "1",
+        "22-23",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "2",
+        "17-18",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "3",
+        "1-2",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "4",
+        "14-16",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "9",
+        "20-21",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "10",
+        "9-10",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "11",
+        "2-3",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "11",
+        "16-17",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "12",
+        "15-16",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "13",
+        "34-35",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "13",
+        "53-54",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "15",
+        "7-9",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "20",
+        "11-12",
+        "bridge or suffix"
+      ],
+      [
+        "MAT",
+        "22",
+        "31-32",
+        "bridge or suffix"
+      ],
+      [
+        "MRK",
+        "9",
+        "43-44",
+        "bridge or suffix"
+      ],
+      [
+        "MRK",
+        "9",
+        "45-46",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "1",
+        "39-40",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "1",
+        "48-49",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "1",
+        "54-55",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "1",
+        "70-73",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "1",
+        "74-75",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "1",
+        "76-78",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "2",
+        "22-24",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "2",
+        "30-32",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "6",
+        "17-18",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "11",
+        "50-51",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "11",
+        "53-54",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "16",
+        "27-28",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "19",
+        "45-46",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "20",
+        "39-40",
+        "bridge or suffix"
+      ],
+      [
+        "LUK",
+        "20",
+        "42-43",
+        "bridge or suffix"
+      ],
+      [
+        "JHN",
+        "5",
+        "3-4",
+        "bridge or suffix"
+      ],
+      [
+        "JHN",
+        "12",
+        "10-11",
+        "bridge or suffix"
+      ],
+      [
+        "JHN",
+        "12",
+        "14-15",
+        "bridge or suffix"
+      ],
+      [
+        "JHN",
+        "19",
+        "2-3",
+        "bridge or suffix"
+      ],
+      [
+        "JHN",
+        "19",
+        "8-9",
+        "bridge or suffix"
+      ],
+      [
+        "ACT",
+        "24",
+        "20-21",
+        "bridge or suffix"
+      ],
+      [
+        "ACT",
+        "26",
+        "17-18",
+        "bridge or suffix"
+      ],
+      [
+        "ACT",
+        "26",
+        "22-23",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "1",
+        "9-10",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "1",
+        "11-12",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "5",
+        "3-4",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "8",
+        "3-4",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "8",
+        "38-39",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "9",
+        "1-2",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "9",
+        "27-28",
+        "bridge or suffix"
+      ],
+      [
+        "ROM",
+        "12",
+        "7-8",
+        "bridge or suffix"
+      ],
+      [
+        "1CO",
+        "4",
+        "15-16",
+        "bridge or suffix"
+      ],
+      [
+        "1CO",
+        "12",
+        "24-25",
+        "bridge or suffix"
+      ],
+      [
+        "EPH",
+        "3",
+        "14-15",
+        "bridge or suffix"
+      ],
+      [
+        "EPH",
+        "3",
+        "16-17",
+        "bridge or suffix"
+      ],
+      [
+        "EPH",
+        "4",
+        "1-3",
+        "bridge or suffix"
+      ],
+      [
+        "EPH",
+        "4",
+        "11-12",
+        "bridge or suffix"
+      ],
+      [
+        "EPH",
+        "6",
+        "2-3",
+        "bridge or suffix"
+      ],
+      [
+        "PHP",
+        "1",
+        "25-26",
+        "bridge or suffix"
+      ],
+      [
+        "PHP",
+        "1",
+        "29-30",
+        "bridge or suffix"
+      ],
+      [
+        "PHP",
+        "2",
+        "9-11",
+        "bridge or suffix"
+      ],
+      [
+        "PHP",
+        "3",
+        "10-11",
+        "bridge or suffix"
+      ],
+      [
+        "COL",
+        "1",
+        "3-5",
+        "bridge or suffix"
+      ],
+      [
+        "1TH",
+        "3",
+        "2-3",
+        "bridge or suffix"
+      ],
+      [
+        "1TH",
+        "4",
+        "11-12",
+        "bridge or suffix"
+      ],
+      [
+        "2TH",
+        "1",
+        "6-7",
+        "bridge or suffix"
+      ],
+      [
+        "2TH",
+        "1",
+        "9-10",
+        "bridge or suffix"
+      ],
+      [
+        "2TI",
+        "2",
+        "25-26",
+        "bridge or suffix"
+      ],
+      [
+        "2TI",
+        "3",
+        "16-17",
+        "bridge or suffix"
+      ],
+      [
+        "TIT",
+        "1",
+        "13-14",
+        "bridge or suffix"
+      ],
+      [
+        "TIT",
+        "2",
+        "4-5",
+        "bridge or suffix"
+      ],
+      [
+        "TIT",
+        "2",
+        "9-10",
+        "bridge or suffix"
+      ],
+      [
+        "TIT",
+        "2",
+        "12-13",
+        "bridge or suffix"
+      ],
+      [
+        "TIT",
+        "3",
+        "6-7",
+        "bridge or suffix"
+      ],
+      [
+        "PHM",
+        "1",
+        "4-5",
+        "bridge or suffix"
+      ],
+      [
+        "HEB",
+        "6",
+        "4-5",
+        "bridge or suffix"
+      ],
+      [
+        "REV",
+        "16",
+        "5-6",
+        "bridge or suffix"
+      ],
+      [
+        "REV",
+        "18",
+        "9-10",
+        "bridge or suffix"
+      ]
+    ],
+    "counts": {
+      "books": 66,
+      "chapters": 1189,
+      "verse_markers": 31004
+    }
+  }
+}

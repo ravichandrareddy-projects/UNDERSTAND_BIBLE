@@ -1,0 +1,41 @@
+{
+  "dataset_id": "step-tipnr",
+  "repository": "STEPBible/STEPBible-Data",
+  "commit": "5de0a47f35f0fc13dfe1430d104e5db8a4285f9c",
+  "licence": "CC BY 4.0",
+  "licence_status": "VERIFIED for source-local metadata audit",
+  "attribution": "STEP Bible, www.STEPBible.org. Data originated at Tyndale House, Cambridge. Preserve individual source credits, the source link and the record of changes.",
+  "files": [
+    {
+      "path": "Proper Nouns/TIPNR - Translators Individualised Proper Names with all References - STEPBible.org CC BY.txt",
+      "source_url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/Proper%20Nouns/TIPNR%20-%20Translators%20Individualised%20Proper%20Names%20with%20all%20References%20-%20STEPBible.org%20CC%20BY.txt",
+      "raw_path": "data/sources/study/step-tipnr/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/Proper Nouns/TIPNR - Translators Individualised Proper Names with all References - STEPBible.org CC BY.txt",
+      "retrieved_at": "2026-11-23T15:00:16+00:00",
+      "bytes": 8202454,
+      "sha256": "d595b9163d32a400bb0ef96b27a6de58335a63da840b82531fe9f5e1d16a318c",
+      "evidence": [
+        {
+          "url": "https://raw.githubusercontent.com/STEPBible/STEPBible-Data/5de0a47f35f0fc13dfe1430d104e5db8a4285f9c/README.md",
+          "checked_at": "2026-11-23T15:00:09+00:00",
+          "sha256": "261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1",
+          "snapshot": "data/sources/evidence/261d5157c0ffeadeedad3f734db945a4c3642e3e4ce5fa28002985b6c52437b1"
+        }
+      ],
+      "profile": {
+        "physical_lines": 40052,
+        "nonblank_lines_by_tab_field_count": {
+          "1": 12823,
+          "2": 2,
+          "5": 3,
+          "6": 4250,
+          "14": 8,
+          "32": 4248,
+          "33": 3,
+          "37": 5592,
+          "38": 13040,
+          "39": 5
+        }
+      }
+    }
+  ]
+}

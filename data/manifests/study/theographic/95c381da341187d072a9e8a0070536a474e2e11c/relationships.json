@@ -1,0 +1,14 @@
+{
+  "dataset_id": "theographic-relationships",
+  "source_url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/json/people.json",
+  "source_sha256": "09b0a77f89c08196f5326bdad70d4bcbb1b9c7b0a770d521de470d24c63b9d83",
+  "commit": "95c381da341187d072a9e8a0070536a474e2e11c",
+  "source_manifest": "manifest.json",
+  "licence": "CC BY-SA 4.0",
+  "attribution": "Theographic / Robert Rouse, Viz.Bible. Retain the pinned bibliography and honour original providers. Genealogy draws on STEPBible and other listed works. Chronology credits include Jones and Atwood.",
+  "changes": "Projected named relationship fields into directed rows.",
+  "output": "data/sources/study-working/theographic/95c381da341187d072a9e8a0070536a474e2e11c/relationships.jsonl",
+  "sha256": "3d7eeef7780c82a9b20ad35b5c66797227e7e2ed7896ccc18d39be053e0ef812",
+  "assertions": 8926,
+  "unresolved_targets": 0
+}

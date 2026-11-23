@@ -1,5 +1,9 @@
 # Understand Bible status
 
+## 2026-11-23 · OC-02 pilot checkpoint
+
+Five gated USFM acquisitions passed archive and structural verification. KJV remains on territorial hold. The three study sources are preserved at separate upstream commits. The adaptive-reading research note is ready for frontend review. The reader contract still exposes only the OC-01 health operation. Raw inputs stay private, and Antigravity's ongoing reader edits remain independently owned. Owner review is the next milestone. [Report](OC-02_REPORT.md) · [Checklist](OC-02_CHECKLIST.md) · [Study audit](OC-02_STUDY_SOURCES.md) · [Reading focus](OC-02_READING_FOCUS.md)
+
 ## 2026-11-23 · OC-01 approved for local commit
 
 The starting repository contained the planning pack at `0e4fb57`. OC-01 adds the local development foundation. The Fastify health endpoint and Next.js placeholder both returned HTTP 200 on Windows. The frozen install, lint, typechecks, automated tests and production builds passed. The official Compose validator accepted the infrastructure definition.

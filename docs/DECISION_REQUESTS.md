@@ -1,5 +1,11 @@
 # Understand Bible decision requests
 
+## OC-02 update · 2026-11-23
+
+The owner authorised the six-edition pilot and an initial local acquisition pipeline. Five archives passed. The scope decision on the other 15 CORE editions remains open until parser, versification and validation gates pass. D-001 remains undecided.
+
+For KJV, the owner can approve an enforceable territorial scope after rights review, seek permission for worldwide use, or retain the hold. Recommend retaining the hold for worldwide delivery. For the IRVs, the owner and rights reviewer can approve a concrete CC BY-SA adaptation and attribution workflow for AI, embeddings and speech, or keep those features disabled. Current verified use covers the attributed local collection. The file-backed registry is available now. Its database seed still depends on OC-07. [OC-02 report](OC-02_REPORT.md)
+
 Audit date 2026-11-23. This addendum preserves the decisions and status labels in the original planning pack. The owner confirmed the product name and the temporary GitHub reviewer. The planning assumptions below require separate approval.
 
 ## Decisions affecting the next milestones

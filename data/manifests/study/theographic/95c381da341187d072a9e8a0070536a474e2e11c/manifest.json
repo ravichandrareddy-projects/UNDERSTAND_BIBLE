@@ -1,0 +1,235 @@
+{
+  "dataset_id": "theographic",
+  "repository": "robertrouse/theographic-bible-metadata",
+  "commit": "95c381da341187d072a9e8a0070536a474e2e11c",
+  "licence": "CC BY-SA 4.0, with upstream credits and field-specific source terms",
+  "licence_status": "VERIFIED for source-local metadata audit",
+  "attribution": "Theographic / Robert Rouse, Viz.Bible. Retain the pinned bibliography and honour original providers. Genealogy draws on STEPBible and other listed works. Chronology credits include Jones and Atwood.",
+  "files": [
+    {
+      "path": "json/people.json",
+      "source_url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/json/people.json",
+      "raw_path": "data/sources/study/theographic/95c381da341187d072a9e8a0070536a474e2e11c/json/people.json",
+      "retrieved_at": "2026-11-23T15:00:23+00:00",
+      "bytes": 5064462,
+      "sha256": "09b0a77f89c08196f5326bdad70d4bcbb1b9c7b0a770d521de470d24c63b9d83",
+      "evidence": [
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/readme.md",
+          "checked_at": "2026-11-23T15:00:17+00:00",
+          "sha256": "7b312fc339920cc5a42a698b1fe1602c3efdd4cc2a89230b2458989622db5226",
+          "snapshot": "data/sources/evidence/7b312fc339920cc5a42a698b1fe1602c3efdd4cc2a89230b2458989622db5226"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/LICENSE",
+          "checked_at": "2026-11-23T15:00:18+00:00",
+          "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+          "snapshot": "data/sources/evidence/7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/docs/data-source-bibliography.md",
+          "checked_at": "2026-11-23T15:00:19+00:00",
+          "sha256": "0d50db3748a7761038ca2c1c528f5e554c63fcba48cedae3369de1d6f0b188ab",
+          "snapshot": "data/sources/evidence/0d50db3748a7761038ca2c1c528f5e554c63fcba48cedae3369de1d6f0b188ab"
+        }
+      ],
+      "profile": {
+        "rows": 3068,
+        "top_level_field_presence": {
+          "createdTime": 3068,
+          "fields": 3068,
+          "id": 3068
+        },
+        "nested_field_presence": {
+          "Easton's Count": 3068,
+          "alphaGroup": 3068,
+          "alsoCalled": 352,
+          "ambiguous": 1614,
+          "birthPlace": 77,
+          "birthYear": 71,
+          "chaptersWritten": 39,
+          "children": 963,
+          "deathPlace": 46,
+          "deathYear": 61,
+          "definitions": 3067,
+          "dictText": 1815,
+          "dictionaryLink": 122,
+          "dictionaryText": 122,
+          "displayTitle": 3068,
+          "eastons": 1815,
+          "events": 108,
+          "father": 1584,
+          "gender": 3068,
+          "halfSiblingsSameFather": 111,
+          "halfSiblingsSameMother": 3,
+          "isProperName": 3043,
+          "maxYear": 3068,
+          "memberOf": 736,
+          "minYear": 3068,
+          "modified": 3068,
+          "mother": 200,
+          "name": 3068,
+          "partners": 175,
+          "personID": 3068,
+          "personLookup": 3068,
+          "siblings": 944,
+          "slug": 3068,
+          "surname": 14,
+          "timeline": 319,
+          "verseCount": 3068,
+          "verses": 3068
+        }
+      }
+    },
+    {
+      "path": "json/places.json",
+      "source_url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/json/places.json",
+      "raw_path": "data/sources/study/theographic/95c381da341187d072a9e8a0070536a474e2e11c/json/places.json",
+      "retrieved_at": "2026-11-23T15:00:27+00:00",
+      "bytes": 2764196,
+      "sha256": "cea8f1b960bc0d643b9e574cf888a3061c5e6cd628b29164770cbdf71ca304c6",
+      "evidence": [
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/readme.md",
+          "checked_at": "2026-11-23T15:00:23+00:00",
+          "sha256": "7b312fc339920cc5a42a698b1fe1602c3efdd4cc2a89230b2458989622db5226",
+          "snapshot": "data/sources/evidence/7b312fc339920cc5a42a698b1fe1602c3efdd4cc2a89230b2458989622db5226"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/LICENSE",
+          "checked_at": "2026-11-23T15:00:24+00:00",
+          "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+          "snapshot": "data/sources/evidence/7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/docs/data-source-bibliography.md",
+          "checked_at": "2026-11-23T15:00:26+00:00",
+          "sha256": "0d50db3748a7761038ca2c1c528f5e554c63fcba48cedae3369de1d6f0b188ab",
+          "snapshot": "data/sources/evidence/0d50db3748a7761038ca2c1c528f5e554c63fcba48cedae3369de1d6f0b188ab"
+        }
+      ],
+      "profile": {
+        "rows": 1297,
+        "top_level_field_presence": {
+          "createdTime": 1297,
+          "fields": 1297,
+          "id": 1297
+        },
+        "nested_field_presence": {
+          "aliases": 17,
+          "alphaGroup": 1297,
+          "ambiguous": 182,
+          "booksWritten": 6,
+          "canonicalLat": 254,
+          "canonicalLon": 254,
+          "canonicalPlace": 255,
+          "comment": 215,
+          "definitions": 1296,
+          "dictText": 966,
+          "dictionaryLink": 96,
+          "dictionaryText": 97,
+          "displayTitle": 1297,
+          "eastons": 966,
+          "endYear": 3,
+          "esvName": 1273,
+          "eventsHere": 174,
+          "featureSubType": 67,
+          "featureType": 743,
+          "hasBeenHere": 132,
+          "kjvName": 1297,
+          "latitude": 1272,
+          "longitude": 1272,
+          "modified": 1297,
+          "near": 19,
+          "nearby": 11,
+          "openBibleLat": 1270,
+          "openBibleLong": 1270,
+          "openBibleUri": 1253,
+          "otherNames": 180,
+          "partOf": 346,
+          "parts": 30,
+          "peopleBorn": 11,
+          "peopleDied": 17,
+          "placeID": 1297,
+          "placeLookup": 1297,
+          "pleiadesLat": 220,
+          "pleiadesLon": 220,
+          "pleiadesUri": 363,
+          "precision": 543,
+          "recogitoComments": 91,
+          "recogitoLabel": 430,
+          "recogitoLat": 420,
+          "recogitoLon": 418,
+          "recogitoStatus": 1272,
+          "recogitoType": 269,
+          "recogitoUID": 1272,
+          "recogitoUri": 428,
+          "slug": 1297,
+          "sourceLat": 1271,
+          "sourceLon": 1271,
+          "startYear": 3,
+          "verseCount": 1297,
+          "verses": 1287
+        }
+      }
+    },
+    {
+      "path": "json/events.json",
+      "source_url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/json/events.json",
+      "raw_path": "data/sources/study/theographic/95c381da341187d072a9e8a0070536a474e2e11c/json/events.json",
+      "retrieved_at": "2026-11-23T15:00:32+00:00",
+      "bytes": 1960135,
+      "sha256": "e21729678280c55455603a47df816656be9db75c5870c61fede0eb054f4c6c26",
+      "evidence": [
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/readme.md",
+          "checked_at": "2026-11-23T15:00:27+00:00",
+          "sha256": "7b312fc339920cc5a42a698b1fe1602c3efdd4cc2a89230b2458989622db5226",
+          "snapshot": "data/sources/evidence/7b312fc339920cc5a42a698b1fe1602c3efdd4cc2a89230b2458989622db5226"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/LICENSE",
+          "checked_at": "2026-11-23T15:00:28+00:00",
+          "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+          "snapshot": "data/sources/evidence/7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/robertrouse/theographic-bible-metadata/95c381da341187d072a9e8a0070536a474e2e11c/docs/data-source-bibliography.md",
+          "checked_at": "2026-11-23T15:00:29+00:00",
+          "sha256": "0d50db3748a7761038ca2c1c528f5e554c63fcba48cedae3369de1d6f0b188ab",
+          "snapshot": "data/sources/evidence/0d50db3748a7761038ca2c1c528f5e554c63fcba48cedae3369de1d6f0b188ab"
+        }
+      ],
+      "profile": {
+        "rows": 501,
+        "top_level_field_presence": {
+          "createdTime": 501,
+          "fields": 501,
+          "id": 501
+        },
+        "nested_field_presence": {
+          "definitions": 501,
+          "duration": 501,
+          "eventID": 501,
+          "groups": 75,
+          "lag": 118,
+          "lagType": 118,
+          "locations": 356,
+          "modified": 501,
+          "notes": 26,
+          "partOf": 249,
+          "participants": 486,
+          "people (from verses)": 497,
+          "places (from verses)": 328,
+          "predecessor": 500,
+          "rangeFlag": 6,
+          "sortKey": 501,
+          "startDate": 501,
+          "title": 501,
+          "verseSort": 501,
+          "verses": 501
+        }
+      }
+    }
+  ]
+}

@@ -249,3 +249,18 @@ Subject: Permission request — <edition name> in a free multilingual Bible read
 - eBible copyright list and per-edition about pages — https://ebible.org/Scriptures/copyright.php
 - Cambridge UP KJV notice — https://assets.cambridge.org/97805212/28626/copyright/9780521228626_copyright_info.pdf
 - Berean — https://berean.bible/terms.htm ; LAI — https://copyright.sabda.org/content.php ; RVR1960 — https://m.biblegateway.com/versions/Reina-Valera-1960-RVR1960-Biblia/
+
+## OC-02 action-specific review · 2026-11-23
+
+The commercial model remains undecided. The permissions below come from the edition-specific terms. All five acquisitions allow unchanged local copies and structural inspection under either operating model. The registry records hosting, display, redistribution, caching, offline, commercial use, local retrieval, external AI, embeddings, generated speech and existing recordings independently.
+
+| Edition | Local collection, website hosting, redistribution, offline and commercial text use | AI retrieval, embeddings and audio | Credit and limitations |
+| --- | --- | --- | --- |
+| WEB, engwebp | Public domain | Text retrieval, processing, embeddings and new TTS are permitted by the broad public-domain grant. Existing recordings require their own rights. | Preserve the WEB name for verbatim text. [eBible edition and trademark notice](https://ebible.org/details.php?id=engwebp) |
+| BSB, engbsb | Public domain dedication, all uses permitted | Same text-use scope, including new audio from the text. Existing performances excluded. | Credit appreciated. Apply the naming conditions for adapted material. [Publisher terms](https://berean.bible/terms.htm) |
+| Douay-Rheims, engDRA | Public domain, American Edition of 1899 | Text processing, embeddings and new TTS inferred from the underlying public-domain text. Existing recordings excluded. | Credit English College, Douai and eBible.org. [Edition notice](https://ebible.org/details.php?id=engDRA) |
+| Telugu IRV, tel2017 | CC BY-SA 4.0 permits the text uses listed here with attribution, notices, licence link, changes identified and ShareAlike on adapted material | Local retrieval and indexing permitted. External AI, embedding outputs and TTS held pending workflow and adaptation review. Recorded performances and artwork require separate rights. | Bridge Connectivity Solutions, copyright 2017 and 2019. [Telugu edition](https://ebible.org/details.php?id=tel2017) |
+| Hindi IRV, hin2017 | Same CC BY-SA 4.0 text conditions | Same local-use permission and feature holds | Bridge Connectivity Solutions, copyright 2017, 2018 and 2019. [Hindi edition](https://ebible.org/details.php?id=hin2017) |
+| KJV, eng-kjv2006 | Text is described as public domain outside the UK. Worldwide full-edition rights remain unresolved. Collection held for this unbounded pilot. | Worldwide approvals held. Separate recordings unverified. | Digital source credited to CrossWire and eBible.org. [Edition notice](https://ebible.org/details.php?id=eng-kjv2006) and [Cambridge rights notice](https://assets.cambridge.org/97805211/63347/copyright/9780521163347_copyright_info.pdf) |
+
+Permission for a technique on public-domain text is an inference from the grant. It does not clear a model provider's terms or a third-party recording. No edition was sent to an AI service or used to make embeddings or audio. Dated raw evidence hashes and local snapshot locations are in the [pilot registry](../data/rights/edition_rights.json). The CC text conditions follow the [CC BY-SA 4.0 legal code](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).

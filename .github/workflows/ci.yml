@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - name: Check the source gate with offline fixtures
+        run: python3 -B packages/ingest/test_pilot.py -v
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
