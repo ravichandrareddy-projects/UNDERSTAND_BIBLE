@@ -522,7 +522,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
               type="button"
               className={styles.loadMoreBtn}
               onClick={loadMoreVerses}
-              aria-label="Load next 4 verses"
+              aria-label={`Load next ${preferences.batchSize || 5} verses`}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -537,7 +537,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
               <span>
                 Load Next Verses ({loadedVersesCount + 1}–
                 {Math.min(
-                  loadedVersesCount + 4,
+                  loadedVersesCount + (preferences.batchSize || 5),
                   primaryChapterContent.totalVerses,
                 )}
                 )

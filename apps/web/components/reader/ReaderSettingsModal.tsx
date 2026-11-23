@@ -183,6 +183,35 @@ export function ReaderSettingsModal({
             </div>
           </div>
 
+          {/* 5. Verses per Reading Batch */}
+          <div className={styles.settingGroup}>
+            <div className={styles.labelRow}>
+              <span>Verses per Batch</span>
+              <span className={styles.valueTag}>
+                {preferences.batchSize === 999
+                  ? 'All Chapter'
+                  : `${preferences.batchSize || 5} verses`}
+              </span>
+            </div>
+            <div className={styles.buttonRow}>
+              {[
+                { label: '5 (Default)', value: 5 },
+                { label: '10 Verses', value: 10 },
+                { label: '20 Verses', value: 20 },
+                { label: 'All Chapter', value: 999 },
+              ].map((batch) => (
+                <button
+                  key={batch.value}
+                  type="button"
+                  className={`${styles.optionBtn} ${(preferences.batchSize || 5) === batch.value ? styles.optionBtnActive : ''}`}
+                  onClick={() => onUpdate({ batchSize: batch.value })}
+                >
+                  {batch.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* 5. Parallel Synced Scrolling */}
           <div className={styles.toggleRow}>
             <div>

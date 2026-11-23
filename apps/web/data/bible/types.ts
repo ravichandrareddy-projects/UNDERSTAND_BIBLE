@@ -95,4 +95,5 @@ export interface ReaderPreferences {
   fontFamily: 'serif' | 'sans';
   verseNumbers: 'superscript' | 'inline' | 'hidden';
   linkScrolling: boolean;
+  batchSize: number; // default 5 verses per batch, adjustable
 }

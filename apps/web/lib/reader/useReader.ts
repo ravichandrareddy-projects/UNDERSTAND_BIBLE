@@ -33,6 +33,7 @@ const DEFAULT_PREFERENCES: ReaderPreferences = {
   fontFamily: 'serif',
   verseNumbers: 'superscript',
   linkScrolling: true,
+  batchSize: 5,
 };
 
 export function useReader(
@@ -57,9 +58,8 @@ export function useReader(
     DEFAULT_PARALLEL_EDITION,
   );
 
-  // 4-Verse Batching state
-  // Starts with 4 verses, increments by 4 as user scrolls
-  const [loadedVersesCount, setLoadedVersesCount] = useState<number>(4);
+  // Verses Batching state (default 5 verses, user-adjustable)
+  const [loadedVersesCount, setLoadedVersesCount] = useState<number>(5);
 
   // Reader Preferences
   const [preferences, setPreferences] =
@@ -198,11 +198,12 @@ export function useReader(
     };
   }, [persistCurrentPosition]);
 
-  // Reset 4-verse batching when changing chapter or book
+  // Reset batching when changing chapter or book
   useEffect(() => {
-    setLoadedVersesCount(4);
+    const size = preferences.batchSize || 5;
+    setLoadedVersesCount(size);
     setSelectedVerseNumber(null);
-  }, [bookId, chapterNumber]);
+  }, [bookId, chapterNumber, preferences.batchSize]);
 
   // Navigation Handlers
   const navigateTo = useCallback(
@@ -211,10 +212,11 @@ export function useReader(
       setChapterNumber(newChapter);
       setTargetVerseNumber(newVerse);
       setActiveVerseNumber(newVerse);
-      setLoadedVersesCount(Math.max(4, Math.ceil(newVerse / 4) * 4));
+      const size = preferences.batchSize || 5;
+      setLoadedVersesCount(Math.max(size, Math.ceil(newVerse / size) * size));
       setIsBookPickerOpen(false);
     },
-    [],
+    [preferences.batchSize],
   );
 
   const nextChapter = useCallback(() => {
@@ -247,13 +249,14 @@ export function useReader(
     }
   }, [chapterNumber, currentBook, bookId, navigateTo]);
 
-  // Batching Handler: reveal next 4 verses smoothly
+  // Batching Handler: reveal next batch of verses smoothly
   const loadMoreVerses = useCallback(() => {
     setLoadedVersesCount((prev) => {
       if (prev >= primaryChapterContent.totalVerses) return prev;
-      return Math.min(prev + 4, primaryChapterContent.totalVerses);
+      const step = preferences.batchSize || 5;
+      return Math.min(prev + step, primaryChapterContent.totalVerses);
     });
-  }, [primaryChapterContent.totalVerses]);
+  }, [primaryChapterContent.totalVerses, preferences.batchSize]);
 
   // Highlights & Bookmarks
   const addHighlight = useCallback(

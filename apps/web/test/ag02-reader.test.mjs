@@ -75,14 +75,18 @@ test('Core Reader components and modals exist', () => {
   }
 });
 
-test('useReader state hook provides 4-verse batching and persistence logic', () => {
+test('useReader state hook provides 5-verse adjustable batching and persistence logic', () => {
   const hookPath = path.join(webRoot, 'lib', 'reader', 'useReader.ts');
   assert.ok(fs.existsSync(hookPath), 'useReader.ts exists');
 
   const content = fs.readFileSync(hookPath, 'utf8');
   assert.ok(
     content.includes('loadedVersesCount'),
-    'Tracks loaded verses count for 4-verse batching',
+    'Tracks loaded verses count for batching',
+  );
+  assert.ok(
+    content.includes('batchSize'),
+    'Supports user-adjustable batchSize',
   );
   assert.ok(
     content.includes('loadMoreVerses'),
