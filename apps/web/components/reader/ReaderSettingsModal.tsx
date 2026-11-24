@@ -190,20 +190,20 @@ export function ReaderSettingsModal({
               <span className={styles.valueTag}>
                 {preferences.batchSize === 999
                   ? 'All Chapter'
-                  : `${preferences.batchSize || 5} verses`}
+                  : `${preferences.batchSize || 3} verses`}
               </span>
             </div>
             <div className={styles.buttonRow}>
               {[
-                { label: '5 (Default)', value: 5 },
+                { label: '3 (Default)', value: 3 },
+                { label: '5 Verses', value: 5 },
                 { label: '10 Verses', value: 10 },
-                { label: '20 Verses', value: 20 },
                 { label: 'All Chapter', value: 999 },
               ].map((batch) => (
                 <button
                   key={batch.value}
                   type="button"
-                  className={`${styles.optionBtn} ${(preferences.batchSize || 5) === batch.value ? styles.optionBtnActive : ''}`}
+                  className={`${styles.optionBtn} ${(preferences.batchSize || 3) === batch.value ? styles.optionBtnActive : ''}`}
                   onClick={() => onUpdate({ batchSize: batch.value })}
                 >
                   {batch.label}

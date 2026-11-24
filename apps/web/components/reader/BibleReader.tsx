@@ -8,7 +8,10 @@ import { ReaderSettingsModal } from './ReaderSettingsModal';
 import { VoiceNavigator } from './VoiceNavigator';
 import { VerseActionBar } from './VerseActionBar';
 import { BibleOpeningLoader } from './BibleOpeningLoader';
-import { calculateAnimationDirection } from '../../lib/animation/animationDirection';
+import {
+  calculateAnimationDirection,
+  type AnimationPlan,
+} from '../../lib/animation/animationDirection';
 import { ContextualStudyPanel } from './ContextualStudyPanel';
 import { useSwipeGesture } from '../../lib/reader/useSwipeGesture';
 import { useAdaptiveFocus } from '../../lib/reader/useAdaptiveFocus';
@@ -73,14 +76,13 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
   const [isUnderstandOpen, setIsUnderstandOpen] = useState(false);
   const [isOpeningAnimationActive, setIsOpeningAnimationActive] =
     useState(false);
-  const [animationDirection, setAnimationDirection] = useState<
-    | 'forward'
-    | 'backward'
-    | 'chapter-forward'
-    | 'chapter-backward'
-    | 'initial-open'
-    | 'same-location'
-  >('initial-open');
+  const [animationPlan, setAnimationPlan] = useState<AnimationPlan>(() =>
+    calculateAnimationDirection({
+      toBookId: bookId,
+      toChapter: chapterNumber,
+      tradition: preferences.tradition,
+    }),
+  );
 
   const prevLocationRef = useRef<{
     bookId: string;
@@ -156,7 +158,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [primaryChapterContent.totalVerses, recordScrollProgress]);
 
-  // Animated Navigation Helper
+  // Animated Navigation Helper with Dynamic Canonical Pacing
   const navigateWithAnimation = useCallback(
     (targetBookId: string, targetChapter: number, targetVerse = 1) => {
       const plan = calculateAnimationDirection({
@@ -166,7 +168,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
         toChapter: targetChapter,
         tradition: preferences.tradition,
       });
-      setAnimationDirection(plan.direction);
+      setAnimationPlan(plan);
       setIsOpeningAnimationActive(true);
       prevLocationRef.current = {
         bookId: targetBookId,
@@ -694,7 +696,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
               type="button"
               className={styles.loadMoreBtn}
               onClick={loadMoreVerses}
-              aria-label={`Load next ${preferences.batchSize || 5} verses`}
+              aria-label={`Load next ${preferences.batchSize || 3} verses`}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -709,7 +711,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
               <span>
                 Load Next Verses ({loadedVersesCount + 1}–
                 {Math.min(
-                  loadedVersesCount + (preferences.batchSize || 5),
+                  loadedVersesCount + (preferences.batchSize || 3),
                   primaryChapterContent.totalVerses,
                 )}
                 )
@@ -909,7 +911,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
         estimatedWpm={focusState.estimatedWpm}
       />
 
-      {/* Phase 2: 3D Bible-Opening Animated Loader */}
+      {/* Phase 2: 3D Bible-Opening Animated Loader with Dynamic Realistic Pacing */}
       <BibleOpeningLoader
         isOpen={isOpeningAnimationActive}
         destination={{
@@ -918,7 +920,11 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
           chapterNumber,
           verseNumber: activeVerseNumber,
         }}
-        direction={animationDirection}
+        direction={animationPlan.direction}
+        durationMs={animationPlan.targetDurationMs}
+        revealDelayMs={animationPlan.revealDelayMs}
+        leafCount={animationPlan.leafCount}
+        labelDirection={animationPlan.labelDirection}
         onComplete={() => setIsOpeningAnimationActive(false)}
       />
 

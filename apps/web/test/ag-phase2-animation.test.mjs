@@ -96,3 +96,27 @@ test('Phase 2 3D Bible-Opening Loader Component exists with realistic page turns
     'Renders ribbon bookmark',
   );
 });
+
+test('Phase 2 Dynamic Realistic Pacing: Scales duration with canonical distance & supports staggered reveal', () => {
+  const directionEnginePath = path.join(
+    webRoot,
+    'lib',
+    'animation',
+    'animationDirection.ts',
+  );
+  const content = fs.readFileSync(directionEnginePath, 'utf8');
+
+  // Verify strategy types and leafCount calculations
+  assert.ok(content.includes('strategy:'), 'Strategy calculations supported');
+  assert.ok(content.includes('revealDelayMs'), 'revealDelayMs calculated');
+  assert.ok(content.includes('leafCount'), 'leafCount calculated');
+  assert.ok(
+    content.includes('3600') || content.includes('Traversing across'),
+    'Extended traverse duration for deep jumps (Genesis -> Revelation)',
+  );
+  assert.ok(
+    content.includes('Opening from the Center') ||
+      content.includes('strategy: \'center\''),
+    'Supports natural opening from center for Psalms',
+  );
+});

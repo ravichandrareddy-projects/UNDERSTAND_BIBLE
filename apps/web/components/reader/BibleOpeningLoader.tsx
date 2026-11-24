@@ -20,6 +20,9 @@ export interface BibleOpeningLoaderProps {
     | undefined;
   direction?: BibleAnimationDirection | undefined;
   durationMs?: number | undefined;
+  revealDelayMs?: number | undefined;
+  leafCount?: number | undefined;
+  labelDirection?: string | undefined;
   reducedMotion?: boolean | undefined;
   onComplete?: (() => void) | undefined;
 }
@@ -32,7 +35,10 @@ export function BibleOpeningLoader({
   verse,
   destination,
   direction = 'initial-open',
-  durationMs = 2800,
+  durationMs = 2400,
+  revealDelayMs,
+  leafCount = 3,
+  labelDirection,
   reducedMotion = false,
   onComplete,
 }: BibleOpeningLoaderProps) {
@@ -41,6 +47,10 @@ export function BibleOpeningLoader({
   const effBookName = destination?.bookName || bookName || 'Genesis';
   const effChapter = destination?.chapterNumber ?? chapter ?? 1;
   const effVerse = destination?.verseNumber ?? verse ?? 1;
+
+  const effDuration = durationMs;
+  const effRevealDelay = revealDelayMs ?? Math.round(effDuration * 0.45);
+  const effLeafCount = Math.min(5, Math.max(1, leafCount));
 
   const [isExiting, setIsExiting] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] =
@@ -205,26 +215,54 @@ export function BibleOpeningLoader({
                   >
                     <div className={styles.pageShine} />
                   </div>
-                  <div
-                    className={`${styles.turningPage} ${styles.turningPage2} ${
-                      isBackward
-                        ? styles.turningPageBackward
-                        : styles.turningPageForward
-                    }`}
-                    aria-hidden="true"
-                  >
-                    <div className={styles.pageShine} />
-                  </div>
-                  <div
-                    className={`${styles.turningPage} ${styles.turningPage3} ${
-                      isBackward
-                        ? styles.turningPageBackward
-                        : styles.turningPageForward
-                    }`}
-                    aria-hidden="true"
-                  >
-                    <div className={styles.pageShine} />
-                  </div>
+                  {effLeafCount >= 2 && (
+                    <div
+                      className={`${styles.turningPage} ${styles.turningPage2} ${
+                        isBackward
+                          ? styles.turningPageBackward
+                          : styles.turningPageForward
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <div className={styles.pageShine} />
+                    </div>
+                  )}
+                  {effLeafCount >= 3 && (
+                    <div
+                      className={`${styles.turningPage} ${styles.turningPage3} ${
+                        isBackward
+                          ? styles.turningPageBackward
+                          : styles.turningPageForward
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <div className={styles.pageShine} />
+                    </div>
+                  )}
+                  {effLeafCount >= 4 && (
+                    <div
+                      className={`${styles.turningPage} ${styles.turningPage4} ${
+                        isBackward
+                          ? styles.turningPageBackward
+                          : styles.turningPageForward
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <div className={styles.pageShine} />
+                    </div>
+                  )}
+                  {effLeafCount >= 5 && (
+                    <div
+                      className={`${styles.turningPage} ${styles.turningPage5} ${
+                        isBackward
+                          ? styles.turningPageBackward
+                          : styles.turningPageForward
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <div className={styles.pageShine} />
+                    </div>
+                  )}
                 </>
               )}
 
@@ -241,24 +279,28 @@ export function BibleOpeningLoader({
           </div>
         )}
 
-        {/* Destination Information at Bottom of Glass Modal */}
-        <div className={styles.destinationBox}>
+        {/* Destination Information at Bottom of Glass Modal — Staggered Reveal */}
+        <div
+          className={styles.destinationBox}
+          style={{ animationDelay: `${effRevealDelay}ms` }}
+        >
           <div className={styles.editionTag}>{effEditionName}</div>
           <h2 className={styles.bookName}>{effBookName}</h2>
           <div className={styles.goldDivider} aria-hidden="true" />
           <div className={styles.chapterVerseDetails}>
             Chapter {effChapter} · Starting at verse {effVerse}
           </div>
-          {direction === 'backward' && (
+          {labelDirection ? (
+            <div className={styles.directionNotice}>{labelDirection}</div>
+          ) : direction === 'backward' ? (
             <div className={styles.directionNotice}>
               ◂ Turning back toward earlier Scripture
             </div>
-          )}
-          {direction === 'forward' && (
+          ) : direction === 'forward' ? (
             <div className={styles.directionNotice}>
               Turning deeper into Scripture ▸
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </aside>

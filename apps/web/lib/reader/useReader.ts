@@ -33,7 +33,7 @@ const DEFAULT_PREFERENCES: ReaderPreferences = {
   fontFamily: 'serif',
   verseNumbers: 'superscript',
   linkScrolling: true,
-  batchSize: 5,
+  batchSize: 3,
 };
 
 export function useReader(
@@ -58,8 +58,8 @@ export function useReader(
     DEFAULT_PARALLEL_EDITION,
   );
 
-  // Verses Batching state (default 5 verses, user-adjustable)
-  const [loadedVersesCount, setLoadedVersesCount] = useState<number>(5);
+  // Verses Batching state (default 3 verses, user-adjustable)
+  const [loadedVersesCount, setLoadedVersesCount] = useState<number>(3);
 
   // Reader Preferences
   const [preferences, setPreferences] =
@@ -200,7 +200,7 @@ export function useReader(
 
   // Reset batching when changing chapter or book
   useEffect(() => {
-    const size = preferences.batchSize || 5;
+    const size = preferences.batchSize || 3;
     setLoadedVersesCount(size);
     setSelectedVerseNumber(null);
   }, [bookId, chapterNumber, preferences.batchSize]);
@@ -212,7 +212,7 @@ export function useReader(
       setChapterNumber(newChapter);
       setTargetVerseNumber(newVerse);
       setActiveVerseNumber(newVerse);
-      const size = preferences.batchSize || 5;
+      const size = preferences.batchSize || 3;
       setLoadedVersesCount(Math.max(size, Math.ceil(newVerse / size) * size));
       setIsBookPickerOpen(false);
     },
@@ -249,12 +249,18 @@ export function useReader(
     }
   }, [chapterNumber, currentBook, bookId, navigateTo]);
 
-  // Batching Handler: reveal next batch of verses smoothly
+  // Batching Handler: reveal next batch of verses smoothly with remainder handling
   const loadMoreVerses = useCallback(() => {
     setLoadedVersesCount((prev) => {
-      if (prev >= primaryChapterContent.totalVerses) return prev;
-      const step = preferences.batchSize || 5;
-      return Math.min(prev + step, primaryChapterContent.totalVerses);
+      const total = primaryChapterContent.totalVerses;
+      if (prev >= total) return prev;
+      const step = preferences.batchSize || 3;
+      const next = prev + step;
+      // Remainder handling: if remaining verses are <= step, load all remaining seamlessly
+      if (total - next <= Math.ceil(step / 2)) {
+        return total;
+      }
+      return Math.min(next, total);
     });
   }, [primaryChapterContent.totalVerses, preferences.batchSize]);
 
