@@ -1,22 +1,23 @@
+/* ============================================================
+   3D BIBLE-OPENING LOADER — MODERN GLASSMORPHIC & CURVED 3D DESIGN
+   ============================================================ */
+
 .overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(
-    circle at center,
-    rgba(247, 244, 234, 0.98) 0%,
-    rgba(235, 229, 215, 0.98) 70%,
-    rgba(215, 206, 188, 0.98) 100%
-  );
-  backdrop-filter: blur(8px);
+  /* Translucent frosted-glass backdrop: lets the previous Scripture remain visible underneath */
+  background: rgba(14, 25, 20, 0.48);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
   opacity: 1;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   user-select: none;
+  padding: 16px;
 }
 
 .overlayExiting {
@@ -24,172 +25,348 @@
   pointer-events: none;
 }
 
+/* ============================================================
+   CENTERED GLASSMORPHIC FLOATING CARD
+   ============================================================ */
+.glassModal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(247, 244, 234, 0.72) 100%
+  );
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1.5px solid rgba(197, 161, 90, 0.45);
+  border-radius: 26px;
+  padding: 24px 20px 20px;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+    0 0 32px rgba(197, 161, 90, 0.2);
+  animation: glassModalEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
+}
+
+@keyframes glassModalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Ambient Corner Glass Sheen */
+.glassReflection {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(197, 161, 90, 0.15) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  filter: blur(12px);
+}
+
+/* ============================================================
+   3D PERSPECTIVE STAGE & CURVED BIBLE MODEL
+   ============================================================ */
 .stage {
-  perspective: 1400px;
-  perspective-origin: 50% 45%;
+  perspective: 1100px;
+  perspective-origin: 50% 48%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 600px;
-  height: 380px;
+  height: 220px;
   position: relative;
 }
 
 /* 3D Bible Wrapper */
 .bible3d {
   position: relative;
-  width: 440px;
-  height: 290px;
+  width: 290px;
+  height: 185px;
   transform-style: preserve-3d;
-  transform: rotateX(22deg) rotateZ(0deg);
+  transform: rotateX(24deg) rotateY(0deg) translateZ(0);
   transition: transform 0.6s ease;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+  .glassModal {
+    max-width: 360px;
+    padding: 20px 14px 16px;
+  }
   .bible3d {
-    width: 320px;
-    height: 220px;
-    transform: rotateX(24deg) scale(0.9);
+    width: 250px;
+    height: 160px;
+    transform: rotateX(24deg) scale(0.92);
   }
 }
 
-/* Warm Ambient Drop Shadow */
+/* Deep Ambient 3D Shadow under Book */
 .bibleShadow {
   position: absolute;
-  bottom: -28px;
-  left: 5%;
-  width: 90%;
-  height: 36px;
+  bottom: -22px;
+  left: 6%;
+  width: 88%;
+  height: 30px;
   background: radial-gradient(
     ellipse at center,
-    rgba(20, 30, 25, 0.35) 0%,
-    rgba(20, 30, 25, 0.12) 60%,
+    rgba(12, 24, 18, 0.45) 0%,
+    rgba(12, 24, 18, 0.15) 60%,
     transparent 80%
   );
   filter: blur(8px);
-  transform: translateZ(-30px);
+  transform: translateZ(-25px);
 }
 
-/* Leather Spine Base */
-.spineCenter {
+/* Realistic 3D Leather Cover Backplate */
+.leatherCoverLeft {
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  width: 150px;
+  height: 193px;
+  background: linear-gradient(135deg, #0e221b 0%, #183d32 50%, #0d1e18 100%);
+  border-radius: 6px 1px 1px 6px;
+  box-shadow:
+    -3px 6px 16px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(197, 161, 90, 0.35);
+  transform: rotateY(14deg) translateZ(-6px);
+  transform-origin: right center;
+}
+
+.leatherCoverRight {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  width: 150px;
+  height: 193px;
+  background: linear-gradient(225deg, #0e221b 0%, #183d32 50%, #0d1e18 100%);
+  border-radius: 1px 6px 6px 1px;
+  box-shadow:
+    3px 6px 16px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(197, 161, 90, 0.35);
+  transform: rotateY(-14deg) translateZ(-6px);
+  transform-origin: left center;
+}
+
+/* ============================================================
+   CURVED THICK PAGE STACKS (PHYSICAL CYLINDRICAL DEPTH)
+   ============================================================ */
+
+/* Left Curved Page Stack */
+.pageStackLeft {
   position: absolute;
   top: 0;
-  left: 50%;
-  width: 24px;
+  left: 0;
+  width: 145px;
   height: 100%;
-  margin-left: -12px;
+  /* Cylindrical curvature gradient simulating 300+ curved onion skin Bible pages */
   background: linear-gradient(
     90deg,
-    #0f221b 0%,
-    #183d32 40%,
-    #244b3e 60%,
-    #0f221b 100%
+    #ded7c5 0%,
+    #fbf9f4 20%,
+    #ffffff 80%,
+    #e8e1cf 98%,
+    #bcaf93 100%
+  );
+  border-radius: 4px 1px 1px 4px;
+  transform: rotateY(14deg);
+  transform-origin: right center;
+  box-shadow:
+    -5px 8px 18px rgba(0, 0, 0, 0.18),
+    inset 4px 0 6px rgba(0, 0, 0, 0.05),
+    inset -1px 0 2px rgba(139, 112, 56, 0.2);
+  padding: 14px 16px;
+  overflow: hidden;
+}
+
+/* Right Curved Page Stack */
+.pageStackRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 145px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #bcaf93 0%,
+    #e8e1cf 2%,
+    #ffffff 20%,
+    #fbf9f4 80%,
+    #ded7c5 100%
+  );
+  border-radius: 1px 4px 4px 1px;
+  transform: rotateY(-14deg);
+  transform-origin: left center;
+  box-shadow:
+    5px 8px 18px rgba(0, 0, 0, 0.18),
+    inset -4px 0 6px rgba(0, 0, 0, 0.05),
+    inset 1px 0 2px rgba(139, 112, 56, 0.2);
+  padding: 14px 16px;
+  overflow: hidden;
+}
+
+/* Center Leather Spine & Gold Ribbon */
+.spineCenter {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 18px;
+  height: calc(100% + 8px);
+  margin-left: -9px;
+  background: linear-gradient(
+    90deg,
+    #0a1813 0%,
+    #183d32 35%,
+    #244b3e 50%,
+    #183d32 65%,
+    #0a1813 100%
   );
   border-radius: 4px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  box-shadow:
+    inset 0 0 4px rgba(0, 0, 0, 0.7),
+    0 4px 10px rgba(0, 0, 0, 0.35);
   z-index: 10;
 }
 
-/* Hanging Red/Gold Ribbon Bookmark */
+/* Hanging Red/Gold Satin Ribbon Bookmark */
 .ribbon {
   position: absolute;
-  top: 90%;
+  top: 85%;
   left: 50%;
-  width: 12px;
-  height: 70px;
-  margin-left: -6px;
-  background: linear-gradient(180deg, #c5a15a 0%, #8b7038 80%, #5d461e 100%);
-  border-radius: 0 0 2px 2px;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  transform: rotate(4deg);
+  width: 10px;
+  height: 52px;
+  margin-left: -5px;
+  background: linear-gradient(135deg, #c5a15a 0%, #a6843b 60%, #e8d098 100%);
+  border-radius: 1px 1px 3px 3px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.35);
+  transform: rotate(7deg) translateZ(8px);
   transform-origin: top center;
+  animation: ribbonSway 3s ease-in-out infinite;
   z-index: 12;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
 }
 
-/* Base Left & Right Resting Page Stacks */
-.pageStackLeft,
-.pageStackRight {
+.ribbon::after {
+  content: '';
   position: absolute;
-  top: 0;
-  width: 210px;
-  height: 100%;
-  background: #fdfbf7;
-  border-radius: 3px 0 0 3px;
-  box-shadow:
-    inset -4px 0 10px rgba(0, 0, 0, 0.08),
-    0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  padding: 20px 24px;
-  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 6px solid #f7f4ea;
 }
 
-@media (max-width: 600px) {
-  .pageStackLeft,
-  .pageStackRight {
-    width: 152px;
-    padding: 14px 16px;
+@keyframes ribbonSway {
+  0%,
+  100% {
+    transform: rotate(5deg) translateZ(8px);
+  }
+  50% {
+    transform: rotate(10deg) translateZ(8px);
   }
 }
 
-.pageStackLeft {
-  right: 50%;
-  transform-origin: right center;
-  border-left: 6px solid #132b23; /* Leather cover edge */
-  border-bottom: 4px solid #eae5d8; /* Page thickness block */
-}
-
-.pageStackRight {
-  left: 50%;
-  transform-origin: left center;
-  border-right: 6px solid #132b23; /* Leather cover edge */
-  border-bottom: 4px solid #eae5d8; /* Page thickness block */
-}
-
-/* Faux Script Lines printed on resting pages */
+/* Faux Scripture Text Lines on Page Stacks */
 .fauxLines {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 6px;
   opacity: 0.28;
 }
 
-.line {
-  height: 4px;
-  background-color: #292b28;
+.lineHeading {
+  width: 65%;
+  height: 5px;
+  background-color: #183d32;
   border-radius: 2px;
+  margin-bottom: 3px;
+}
+
+.line {
   width: 100%;
+  height: 3px;
+  background-color: #555850;
+  border-radius: 1.5px;
 }
 
 .lineShort {
-  width: 65%;
+  width: 72%;
+  height: 3px;
+  background-color: #555850;
+  border-radius: 1.5px;
 }
 
-.lineHeading {
-  height: 6px;
-  width: 45%;
-  background-color: #c5a15a;
-  margin-bottom: 4px;
-}
-
-/* Dynamic 3D Flipping Pages */
+/* ============================================================
+   ROTATING 3D CURVED PAGES (TRUE 3D CYLINDER FLIP)
+   ============================================================ */
 .turningPage {
   position: absolute;
   top: 0;
-  width: 210px;
+  width: 145px;
   height: 100%;
-  background: linear-gradient(135deg, #fffefc 0%, #f7f4ea 80%, #eee9db 100%);
+  background: linear-gradient(
+    90deg,
+    #ede6d4 0%,
+    #ffffff 25%,
+    #fcfbfa 75%,
+    #ded5c0 100%
+  );
+  border-radius: 2px 4px 4px 2px;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
-  backface-visibility: hidden;
-  z-index: 20;
+  backface-visibility: visible;
+  pointer-events: none;
+  z-index: 8;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 0 8px rgba(197, 161, 90, 0.15);
+  overflow: hidden;
 }
 
-@media (max-width: 600px) {
-  .turningPage {
-    width: 152px;
+/* Specular Light Sheen across turning paper */
+.pageShine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.65) 40%,
+    rgba(197, 161, 90, 0.2) 60%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation: shineMove 1.8s ease-in-out infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  40% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 
@@ -197,35 +374,36 @@
 .turningPageForward {
   left: 50%;
   transform-origin: left center;
-  animation: flipForward 1.8s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+  animation: flipForward3D 1.8s cubic-bezier(0.3, 0.8, 0.25, 1) infinite;
 }
 
-.turningPageForward:nth-child(1) {
+.turningPage1 {
   animation-delay: 0s;
 }
-.turningPageForward:nth-child(2) {
-  animation-delay: 0.35s;
+.turningPage2 {
+  animation-delay: 0.28s;
 }
-.turningPageForward:nth-child(3) {
-  animation-delay: 0.7s;
+.turningPage3 {
+  animation-delay: 0.56s;
 }
 
-@keyframes flipForward {
+@keyframes flipForward3D {
   0% {
-    transform: rotateY(0deg) skewY(0deg);
-    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.1);
+    transform: rotateY(0deg) translateZ(0);
+    box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.1);
   }
-  30% {
-    transform: rotateY(-60deg) skewY(-2deg);
-    box-shadow: -15px 12px 25px rgba(0, 0, 0, 0.25);
+  35% {
+    /* Cylindrical bend as page arches over */
+    transform: rotateY(-70deg) skewY(-2.5deg) translateZ(12px);
+    box-shadow: -12px 10px 24px rgba(0, 0, 0, 0.28);
   }
   70% {
-    transform: rotateY(-130deg) skewY(2deg);
-    box-shadow: 15px 12px 25px rgba(0, 0, 0, 0.25);
+    transform: rotateY(-135deg) skewY(2.5deg) translateZ(10px);
+    box-shadow: 12px 10px 24px rgba(0, 0, 0, 0.28);
   }
   100% {
-    transform: rotateY(-180deg) skewY(0deg);
-    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+    transform: rotateY(-180deg) translateZ(0);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -233,35 +411,25 @@
 .turningPageBackward {
   right: 50%;
   transform-origin: right center;
-  animation: flipBackward 1.8s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+  animation: flipBackward3D 1.8s cubic-bezier(0.3, 0.8, 0.25, 1) infinite;
 }
 
-.turningPageBackward:nth-child(1) {
-  animation-delay: 0s;
-}
-.turningPageBackward:nth-child(2) {
-  animation-delay: 0.35s;
-}
-.turningPageBackward:nth-child(3) {
-  animation-delay: 0.7s;
-}
-
-@keyframes flipBackward {
+@keyframes flipBackward3D {
   0% {
-    transform: rotateY(0deg) skewY(0deg);
-    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+    transform: rotateY(0deg) translateZ(0);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
   }
-  30% {
-    transform: rotateY(60deg) skewY(2deg);
-    box-shadow: 15px 12px 25px rgba(0, 0, 0, 0.25);
+  35% {
+    transform: rotateY(70deg) skewY(2.5deg) translateZ(12px);
+    box-shadow: 12px 10px 24px rgba(0, 0, 0, 0.28);
   }
   70% {
-    transform: rotateY(130deg) skewY(-2deg);
-    box-shadow: -15px 12px 25px rgba(0, 0, 0, 0.25);
+    transform: rotateY(135deg) skewY(-2.5deg) translateZ(10px);
+    box-shadow: -12px 10px 24px rgba(0, 0, 0, 0.28);
   }
   100% {
-    transform: rotateY(180deg) skewY(0deg);
-    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.1);
+    transform: rotateY(180deg) translateZ(0);
+    box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -269,31 +437,39 @@
 .turningPageChapter {
   left: 50%;
   transform-origin: left center;
-  animation: flipChapterSingle 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: flipChapterSingle 1.4s cubic-bezier(0.35, 0, 0.25, 1) forwards;
 }
 
 @keyframes flipChapterSingle {
   0% {
     transform: rotateY(0deg);
   }
+  50% {
+    transform: rotateY(-90deg) skewY(-2deg) translateZ(8px);
+  }
   100% {
     transform: rotateY(-180deg);
   }
 }
 
-/* Destination Typography Information Box */
+/* ============================================================
+   DESTINATION TYPOGRAPHY (INSIDE GLASSMODAL)
+   ============================================================ */
 .destinationBox {
-  margin-top: var(--space-4);
+  margin-top: 12px;
   text-align: center;
-  max-width: 28rem;
-  padding: var(--space-3) var(--space-6);
-  animation: fadeInDestination 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 100%;
+  padding: 4px 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInDestination 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeInDestination {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -302,36 +478,43 @@
 }
 
 .editionTag {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #8b7038;
-  margin-bottom: var(--space-1);
+  background: rgba(197, 161, 90, 0.16);
+  border: 1px solid rgba(197, 161, 90, 0.35);
+  padding: 3px 10px;
+  border-radius: 9999px;
+  margin-bottom: 6px;
 }
 
 .bookName {
   font-family: var(--font-serif);
-  font-size: var(--text-2xl);
+  font-size: 1.45rem;
   font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-1);
+  color: #183d32;
+  margin: 0;
   letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.goldDivider {
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c5a15a, transparent);
+  margin: 6px auto;
 }
 
 .chapterVerseDetails {
   font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  font-weight: 500;
-}
-
-.goldDivider {
-  width: 48px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #c5a15a, transparent);
-  margin: var(--space-2) auto;
+  font-size: 13px;
+  color: #555850;
+  font-weight: 600;
 }
 
 .directionNotice {
@@ -341,20 +524,22 @@
   margin-top: 4px;
 }
 
-/* Accessibility: Reduced-Motion Mode */
+/* ============================================================
+   ACCESSIBILITY: REDUCED-MOTION MODE
+   ============================================================ */
 .reducedMotionContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-8);
+  padding: 20px 16px;
 }
 
 .reducedMotionEmblem {
-  width: 64px;
-  height: 64px;
-  margin-bottom: var(--space-4);
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
   animation: gentlePulse 2s ease-in-out infinite;
 }
 
@@ -365,7 +550,7 @@
     opacity: 0.9;
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.04);
     opacity: 1;
   }
 }
@@ -373,7 +558,9 @@
 @media (prefers-reduced-motion: reduce) {
   .turningPageForward,
   .turningPageBackward,
-  .turningPageChapter {
+  .turningPageChapter,
+  .pageShine,
+  .ribbon {
     animation: none !important;
   }
   .bible3d {
