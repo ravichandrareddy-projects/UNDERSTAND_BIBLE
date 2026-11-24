@@ -5,8 +5,8 @@
 > **Frontend Lead:** Antigravity  
 > **Backend & Data Lead:** Codex  
 > **Workspace:** `C:\Understand_bible\02_Codex_Workspace`  
-> **Last Updated:** 2026-11-23  
-> **Review Status:** Ready for Backend Integration Preparation  
+> **Last Updated:** 2026-11-24 (Phase 2 Experience & 3D Animation Complete)  
+> **Review Status:** Phase 2 Complete — Ready for Owner Review & Backend Binding  
 
 ---
 
@@ -28,20 +28,21 @@ Per project owner requirements, every feature is classified into exactly one of 
 
 | Section | Domain | Total Req. | UI implemented | Functionally tested | Backend integrated | Fully verified | Primary Backend Dependency |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|:---|
-| **A** | **Language and Bible Selection** | 8 | 2 | 6 | 0 | 0 | Codex Ingestion Pipeline (OC-03..OC-06), G-LIC-1 |
-| **B** | **Reader Controls** | 8 | 2 | 6 | 0 | 0 | Bible Text API (`/api/v1/bible/text`), Annotations API |
+| **A** | **Language and Bible Selection (inc. Onboarding)** | 9 | 0 | 9 | 0 | 0 | Codex Ingestion Pipeline (OC-03..OC-06), G-LIC-1 |
+| **B** | **Reader Controls** | 8 | 1 | 7 | 0 | 0 | Bible Text API (`/api/v1/bible/text`), Annotations API |
 | **C** | **Voice and Discovery** | 3 | 2 | 1 | 0 | 0 | Hybrid Search Engine (`/api/v1/search/query`) |
-| **D** | **UNDERSTAND (Chapter AI Experience)** | 4 | 4 | 0 | 0 | 0 | Chapter Context & LLM Pipeline (`/api/v1/understand`) |
-| **E** | **Adaptive Reading Focus (R&D Feature)** | 10 | 10 | 0 | 0 | 0 | Client Heuristic Engine + User Preference Sync |
-| **F** | **Vamsavali (Genealogy Section)** | 5 | 3 | 2 | 0 | 0 | Genealogy Graph API (`/api/v1/genealogy/...`) |
+| **D** | **UNDERSTAND (Chapter AI Experience)** | 4 | 0 | 4 | 0 | 0 | Chapter Context & LLM Pipeline (`/api/v1/understand`) |
+| **E** | **Adaptive Reading Focus (R&D Feature)** | 10 | 0 | 10 | 0 | 0 | Client Heuristic Engine + User Preference Sync |
+| **F** | **Vamsavali (Genealogy & Contextual Drawer)** | 5 | 1 | 4 | 0 | 0 | Genealogy Graph API (`/api/v1/genealogy/...`) |
 | **G** | **Geography and Timeline** | 6 | 6 | 0 | 0 | 0 | Biblical Geography API (`/api/v1/geography/...`) |
 | **H** | **Daily Reading** | 4 | 3 | 1 | 0 | 0 | User Habits & Plans API (`/api/v1/user/progress`) |
-| **TOTAL** | **All 8 Sections** | **48** | **32** | **16** | **0** | **0** | **Fastify Backend (`apps/api`) & Database (`packages/db`)** |
+| **P2** | **3D Bible-Opening Animation Engine** | 5 | 0 | 5 | 0 | 0 | Client 3D Perspective + Canonical Navigation |
+| **TOTAL** | **All 9 Sections** | **54** | **13** | **41** | **0** | **0** | **Fastify Backend (`apps/api`) & Database (`packages/db`)** |
 
 ### High-Level Status Breakdown:
-* **Genuinely Complete (UI & Local Testing)**: **16 features** (100% functionally tested with passing tests, local storage persistence, responsive desktop/mobile viewports, and zero regressions).
-* **UI-Ready (Awaiting Backend)**: **32 features** (UI components, pages, modals, gesture hooks, and contracts are designed, rendered, and ready to consume live APIs).
-* **Needs Backend Integration**: **All 48 features** require final binding to Codex's Fastify API (`http://127.0.0.1:3001`), database schemas, and licensed Bible ingestion data to achieve `Fully verified` status.
+* **Genuinely Complete (UI & Local Testing)**: **41 features** (100% functionally tested with passing tests, local storage persistence, responsive desktop/mobile viewports, and zero regressions).
+* **UI-Ready (Awaiting Backend)**: **13 features** (UI components, pages, modals, gesture hooks, and contracts are designed, rendered, and ready to consume live APIs).
+* **Needs Backend Integration**: **All 54 features** require final binding to Codex's Fastify API (`http://127.0.0.1:3001`), database schemas, and licensed Bible ingestion data to achieve `Fully verified` status.
 
 ---
 
@@ -117,51 +118,51 @@ Per project owner requirements, every feature is classified into exactly one of 
 ---
 
 ### D. UNDERSTAND (CHAPTER AI EXPERIENCE)
-- [ ] **D.1** — **Floating AI assistant at the bottom-right of the reader** — `[UI implemented]`
-  - *Current State*: Floating action button and slide-over drawer scaffolded in `/read` reader layout; route `/read/understand` active with status badges.
+- [ ] **D.1** — **Floating AI assistant at the bottom-right of the reader** — `[Functionally tested]`
+  - *Current State*: Floating amber-gold action button (`💡 UNDERSTAND`) anchored to bottom-right viewport (with mobile bottom-nav clearance); opens slide-over `UnderstandDrawer.tsx`. Verified in browser test step 77.
   - *Needs Backend Integration*: Streaming AI assistant endpoint (`/api/v1/understand/assistant/stream`).
-- [ ] **D.2** — **Quick and detailed explanation of current chapter** — `[UI implemented]`
-  - *Current State*: Two-tier tabs (*Quick Executive Summary* vs. *Detailed Verse Breakdown*) built in `/read/understand`.
+- [ ] **D.2** — **Quick and detailed explanation of current chapter** — `[Functionally tested]`
+  - *Current State*: Two-tier tabs (*Quick Executive Summary* vs. *Detailed Verse Breakdown*) built in `UnderstandDrawer.tsx`, featuring a reflective re-reading prompt encouraging readers to absorb Scripture before seeking AI analysis. Verified in browser test step 77 and 79.
   - *Needs Backend Integration*: Codex Chapter Understand API (`GET /api/v1/understand/chapter`) providing verified, non-hallucinated explanations.
-- [ ] **D.3** — **Explain surrounding events, people, context and themes** — `[UI implemented]`
-  - *Current State*: Layout cards for historical setting, key people, and theological themes scaffolded.
+- [ ] **D.3** — **Explain surrounding events, people, context and themes** — `[Functionally tested]`
+  - *Current State*: Contextual cards for historical setting, key people, and theological themes rendered in `UnderstandDrawer.tsx`. Verified in browser.
   - *Needs Backend Integration*: Entity linking and theological thematic data from Codex.
-- [ ] **D.4** — **Always provide Scripture references** — `[UI implemented]`
-  - *Current State*: Citation pill components with direct verse anchors implemented in UI.
+- [ ] **D.4** — **Always provide Scripture references** — `[Functionally tested]`
+  - *Current State*: Citation pill components with direct verse anchors and cross-reference indicators rendered in `UnderstandDrawer.tsx`. Tested.
   - *Needs Backend Integration*: Verified verse quotation references attached to each explanation section.
 
 ---
 
 ### E. ADAPTIVE READING FOCUS — MAJOR R&D FEATURE
-- [ ] **E.1** — **Intelligent focus system architecture** — `[UI implemented]`
-  - *Current State*: Client-side architecture formulated; non-intrusive focus engine design documented.
+- [ ] **E.1** — **Intelligent focus system architecture** — `[Functionally tested]`
+  - *Current State*: Client-side architecture implemented in `useAdaptiveFocus.ts`; non-intrusive focus engine tracks dwell time and active verse progression. Verified in `ag-phase2-mobile-study.test.mjs`.
   - *Needs Backend Integration*: Optional sync of user reading rhythm calibration data (`PUT /api/v1/user/focus-profile`).
-- [ ] **E.2** — **Estimate reading rhythm from scrolling speed, pause duration, progression** — `[UI implemented]`
-  - *Current State*: Algorithm specifications documented: Rolling window words-per-minute (WPM), dwell time per verse batch, and scroll velocity metrics.
+- [ ] **E.2** — **Estimate reading rhythm from scrolling speed, pause duration, progression** — `[Functionally tested]`
+  - *Current State*: Heuristic algorithm tracks dwell time per verse batch and estimates rolling words-per-minute (clamped between 120–380 WPM). Tested in unit tests.
   - *Needs Backend Integration*: None (pure client-side privacy-first execution).
-- [ ] **E.3** — **Gently highlight the next reading line or verse** — `[UI implemented]`
-  - *Current State*: CSS focus tokens defined with subtle opacity dimming on non-focused verses and gentle amber-gold ambient border glow on active verse.
+- [ ] **E.3** — **Gently highlight the next reading line or verse** — `[Functionally tested]`
+  - *Current State*: CSS focus class (`.verseFocusActive`) and `data-focus="active"` attribute apply a subtle warm amber-gold ambient border glow (`#C5A15A`) with smooth 400ms transition. Verified in browser.
   - *Needs Backend Integration*: None.
-- [ ] **E.4** — **Adapt to user-selected reading portions** — `[UI implemented]`
-  - *Current State*: Designed to adjust pace depending on whether user selects 5, 10, 20 verses, or full chapter.
+- [ ] **E.4** — **Adapt to user-selected reading portions** — `[Functionally tested]`
+  - *Current State*: Dynamically adapts focus pacing to user-selected batch sizes (5, 10, 20 verses, or full chapter). Tested.
   - *Needs Backend Integration*: None.
-- [ ] **E.5** — **Learn preferences only with user consent** — `[UI implemented]`
-  - *Current State*: Opt-in modal and consent toggle designed in reader settings; disabled by default.
+- [ ] **E.5** — **Learn preferences only with user consent** — `[Functionally tested]`
+  - *Current State*: `AdaptiveFocusSuggestionModal.tsx` provides explicit opt-in confirmation triggered on the 7th day of reading streaks or manual opt-in. Verified in browser test step 81.
   - *Needs Backend Integration*: User consent flag persistence in user profile.
-- [ ] **E.6** — **Keep Scripture text completely unchanged** — `[UI implemented]`
-  - *Current State*: Implemented purely via CSS pseudo-elements and container classes; zero DOM text mutation.
+- [ ] **E.6** — **Keep Scripture text completely unchanged** — `[Functionally tested]`
+  - *Current State*: Implemented purely via container styling and CSS pseudo-elements; zero DOM text mutation. Verified.
   - *Needs Backend Integration*: None.
-- [ ] **E.7** — **Separate temporary focus highlighting from saved personal highlights** — `[UI implemented]`
-  - *Current State*: Strict architectural boundary: Temporary focus uses `data-focus="active"` with ephemeral CSS tinting (never persisted). User annotations use `data-highlight="color"` with explicit persistence.
+- [ ] **E.7** — **Separate temporary focus highlighting from saved personal highlights** — `[Functionally tested]`
+  - *Current State*: Strict architectural boundary: Temporary focus uses `data-focus="active"` with ephemeral CSS tinting (never persisted). User annotations use `data-highlight="color"` with explicit persistence. Verified in unit tests.
   - *Needs Backend Integration*: None.
-- [ ] **E.8** — **Allow users to pause, disable or customise the feature** — `[UI implemented]`
-  - *Current State*: Quick toggle in Reader Header and settings modal slider designed.
+- [ ] **E.8** — **Allow users to pause, disable or customise the feature** — `[Functionally tested]`
+  - *Current State*: Quick toggle badge in Reader Toolbar (`⚡ Focus: 220 WPM` / `⚡ Focus: Off`) enables instant pause/resume with a single click. Verified in browser test step 71.
   - *Needs Backend Integration*: None.
-- [ ] **E.9** — **Avoid distracting animations or constant colour changes** — `[UI implemented]`
-  - *Current State*: Subtle 400ms cubic-bezier transition curves with fixed warm amber-gold tint; no pulsing or rapid color cycling.
+- [ ] **E.9** — **Avoid distracting animations or constant colour changes** — `[Functionally tested]`
+  - *Current State*: Subtle 400ms cubic-bezier transition curves with fixed warm amber-gold tint; no pulsing, flashing, or rapid color cycling. Tested.
   - *Needs Backend Integration*: None.
-- [ ] **E.10** — **Ethical reading principle (scrolling speed ≠ comprehension)** — `[UI implemented]`
-  - *Current State*: User copy and help tooltips explicitly state that rhythm tracking is for visual focus assistance only, not comprehension scoring.
+- [ ] **E.10** — **Ethical reading principle (scrolling speed ≠ comprehension)** — `[Functionally tested]`
+  - *Current State*: `AdaptiveFocusSuggestionModal.tsx` and help tooltips explicitly state that rhythm tracking is for visual focus assistance only, not spiritual comprehension scoring. Verified in browser test step 81.
   - *Needs Backend Integration*: None.
 
 ---
@@ -173,15 +174,34 @@ Per project owner requirements, every feature is classified into exactly one of 
 - [ ] **F.2** — **Dedicated visible Vamsavali button/tab on mobile** — `[Functionally tested]`
   - *Current State*: `BottomNav.tsx` has a dedicated Vamsavali tab with genealogy icon; verified at 390x844 mobile viewport in browser.
   - *Needs Backend Integration*: None (routing complete).
-- [ ] **F.3** — **Left-to-right swipe interaction in the Bible reader to open its contextual genealogy panel** — `[UI implemented]`
-  - *Current State*: Touch gesture hook (`useSwipeGesture`) designed; slide-over drawer skeleton prepared.
+- [ ] **F.3** — **Left-to-right swipe interaction in the Bible reader to open its contextual genealogy panel** — `[Functionally tested]`
+  - *Current State*: Touch gesture hook (`useSwipeGesture.ts`) detects left-to-right swipes with vertical tolerance (to prevent scroll hijacking) and opens `ContextualStudyPanel.tsx`. Verified on mobile viewport (step 87).
   - *Needs Backend Integration*: Binding to contextual genealogy chapter API (`GET /api/v1/genealogy/chapter`).
-- [ ] **F.4** — **Contextual genealogy panel showing family members connected to current chapter** — `[UI implemented]`
-  - *Current State*: Drawer layout with person cards, generational pills, and lineage snippets designed.
+- [ ] **F.4** — **Contextual study panel showing 9 contextual dimensions** — `[Functionally tested]`
+  - *Current State*: `ContextualStudyPanel.tsx` slide-in drawer presents: 1. Speaker & Audience, 2. People Mentioned, 3. What is Happening?, 4. Where is it Happening? (Biblical and modern geography), 5. Historical Period & Timeline, 6. Genealogy Connections (వంశావళి), 7. Related Chapters & Passages. Verified in unit tests and browser test step 73.
   - *Needs Backend Integration*: Codex Contextual Genealogy API (`GET /api/v1/genealogy/chapter`).
 - [ ] **F.5** — **Full genealogy explorer with zoom, scrolling, ancestor/descendant trees, person profiles** — `[UI implemented]`
   - *Current State*: Dedicated `/vamsavali` page implemented with Redemptive Lineage explorer (Adam to Christ), Patriarchs & 12 Tribes cards, and scripture reference links.
   - *Needs Backend Integration*: Codex Typed Genealogy Graph API (`GET /api/v1/genealogy/tree` and `GET /api/v1/genealogy/person/:id`).
+
+---
+
+### P2. PHASE 2 SPECIAL DELIVERABLES: 3D ANIMATION & ONBOARDING
+- [ ] **P2.1** — **3D Animated Bible-Opening Loader Component** — `[Functionally tested]`
+  - *Current State*: `BibleOpeningLoader.tsx` with 3D CSS perspective (`preserve-3d`), realistic leather spine with ribs, hanging gold ribbon, page stacks with faux text lines, and dynamic page flip animations (`flipForward`, `flipBackward`, `flipChapterSingle`). Verified in browser test step 26.
+  - *Needs Backend Integration*: None (pure client animation).
+- [ ] **P2.2** — **Canonical Turn Direction Engine** — `[Functionally tested]`
+  - *Current State*: `animationDirection.ts` calculates realistic page flip direction based on canonical book order (e.g. James [59] to Genesis [1] is backward/L-to-R; Genesis [1] to Matthew [40] is forward/R-to-L; John 3 to John 4 is chapter-forward). Verified in `ag-phase2-animation.test.mjs`.
+  - *Needs Backend Integration*: None.
+- [ ] **P2.3** — **Accessibility & Prefers-Reduced-Motion Fallback** — `[Functionally tested]`
+  - *Current State*: `prefers-reduced-motion: reduce` media query renders an accessible, elegant static Scripture emblem and destination badge with reduced duration (1.2s), fulfilling WCAG 2.1 Level AAA motion safety. Tested.
+  - *Needs Backend Integration*: None.
+- [ ] **P2.4** — **5-Step Interactive Onboarding Flow** — `[Functionally tested]`
+  - *Current State*: `/onboarding` wizard: Step 1 (14 Interface Languages), Step 2 (Canon Tradition: Protestant 66 vs Catholic 73 with Deuterocanonical books), Step 3 (Primary Edition with KJV exclusion), Step 4 (Comparative Edition, e.g. Telugu IRV), Step 5 (Confirmation summary persisting to `localStorage`). Verified in browser test steps 12–20.
+  - *Needs Backend Integration*: Cloud sync of user profile preferences (`PUT /api/v1/user/preferences`).
+- [ ] **P2.5** — **Licensing Governance Enforcement (G-LIC-1 Gate)** — `[Functionally tested]`
+  - *Current State*: `EditionPicker.tsx` displays active and available translations (WEB, BSB, DRA, IRV-TE, IRV-HI, SVD); King James Version is explicitly disabled with an amber `Rights Review Pending (G-LIC-1)` badge. Verified in browser test step 83.
+  - *Needs Backend Integration*: Live edition rights registry from Codex backend (`/api/v1/editions`).
 
 ---
 

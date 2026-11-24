@@ -80,25 +80,47 @@ export function EditionPicker({
         <div className={styles.list}>
           {BIBLE_EDITIONS.map((ed: BibleEdition) => {
             const isSelected = ed.id === selectedEditionId;
+            const isAvailable = ed.available !== false;
             return (
               <button
                 key={ed.id}
                 type="button"
-                className={`${styles.editionCard} ${isSelected ? styles.editionCardSelected : ''}`}
+                disabled={!isAvailable}
+                aria-disabled={!isAvailable}
+                className={`${styles.editionCard} ${isSelected ? styles.editionCardSelected : ''} ${!isAvailable ? styles.editionCardDisabled : ''}`}
                 onClick={() => {
+                  if (!isAvailable) return;
                   onSelect(ed.id);
                   onClose();
                 }}
               >
                 <div className={styles.editionHeader}>
                   <span className={styles.editionName}>{ed.name}</span>
-                  <span className={styles.licenseBadge}>{ed.licenseLabel}</span>
+                  <span
+                    className={`${styles.licenseBadge} ${!isAvailable ? styles.licenseBadgeReview : ''}`}
+                  >
+                    {!isAvailable
+                      ? 'Rights Review Pending (G-LIC-1)'
+                      : ed.licenseLabel}
+                  </span>
                 </div>
                 <div className={styles.editionMeta}>
                   <span>Code: {ed.code}</span> ·{' '}
                   <span>Lang: {ed.language.toUpperCase()}</span> ·{' '}
                   <span>{ed.year ? `Year ${ed.year}` : 'Historical'}</span>
                 </div>
+                {ed.rightsNote && !isAvailable && (
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      color: '#b91c1c',
+                      marginTop: '4px',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    🔒 {ed.rightsNote}
+                  </div>
+                )}
                 <div
                   style={{
                     fontSize: '11px',

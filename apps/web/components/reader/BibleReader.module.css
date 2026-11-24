@@ -475,3 +475,97 @@
   color: #71716a;
   line-height: 1.5;
 }
+
+/* ============================================================
+   PHASE 2: ADAPTIVE FOCUS & FLOATING CONTROLS
+   ============================================================ */
+.verseFocusActive {
+  background-color: rgba(197, 161, 90, 0.14) !important;
+  border-left: 3px solid #c5a15a !important;
+  box-shadow: 0 0 16px rgba(197, 161, 90, 0.22);
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[dir='rtl'] .verseFocusActive {
+  border-left: none !important;
+  border-right: 3px solid #c5a15a !important;
+}
+
+.floatingUnderstandBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #183d32 0%, #244b3e 100%);
+  color: #ffffff;
+  border: 1.5px solid #c5a15a;
+  border-radius: 9999px;
+  padding: 10px 18px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(24, 61, 50, 0.35);
+  transition: all 0.2s ease;
+}
+
+.floatingUnderstandBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(24, 61, 50, 0.45);
+  border-color: #ffd88a;
+}
+
+.contextualStudyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: #f4f0e6;
+  border: 1px solid #ded8ca;
+  color: #183d32;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.contextualStudyBtn:hover {
+  background: #eae5d8;
+  border-color: #c5a15a;
+}
+
+.adaptiveFocusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #8b7038;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: #fbf8f0;
+  border-radius: 12px;
+  border: 1px solid #e5dfd0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.focusBadgeActive {
+  background: #fef7e7;
+  border-color: #c5a15a;
+  color: #183d32;
+  box-shadow: 0 0 8px rgba(197, 161, 90, 0.25);
+}
+
+@media (max-width: 640px) {
+  .floatingUnderstandBtn {
+    bottom: 72px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}

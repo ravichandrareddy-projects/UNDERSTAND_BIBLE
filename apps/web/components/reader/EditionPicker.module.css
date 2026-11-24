@@ -98,6 +98,25 @@
   background-color: #f2ede0;
 }
 
+.editionCardDisabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background-color: #f5f3ee;
+  border-style: dashed;
+}
+
+.editionCardDisabled:hover {
+  border-color: #ebe4d5;
+  background-color: #f5f3ee;
+  transform: none;
+}
+
+.licenseBadgeReview {
+  background-color: #fde8e8;
+  color: #c53030;
+  border: 1px solid #f8b4b4;
+}
+
 .editionHeader {
   display: flex;
   align-items: center;

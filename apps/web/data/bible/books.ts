@@ -675,9 +675,117 @@ export const BIBLE_BOOKS: BibleBook[] = [
   },
 ];
 
-export function getBook(idOrSlug: string): BibleBook {
+// ===================== DEUTEROCANONICAL BOOKS (CATHOLIC CANON - 7 BOOKS) =====================
+export const DEUTEROCANONICAL_BOOKS: BibleBook[] = [
+  {
+    id: 'TOB',
+    slug: 'tobit',
+    testament: 'OT',
+    section: 'history',
+    chaptersCount: 14,
+    names: { en: 'Tobit', te: 'తోబీతు', ar: 'طوبيا' },
+    abbreviations: { en: ['Tob', 'Tb'], te: ['తోబీ'], ar: ['طو'] },
+  },
+  {
+    id: 'JDT',
+    slug: 'judith',
+    testament: 'OT',
+    section: 'history',
+    chaptersCount: 16,
+    names: { en: 'Judith', te: 'యూదితు', ar: 'يهوديت' },
+    abbreviations: { en: ['Jdt', 'Jd'], te: ['యూది'], ar: ['يه'] },
+  },
+  {
+    id: '1MA',
+    slug: '1-maccabees',
+    testament: 'OT',
+    section: 'history',
+    chaptersCount: 16,
+    names: { en: '1 Maccabees', te: '1 మక్కబీయులు', ar: 'مكابيين أول' },
+    abbreviations: { en: ['1Mac', '1Ma'], te: ['1మక్క'], ar: ['1مك'] },
+  },
+  {
+    id: '2MA',
+    slug: '2-maccabees',
+    testament: 'OT',
+    section: 'history',
+    chaptersCount: 15,
+    names: { en: '2 Maccabees', te: '2 మక్కబీయులు', ar: 'مكابيين ثاني' },
+    abbreviations: { en: ['2Mac', '2Ma'], te: ['2మక్క'], ar: ['2مك'] },
+  },
+  {
+    id: 'WIS',
+    slug: 'wisdom',
+    testament: 'OT',
+    section: 'wisdom',
+    chaptersCount: 19,
+    names: {
+      en: 'Wisdom of Solomon',
+      te: 'సొలొమోను జ్ఞానగ్రంథము',
+      ar: 'حكمة سليمان',
+    },
+    abbreviations: { en: ['Wis', 'Ws'], te: ['జ్ఞాన'], ar: ['حك'] },
+  },
+  {
+    id: 'SIR',
+    slug: 'sirach',
+    testament: 'OT',
+    section: 'wisdom',
+    chaptersCount: 51,
+    names: {
+      en: 'Sirach (Ecclesiasticus)',
+      te: 'సీరా జ్ఞానగ్రంథము',
+      ar: 'يشوع بن سيراخ',
+    },
+    abbreviations: { en: ['Sir', 'Ecclus'], te: ['సీరా'], ar: ['سي'] },
+  },
+  {
+    id: 'BAR',
+    slug: 'baruch',
+    testament: 'OT',
+    section: 'major_prophets',
+    chaptersCount: 6,
+    names: { en: 'Baruch', te: 'బారూకు', ar: 'باروخ' },
+    abbreviations: { en: ['Bar', 'Ba'], te: ['బారూ'], ar: ['بار'] },
+  },
+];
+
+/**
+ * Returns books for a given tradition.
+ * Catholic tradition includes 73 books (66 standard + 7 deuterocanonical).
+ */
+export function getBooksForTradition(
+  tradition: 'protestant' | 'catholic' | 'orthodox' = 'protestant',
+): BibleBook[] {
+  if (tradition === 'catholic') {
+    return [...BIBLE_BOOKS, ...DEUTEROCANONICAL_BOOKS];
+  }
+  return BIBLE_BOOKS;
+}
+
+/**
+ * Returns the 1-based canonical index of a book within the specified canon.
+ * Crucial for the 3D Bible-opening animation direction calculation.
+ */
+export function getBookOrder(
+  bookId: string,
+  tradition: 'protestant' | 'catholic' | 'orthodox' = 'protestant',
+): number {
+  const normalized = bookId.toUpperCase();
+  const list = getBooksForTradition(tradition);
+  const index = list.findIndex(
+    (b) => b.id === normalized || b.slug === bookId.toLowerCase(),
+  );
+  return index !== -1 ? index + 1 : 1;
+}
+
+export function getBook(
+  idOrSlug: string,
+  tradition: 'protestant' | 'catholic' | 'orthodox' = 'protestant',
+): BibleBook {
   const normalized = idOrSlug.toUpperCase();
-  const book = BIBLE_BOOKS.find(
+  const list = getBooksForTradition(tradition);
+  const book = list.find(
     (b) => b.id === normalized || b.slug === idOrSlug.toLowerCase(),
   );
   return (book ?? BIBLE_BOOKS[0]) as BibleBook; // Default to Genesis
@@ -686,11 +794,13 @@ export function getBook(idOrSlug: string): BibleBook {
 export function searchBooks(
   query: string,
   locale: 'en' | 'te' | 'ar' = 'en',
+  tradition: 'protestant' | 'catholic' | 'orthodox' = 'protestant',
 ): BibleBook[] {
   const q = query.trim().toLowerCase();
-  if (!q) return BIBLE_BOOKS;
+  const list = getBooksForTradition(tradition);
+  if (!q) return list;
 
-  return BIBLE_BOOKS.filter((b) => {
+  return list.filter((b) => {
     // Check ID
     if (b.id.toLowerCase().includes(q)) return true;
     // Check localized name

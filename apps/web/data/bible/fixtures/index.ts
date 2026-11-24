@@ -1225,13 +1225,24 @@ export function getChapterContent(
   const edition = getEdition(editionId);
   const key = `${book.id}_${chapterNumber}`;
 
-  // Check if we have verbatim pilot fixture text
-  const fixtureVerses = FIXTURES[key]?.[editionId] || FIXTURES[key]?.['web'];
+  // Check if we have verbatim pilot fixture text (supporting legacy short IDs and canonical full IDs)
+  const shortId = edition.id
+    .replace('eng-', '')
+    .replace('tel-', '')
+    .replace('ara-', '')
+    .replace('hin-', '');
+  const fixtureVerses =
+    FIXTURES[key]?.[edition.id] ||
+    FIXTURES[key]?.[shortId] ||
+    FIXTURES[key]?.[edition.code.toLowerCase()] ||
+    FIXTURES[key]?.['web'];
+
+  const bookNames = book.names as Record<string, string>;
 
   if (fixtureVerses && fixtureVerses.length > 0) {
     return {
       bookId: book.id,
-      bookName: book.names[edition.language] || book.names.en,
+      bookName: bookNames[edition.language] || book.names.en,
       chapterNumber,
       editionId: edition.id,
       verses: fixtureVerses,
@@ -1256,14 +1267,14 @@ export function getChapterContent(
       text: sampleText,
       heading:
         v === 1
-          ? `${book.names[edition.language] || book.names.en} ${chapterNumber}`
+          ? `${bookNames[edition.language] || book.names.en} ${chapterNumber}`
           : undefined,
     });
   }
 
   return {
     bookId: book.id,
-    bookName: book.names[edition.language] || book.names.en,
+    bookName: bookNames[edition.language] || book.names.en,
     chapterNumber,
     editionId: edition.id,
     verses,

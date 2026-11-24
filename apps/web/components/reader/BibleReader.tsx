@@ -1,12 +1,19 @@
 'use client';
 
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import { useReader } from '../../lib/reader/useReader';
 import { BookPicker } from './BookPicker';
 import { EditionPicker } from './EditionPicker';
 import { ReaderSettingsModal } from './ReaderSettingsModal';
 import { VoiceNavigator } from './VoiceNavigator';
 import { VerseActionBar } from './VerseActionBar';
+import { BibleOpeningLoader } from './BibleOpeningLoader';
+import { calculateAnimationDirection } from '../../lib/animation/animationDirection';
+import { ContextualStudyPanel } from './ContextualStudyPanel';
+import { useSwipeGesture } from '../../lib/reader/useSwipeGesture';
+import { useAdaptiveFocus } from '../../lib/reader/useAdaptiveFocus';
+import { AdaptiveFocusSuggestionModal } from './AdaptiveFocusSuggestionModal';
+import { UnderstandDrawer } from './UnderstandDrawer';
 import type { HighlightColor, VerseContent } from '../../data/bible/types';
 import styles from './BibleReader.module.css';
 
@@ -60,6 +67,116 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
   const [pickingParallelEdition, setPickingParallelEdition] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
+
+  // Phase 2 State: Study Drawer, Understand AI Drawer, 3D Bible Animation
+  const [isStudyPanelOpen, setIsStudyPanelOpen] = useState(false);
+  const [isUnderstandOpen, setIsUnderstandOpen] = useState(false);
+  const [isOpeningAnimationActive, setIsOpeningAnimationActive] =
+    useState(false);
+  const [animationDirection, setAnimationDirection] = useState<
+    | 'forward'
+    | 'backward'
+    | 'chapter-forward'
+    | 'chapter-backward'
+    | 'initial-open'
+    | 'same-location'
+  >('initial-open');
+
+  const prevLocationRef = useRef<{
+    bookId: string;
+    chapterNumber: number;
+    verseNumber: number;
+  }>({
+    bookId,
+    chapterNumber,
+    verseNumber: activeVerseNumber,
+  });
+
+  // Mobile Swipe Gesture: Left-to-right swipe opens Contextual Study Panel
+  const swipeHandlers = useSwipeGesture({
+    onSwipeRight: () => setIsStudyPanelOpen(true),
+    onSwipeLeft: () => setIsStudyPanelOpen(false),
+    minSwipeDistance: 50,
+    maxPerpendicularDistance: 70,
+  });
+
+  // Phase 2 R&D: Adaptive Reading Focus UI (Client-side rhythm & consent)
+  const {
+    state: focusState,
+    recordScrollProgress,
+    onVerseDwell,
+    enableFocus,
+    disableFocus,
+    dismissSuggestion,
+    triggerSuggestionModal,
+    closeSuggestionModal,
+  } = useAdaptiveFocus({
+    totalVerses: primaryChapterContent.totalVerses,
+    verseBatchSize: preferences.batchSize || 5,
+  });
+
+  // Check URL params for animation triggering on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (
+        params.get('animation') === '1' ||
+        params.get('openWithAnimation') === 'true'
+      ) {
+        setIsOpeningAnimationActive(true);
+      }
+    }
+  }, []);
+
+  // Track dwell time when active verse changes
+  useEffect(() => {
+    onVerseDwell(activeVerseNumber);
+  }, [activeVerseNumber, onVerseDwell]);
+
+  // Gentle passive scroll tracking for reading rhythm estimation
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      if (docHeight > windowHeight) {
+        const scrollPct = scrollPos / (docHeight - windowHeight);
+        const estVerse = Math.max(
+          1,
+          Math.min(
+            primaryChapterContent.totalVerses,
+            Math.ceil(scrollPct * primaryChapterContent.totalVerses),
+          ),
+        );
+        recordScrollProgress(estVerse);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [primaryChapterContent.totalVerses, recordScrollProgress]);
+
+  // Animated Navigation Helper
+  const navigateWithAnimation = useCallback(
+    (targetBookId: string, targetChapter: number, targetVerse = 1) => {
+      const plan = calculateAnimationDirection({
+        fromBookId: prevLocationRef.current.bookId,
+        fromChapter: prevLocationRef.current.chapterNumber,
+        toBookId: targetBookId,
+        toChapter: targetChapter,
+        tradition: preferences.tradition,
+      });
+      setAnimationDirection(plan.direction);
+      setIsOpeningAnimationActive(true);
+      prevLocationRef.current = {
+        bookId: targetBookId,
+        chapterNumber: targetChapter,
+        verseNumber: targetVerse,
+      };
+      navigateTo(targetBookId, targetChapter, targetVerse);
+    },
+    [navigateTo, preferences.tradition],
+  );
 
   // Auto-dismiss toast
   useEffect(() => {
@@ -182,7 +299,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
   }, [preferences]);
 
   return (
-    <div className={styles.readerContainer}>
+    <div className={styles.readerContainer} {...swipeHandlers}>
       {/* ============================================================
           1. STICKY READER TOOLBAR
           ============================================================ */}
@@ -289,6 +406,49 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
         </div>
 
         <div className={styles.toolbarRight}>
+          {/* Contextual Study Panel Button */}
+          <button
+            type="button"
+            className={`${styles.toolButton} ${isStudyPanelOpen ? styles.toolButtonActive : ''}`}
+            onClick={() => setIsStudyPanelOpen(true)}
+            aria-label="Open Contextual Study Panel (9 Dimensions)"
+            title="Open Contextual Study Panel (Speaker, Context, Geography, Vamsavali) — or swipe right on mobile"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+            <span>Context</span>
+          </button>
+
+          {/* Adaptive Focus Status Pill */}
+          <button
+            type="button"
+            className={`${styles.adaptiveFocusBadge} ${focusState.enabled ? styles.focusBadgeActive : ''}`}
+            onClick={() => {
+              if (focusState.enabled) disableFocus();
+              else triggerSuggestionModal();
+            }}
+            title={
+              focusState.enabled
+                ? `Adaptive Focus active (~${focusState.estimatedWpm} WPM). Click to disable.`
+                : 'Enable Adaptive Reading Focus (Temporary rhythm-following highlight)'
+            }
+            aria-label="Toggle Adaptive Reading Focus"
+          >
+            <span>⚡</span>
+            <span>
+              {focusState.enabled ? `${focusState.estimatedWpm} WPM` : 'Focus'}
+            </span>
+          </button>
+
           {/* Voice Navigation Button */}
           <button
             type="button"
@@ -368,6 +528,9 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
           <div>
             {visiblePrimaryVerses.map((verse: VerseContent) => {
               const isSelected = selectedVerseNumber === verse.verseNumber;
+              const isAdaptiveFocused =
+                focusState.enabled &&
+                focusState.focusedVerse === verse.verseNumber;
               const isBookmarked = bookmarks.some(
                 (b) =>
                   b.bookId === bookId &&
@@ -388,7 +551,8 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
                   )}
                   <div
                     id={`verse-${verse.verseNumber}`}
-                    className={`${styles.verseBlock} ${isSelected ? styles.verseBlockSelected : ''}`}
+                    className={`${styles.verseBlock} ${isSelected ? styles.verseBlockSelected : ''} ${isAdaptiveFocused ? styles.verseFocusActive : ''}`}
+                    data-focus={isAdaptiveFocused ? 'active' : undefined}
                     onClick={() => {
                       setSelectedVerseNumber(verse.verseNumber);
                       setActiveVerseNumber(verse.verseNumber);
@@ -453,10 +617,14 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
               </div>
               {visiblePrimaryVerses.map((v) => {
                 const isSelected = selectedVerseNumber === v.verseNumber;
+                const isAdaptiveFocused =
+                  focusState.enabled &&
+                  focusState.focusedVerse === v.verseNumber;
                 return (
                   <div
                     key={`p1_${v.verseNumber}`}
-                    className={`${styles.verseBlock} ${isSelected ? styles.verseBlockSelected : ''}`}
+                    className={`${styles.verseBlock} ${isSelected ? styles.verseBlockSelected : ''} ${isAdaptiveFocused ? styles.verseFocusActive : ''}`}
+                    data-focus={isAdaptiveFocused ? 'active' : undefined}
                     onClick={() => {
                       setSelectedVerseNumber(v.verseNumber);
                       setActiveVerseNumber(v.verseNumber);
@@ -486,10 +654,14 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
               </div>
               {visibleParallelVerses.map((v) => {
                 const isSelected = selectedVerseNumber === v.verseNumber;
+                const isAdaptiveFocused =
+                  focusState.enabled &&
+                  focusState.focusedVerse === v.verseNumber;
                 return (
                   <div
                     key={`p2_${v.verseNumber}`}
-                    className={`${styles.verseBlock} ${isSelected ? styles.verseBlockSelected : ''}`}
+                    className={`${styles.verseBlock} ${isSelected ? styles.verseBlockSelected : ''} ${isAdaptiveFocused ? styles.verseFocusActive : ''}`}
+                    data-focus={isAdaptiveFocused ? 'active' : undefined}
                     onClick={() => {
                       setSelectedVerseNumber(v.verseNumber);
                       setActiveVerseNumber(v.verseNumber);
@@ -662,7 +834,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
       )}
 
       {/* ============================================================
-          6. MODALS & PICKERS
+          6. MODALS, DRAWERS & 3D LOADER
           ============================================================ */}
       <BookPicker
         isOpen={isBookPickerOpen}
@@ -670,7 +842,7 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
         currentBookId={bookId}
         currentChapter={chapterNumber}
         currentVerse={activeVerseNumber}
-        onSelect={(bId, ch, v) => navigateTo(bId, ch, v || 1)}
+        onSelect={(bId, ch, v) => navigateWithAnimation(bId, ch, v || 1)}
         locale={locale}
       />
 
@@ -701,10 +873,66 @@ export function BibleReader({ locale = 'en' }: BibleReaderProps) {
       <VoiceNavigator
         isOpen={isVoiceNavOpen}
         onClose={() => setIsVoiceNavOpen(false)}
-        onNavigate={(bId, ch, v) => navigateTo(bId, ch, v || 1)}
+        onNavigate={(bId, ch, v) => navigateWithAnimation(bId, ch, v || 1)}
         onNextChapter={nextChapter}
         onPrevChapter={prevChapter}
       />
+
+      {/* Phase 2: Contextual Study Drawer (9 Dimensions + Mobile Left-to-Right Swipe) */}
+      <ContextualStudyPanel
+        isOpen={isStudyPanelOpen}
+        onClose={() => setIsStudyPanelOpen(false)}
+        bookId={bookId}
+        bookName={currentBook.names[locale] || currentBook.names.en}
+        chapterNumber={chapterNumber}
+        verseNumber={selectedVerseNumber || activeVerseNumber}
+        locale={locale}
+      />
+
+      {/* Phase 2: Floating UNDERSTAND AI Chapter Assistant Drawer */}
+      <UnderstandDrawer
+        isOpen={isUnderstandOpen}
+        onClose={() => setIsUnderstandOpen(false)}
+        bookName={currentBook.names[locale] || currentBook.names.en}
+        chapterNumber={chapterNumber}
+        editionCode={primaryEdition.code}
+        locale={locale}
+      />
+
+      {/* Phase 2: Adaptive Focus Ethical Consent Suggestion Modal (7th Day or Opt-in) */}
+      <AdaptiveFocusSuggestionModal
+        isOpen={focusState.showSuggestionModal}
+        onClose={closeSuggestionModal}
+        onAccept={enableFocus}
+        onDecline={dismissSuggestion}
+        streakDays={focusState.streakDays}
+        estimatedWpm={focusState.estimatedWpm}
+      />
+
+      {/* Phase 2: 3D Bible-Opening Animated Loader */}
+      <BibleOpeningLoader
+        isOpen={isOpeningAnimationActive}
+        destination={{
+          editionName: primaryEdition.name,
+          bookName: currentBook.names[locale] || currentBook.names.en,
+          chapterNumber,
+          verseNumber: activeVerseNumber,
+        }}
+        direction={animationDirection}
+        onComplete={() => setIsOpeningAnimationActive(false)}
+      />
+
+      {/* Phase 2: Floating UNDERSTAND AI Assistant Button (Bottom-Right) */}
+      <button
+        type="button"
+        className={styles.floatingUnderstandBtn}
+        onClick={() => setIsUnderstandOpen(true)}
+        aria-label="Open Understand AI Chapter Assistant"
+        title="Understand: Chapter context, themes & people"
+      >
+        <span style={{ fontSize: '18px', lineHeight: 1 }}>💡</span>
+        <span>UNDERSTAND</span>
+      </button>
     </div>
   );
 }

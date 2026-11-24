@@ -1,0 +1,82 @@
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(19, 43, 35, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalBox {
+  background: var(--color-surface);
+  border: 1.5px solid #ded8ca;
+  border-radius: var(--radius-xl);
+  max-width: 32rem;
+  width: 100%;
+  padding: var(--space-6);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.iconCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: #fdfbf5;
+  border: 1.5px solid #c5a15a;
+  color: #c5a15a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto var(--space-4);
+  box-shadow: 0 0 16px rgba(197, 161, 90, 0.3);
+}
+
+.modalTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.modalDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.privacyCallout {
+  background: #fdfbf5;
+  border: 1px solid #e2dcce;
+  border-left: 3px solid #c5a15a;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  text-align: left;
+  line-height: 1.5;
+  margin-bottom: var(--space-6);
+}
+
+.actionRow {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}

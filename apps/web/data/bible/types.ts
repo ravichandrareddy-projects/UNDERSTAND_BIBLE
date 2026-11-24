@@ -29,16 +29,23 @@ export interface BibleBook {
   };
 }
 
+export type BibleTradition = 'protestant' | 'catholic' | 'orthodox';
+
 export interface BibleEdition {
-  id: string; // e.g. 'web', 'kjv', 'irv-te', 'ar-svd'
+  id: string; // e.g. 'eng-web', 'eng-bsb', 'eng-dra', 'tel-irv', 'hin-irv', 'ara-svd'
   name: string;
   code: string;
-  language: 'en' | 'te' | 'ar';
+  language: string; // ISO 639-1 code ('en', 'te', 'hi', 'ar', etc.)
+  languageName: string;
   direction: 'ltr' | 'rtl';
+  tradition: BibleTradition;
+  booksCount: number;
   year?: number;
-  license: 'public_domain' | 'cc_by_sa' | 'pilot_licensed';
+  license: 'public_domain' | 'cc_by_sa' | 'pilot_licensed' | 'pending_review';
   licenseLabel: string;
   copyright: string;
+  available: boolean; // Flag if rights are confirmed and approved for user
+  rightsNote?: string;
 }
 
 export interface VerseContent {
@@ -96,4 +103,9 @@ export interface ReaderPreferences {
   verseNumbers: 'superscript' | 'inline' | 'hidden';
   linkScrolling: boolean;
   batchSize: number; // default 5 verses per batch, adjustable
+  primaryEditionId?: string;
+  secondaryEditionId?: string;
+  tradition?: BibleTradition;
+  interfaceLanguage?: string;
+  adaptiveFocusEnabled?: boolean;
 }

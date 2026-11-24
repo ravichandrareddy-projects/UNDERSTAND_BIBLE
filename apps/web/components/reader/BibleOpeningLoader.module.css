@@ -1,0 +1,382 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at center,
+    rgba(247, 244, 234, 0.98) 0%,
+    rgba(235, 229, 215, 0.98) 70%,
+    rgba(215, 206, 188, 0.98) 100%
+  );
+  backdrop-filter: blur(8px);
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  overflow: hidden;
+  user-select: none;
+}
+
+.overlayExiting {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stage {
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  height: 380px;
+  position: relative;
+}
+
+/* 3D Bible Wrapper */
+.bible3d {
+  position: relative;
+  width: 440px;
+  height: 290px;
+  transform-style: preserve-3d;
+  transform: rotateX(22deg) rotateZ(0deg);
+  transition: transform 0.6s ease;
+}
+
+@media (max-width: 600px) {
+  .bible3d {
+    width: 320px;
+    height: 220px;
+    transform: rotateX(24deg) scale(0.9);
+  }
+}
+
+/* Warm Ambient Drop Shadow */
+.bibleShadow {
+  position: absolute;
+  bottom: -28px;
+  left: 5%;
+  width: 90%;
+  height: 36px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(20, 30, 25, 0.35) 0%,
+    rgba(20, 30, 25, 0.12) 60%,
+    transparent 80%
+  );
+  filter: blur(8px);
+  transform: translateZ(-30px);
+}
+
+/* Leather Spine Base */
+.spineCenter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 100%;
+  margin-left: -12px;
+  background: linear-gradient(
+    90deg,
+    #0f221b 0%,
+    #183d32 40%,
+    #244b3e 60%,
+    #0f221b 100%
+  );
+  border-radius: 4px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+/* Hanging Red/Gold Ribbon Bookmark */
+.ribbon {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 12px;
+  height: 70px;
+  margin-left: -6px;
+  background: linear-gradient(180deg, #c5a15a 0%, #8b7038 80%, #5d461e 100%);
+  border-radius: 0 0 2px 2px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  transform: rotate(4deg);
+  transform-origin: top center;
+  z-index: 12;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+}
+
+/* Base Left & Right Resting Page Stacks */
+.pageStackLeft,
+.pageStackRight {
+  position: absolute;
+  top: 0;
+  width: 210px;
+  height: 100%;
+  background: #fdfbf7;
+  border-radius: 3px 0 0 3px;
+  box-shadow:
+    inset -4px 0 10px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .pageStackLeft,
+  .pageStackRight {
+    width: 152px;
+    padding: 14px 16px;
+  }
+}
+
+.pageStackLeft {
+  right: 50%;
+  transform-origin: right center;
+  border-left: 6px solid #132b23; /* Leather cover edge */
+  border-bottom: 4px solid #eae5d8; /* Page thickness block */
+}
+
+.pageStackRight {
+  left: 50%;
+  transform-origin: left center;
+  border-right: 6px solid #132b23; /* Leather cover edge */
+  border-bottom: 4px solid #eae5d8; /* Page thickness block */
+}
+
+/* Faux Script Lines printed on resting pages */
+.fauxLines {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  opacity: 0.28;
+}
+
+.line {
+  height: 4px;
+  background-color: #292b28;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.lineShort {
+  width: 65%;
+}
+
+.lineHeading {
+  height: 6px;
+  width: 45%;
+  background-color: #c5a15a;
+  margin-bottom: 4px;
+}
+
+/* Dynamic 3D Flipping Pages */
+.turningPage {
+  position: absolute;
+  top: 0;
+  width: 210px;
+  height: 100%;
+  background: linear-gradient(135deg, #fffefc 0%, #f7f4ea 80%, #eee9db 100%);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+  backface-visibility: hidden;
+  z-index: 20;
+}
+
+@media (max-width: 600px) {
+  .turningPage {
+    width: 152px;
+  }
+}
+
+/* Forward Page Turning Animation (Right to Left / Front to Back) */
+.turningPageForward {
+  left: 50%;
+  transform-origin: left center;
+  animation: flipForward 1.8s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.turningPageForward:nth-child(1) {
+  animation-delay: 0s;
+}
+.turningPageForward:nth-child(2) {
+  animation-delay: 0.35s;
+}
+.turningPageForward:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+@keyframes flipForward {
+  0% {
+    transform: rotateY(0deg) skewY(0deg);
+    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  30% {
+    transform: rotateY(-60deg) skewY(-2deg);
+    box-shadow: -15px 12px 25px rgba(0, 0, 0, 0.25);
+  }
+  70% {
+    transform: rotateY(-130deg) skewY(2deg);
+    box-shadow: 15px 12px 25px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: rotateY(-180deg) skewY(0deg);
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Backward Page Turning Animation (Left to Right / Back to Front) */
+.turningPageBackward {
+  right: 50%;
+  transform-origin: right center;
+  animation: flipBackward 1.8s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.turningPageBackward:nth-child(1) {
+  animation-delay: 0s;
+}
+.turningPageBackward:nth-child(2) {
+  animation-delay: 0.35s;
+}
+.turningPageBackward:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+@keyframes flipBackward {
+  0% {
+    transform: rotateY(0deg) skewY(0deg);
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  30% {
+    transform: rotateY(60deg) skewY(2deg);
+    box-shadow: 15px 12px 25px rgba(0, 0, 0, 0.25);
+  }
+  70% {
+    transform: rotateY(130deg) skewY(-2deg);
+    box-shadow: -15px 12px 25px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: rotateY(180deg) skewY(0deg);
+    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Subtle Chapter Flip Animation (Single page turn) */
+.turningPageChapter {
+  left: 50%;
+  transform-origin: left center;
+  animation: flipChapterSingle 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes flipChapterSingle {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+/* Destination Typography Information Box */
+.destinationBox {
+  margin-top: var(--space-4);
+  text-align: center;
+  max-width: 28rem;
+  padding: var(--space-3) var(--space-6);
+  animation: fadeInDestination 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInDestination {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.editionTag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8b7038;
+  margin-bottom: var(--space-1);
+}
+
+.bookName {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+  letter-spacing: -0.01em;
+}
+
+.chapterVerseDetails {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.goldDivider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c5a15a, transparent);
+  margin: var(--space-2) auto;
+}
+
+.directionNotice {
+  font-size: 11px;
+  color: #8b7038;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Accessibility: Reduced-Motion Mode */
+.reducedMotionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.reducedMotionEmblem {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-4);
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turningPageForward,
+  .turningPageBackward,
+  .turningPageChapter {
+    animation: none !important;
+  }
+  .bible3d {
+    transform: none !important;
+  }
+}
